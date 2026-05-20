@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Geo Macro Digest — Daily Market Intelligence</title>
+<style>
+  * { box-sizing:border-box; margin:0; padding:0 }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:#0f1117; color:#fff; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px }
+  .logo { font-size:28px; font-weight:700; margin-bottom:8px; letter-spacing:-0.5px }
+  .logo span { color:#378ADD }
+  .tagline { color:#888; font-size:15px; margin-bottom:48px; text-align:center }
+  .cards { display:grid; grid-template-columns:1fr 1fr; gap:16px; width:100%; max-width:720px }
+  .card { background:#1a1d27; border:1px solid #2a2d3a; border-radius:16px; padding:28px; text-decoration:none; color:#fff; transition:border-color .2s, transform .2s }
+  .card:hover { border-color:#378ADD; transform:translateY(-2px) }
+  .card-icon { font-size:32px; margin-bottom:16px }
+  .card-title { font-size:18px; font-weight:600; margin-bottom:8px }
+  .card-desc { font-size:13px; color:#888; line-height:1.6 }
+  .card-tag { display:inline-block; font-size:11px; padding:3px 10px; border-radius:20px; margin-top:14px; font-weight:500 }
+  .tag-blue { background:#378ADD20; color:#378ADD }
+  .tag-green { background:#2d7a2d20; color:#4caf50 }
+  .footer { margin-top:48px; font-size:12px; color:#555; text-align:center }
+  .footer a { color:#378ADD; text-decoration:none }
+  @media(max-width:600px) { .cards { grid-template-columns:1fr } }
+</style>
+</head>
+<body>
+  <div class="logo">Geo <span>Macro</span> Digest</div>
+  <p class="tagline">Daily market intelligence — options chain, macro context & stock setups</p>
+
+  <div class="cards">
+    <a class="card" href="/index_nifty.html">
+      <div class="card-icon">📊</div>
+      <div class="card-title">Nifty Options Dashboard</div>
+      <div class="card-desc">EOD OI analysis — CE/PE walls, PCR, Max Pain, macro context (Brent, DXY, USD/INR), credit spread setups</div>
+      <span class="card-tag tag-blue">Updated daily after 6 PM</span>
+    </a>
+    <a class="card" href="/scanner.html">
+      <div class="card-icon">🔍</div>
+      <div class="card-title">F&O Stock Scanner</div>
+      <div class="card-desc">NSE bhavcopy momentum scanner — 52W breakouts, bullish candles, volume signals + position tracker with trailing ATR stop</div>
+      <span class="card-tag tag-green">Updated daily after 6 PM</span>
+    </a>
+  </div>
+
+  <div class="footer">
+    <a href="https://x.com/geomacrodigest">𝕏 @geomacrodigest</a> &nbsp;·&nbsp;
+    <a href="https://t.me/geomacrodigest">Telegram</a> &nbsp;·&nbsp;
+    For educational purposes only. Not investment advice.
+  </div>
+</body>
+</html>
