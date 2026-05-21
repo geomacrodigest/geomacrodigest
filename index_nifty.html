@@ -37,7 +37,7 @@
 <div class="wrap">
 
 <h1>NIFTY Options Dashboard</h1>
-<p class="sub">Expiry: 26 May 2026 &nbsp;|&nbsp; Source: fo/op200526.csv &nbsp;|&nbsp; Generated: 21 May 2026 02:16</p>
+<p class="sub">Expiry: 26 May 2026 &nbsp;|&nbsp; Source: fo/op200526.csv &nbsp;|&nbsp; Generated: 21 May 2026 14:21</p>
 
 <div class="metrics">
   <div class="mcard"><div class="lbl">ATM Strike</div><div class="val blue">23,650</div></div>
@@ -96,7 +96,7 @@
   
         <div class="insight" style="border-left-color:#639922">
             <div class="itag" style="background:#63992220;color:#639922">SELL PE 23,000</div>
-            <p class="idesc">LTP ₹34.85 &nbsp;|&nbsp; OI 132,218 contracts<br>132,218 OI backing. Bullish bias. SL: ₹69.7 (2× premium). ⚠️ Do not carry overnight.</p>
+            <p class="idesc">LTP ₹34.85 &nbsp;|&nbsp; OI 85.9L contracts<br>85.9 OI backing. Bullish bias. SL: ₹69.7 (2× premium). ⚠️ Do not carry overnight.</p>
         </div>
   <p style="font-size:12px;color:#888;margin-top:8px">For educational purposes only. Not investment advice.</p>
 </div>
@@ -202,7 +202,7 @@ document.getElementById('xthread').textContent = thread;
 
 <script>
 // ── 7-Day History Charts ─────────────────────────────────────────────────────
-const historyData = [{"date": "19 May", "atm": 23600, "pcr": 1.01, "max_pain": 23850, "resistance": 24000, "support": 23000, "bias": "NEUTRAL", "top_ce": [{"strike": 24000, "oi": 128912}, {"strike": 25000, "oi": 119778}, {"strike": 24500, "oi": 106726}], "top_pe": [{"strike": 23000, "oi": 111134}, {"strike": 22500, "oi": 109029}, {"strike": 22000, "oi": 105834}], "brent": 110.5, "dxy": 99.26, "usdinr": 96.53}, {"date": "20 May", "atm": 23600, "pcr": 1.01, "max_pain": 23850, "resistance": 24000, "support": 23000, "bias": "NEUTRAL", "top_ce": [{"strike": 24000, "oi": 128912}, {"strike": 25000, "oi": 119778}, {"strike": 24500, "oi": 106726}], "top_pe": [{"strike": 23000, "oi": 111134}, {"strike": 22500, "oi": 109029}, {"strike": 22000, "oi": 105834}], "brent": 110.89, "dxy": 99.37, "usdinr": 96.85}, {"date": "21 May", "atm": 23650, "pcr": 1.24, "max_pain": 23750, "resistance": 24500, "support": 22500, "bias": "MILDLY BULLISH", "top_ce": [{"strike": 24500, "oi": 139285}, {"strike": 24000, "oi": 135350}, {"strike": 25000, "oi": 134408}], "top_pe": [{"strike": 22500, "oi": 135310}, {"strike": 22000, "oi": 133525}, {"strike": 23000, "oi": 132218}], "brent": 104.95, "dxy": 99.12, "usdinr": 96.58}];
+const historyData = [{"date": "19 May", "atm": 23600, "pcr": 1.01, "max_pain": 23850, "resistance": 24000, "support": 23000, "bias": "NEUTRAL", "top_ce": [{"strike": 24000, "oi": 128912}, {"strike": 25000, "oi": 119778}, {"strike": 24500, "oi": 106726}], "top_pe": [{"strike": 23000, "oi": 111134}, {"strike": 22500, "oi": 109029}, {"strike": 22000, "oi": 105834}], "brent": 110.5, "dxy": 99.26, "usdinr": 96.53}, {"date": "20 May", "atm": 23600, "pcr": 1.01, "max_pain": 23850, "resistance": 24000, "support": 23000, "bias": "NEUTRAL", "top_ce": [{"strike": 24000, "oi": 128912}, {"strike": 25000, "oi": 119778}, {"strike": 24500, "oi": 106726}], "top_pe": [{"strike": 23000, "oi": 111134}, {"strike": 22500, "oi": 109029}, {"strike": 22000, "oi": 105834}], "brent": 110.89, "dxy": 99.37, "usdinr": 96.85}, {"date": "21 May", "atm": 23650, "pcr": 1.24, "max_pain": 23750, "resistance": 24500, "support": 22500, "bias": "MILDLY BULLISH", "top_ce": [{"strike": 24500, "oi": 139285}, {"strike": 24000, "oi": 135350}, {"strike": 25000, "oi": 134408}], "top_pe": [{"strike": 22500, "oi": 135310}, {"strike": 22000, "oi": 133525}, {"strike": 23000, "oi": 132218}], "brent": 106.04, "dxy": 99.16, "usdinr": 96.36}];
 
 if (historyData.length > 1) {
   const histSection = document.createElement('div');
