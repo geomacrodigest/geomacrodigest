@@ -37,7 +37,7 @@
 <div class="wrap">
 
 <h1>NIFTY Options Dashboard</h1>
-<p class="sub">Expiry: 02 Jun 2026 &nbsp;|&nbsp; Source: fo/op290526.csv &nbsp;|&nbsp; Generated: 31 May 2026 12:57</p>
+<p class="sub">Expiry: 02 Jun 2026 &nbsp;|&nbsp; Source: fo/op290526.csv &nbsp;|&nbsp; Generated: 01 Jun 2026 11:45</p>
 
 <div class="metrics">
   <div class="mcard"><div class="lbl">ATM Strike</div><div class="val blue">23,750</div></div>
@@ -91,6 +91,35 @@
   </div>
 </div>
 
+
+<div class="card" style="margin-bottom:16px">
+  <div class="slbl">📊 PCR / Call-Put Ratio Analysis</div>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px">
+    <div style="background:#f9fafb;border-radius:8px;padding:12px;text-align:center">
+      <div style="font-size:11px;color:#888;margin-bottom:4px">OVERALL PCR</div>
+      <div style="font-size:24px;font-weight:700;color:#b91c1c">0.53</div>
+      <div style="margin-top:4px"><span style="color:#888;font-size:13px">→ 0.0 vs yesterday</span></div>
+    </div>
+    <div style="background:#f9fafb;border-radius:8px;padding:12px;text-align:center">
+      <div style="font-size:11px;color:#888;margin-bottom:4px">NEAR-ATM PCR (±500)</div>
+      <div style="font-size:24px;font-weight:700;color:#b91c1c">0.48</div>
+      <div style="font-size:11px;color:#888;margin-top:4px">Call writers capping ±500pt zone (bearish)</div>
+    </div>
+    <div style="background:#f9fafb;border-radius:8px;padding:12px;text-align:center">
+      <div style="font-size:11px;color:#888;margin-bottom:4px">ATM PCR (23,750)</div>
+      <div style="font-size:24px;font-weight:700;color:#b91c1c">0.5</div>
+      <div style="font-size:11px;color:#888;margin-top:4px">Single strike</div>
+    </div>
+  </div>
+  <div style="background:#f9fafb;border-radius:8px;padding:12px;font-size:13px;line-height:1.9">
+    <b>Signal:</b> 🔴🔴 STRONG RESISTANCE<br>
+    <b>Read:</b> Extremely bearish — heavy call writing<br>
+    <b>OI Change:</b> Stable — no strong directional shift<br>
+    <b style="color:#1d4ed8">💡 Both signals BEARISH — sell CE or bear call spreads preferred</b>
+  </div>
+  <p style="font-size:11px;color:#999;margin-top:8px">For educational purposes only. Not investment advice.</p>
+</div>
+
 <div class="card" style="margin-bottom:16px">
   <div class="slbl">Trade setups (directional option selling)</div>
   
@@ -103,7 +132,7 @@
 
 <div class="card" style="margin-bottom:16px">
   <div class="slbl">Credit spread setups — 200pt width (next expiry)</div>
-  <p style="font-size:12px;color:#888;margin:0 0 12px">Spot: 23,750 | DTE: 2 | Expiry: 02 Jun 2026 | ATM IV: 20.0%</p><p style="color:#888;font-size:13px">No spread candidates found — check bhavcopy data.</p>
+  <p style="color:#BA7517;font-size:13px">⚠️ DTE=1 — expiry today or tomorrow. Spread suggestions unavailable. Wait for next week.</p>
 </div>
 
 <div class="card" style="margin-bottom:16px">
@@ -202,7 +231,7 @@ document.getElementById('xthread').textContent = thread;
 
 <script>
 // ── 7-Day History Charts ─────────────────────────────────────────────────────
-const historyData = [{"date": "22 May", "atm": 23650, "pcr": 0.92, "max_pain": 23700, "resistance": 25000, "support": 22500, "bias": "NEUTRAL", "top_ce": [{"strike": 25000, "oi": 203812}, {"strike": 24000, "oi": 198393}, {"strike": 24500, "oi": 160444}], "top_pe": [{"strike": 22500, "oi": 167878}, {"strike": 23000, "oi": 141762}, {"strike": 22000, "oi": 137135}], "brent": 104.28, "dxy": 99.22, "usdinr": 96.14}, {"date": "23 May", "atm": 23750, "pcr": 1.0, "max_pain": 23800, "resistance": 24000, "support": 23000, "bias": "NEUTRAL", "top_ce": [{"strike": 24000, "oi": 195879}, {"strike": 25000, "oi": 171875}, {"strike": 24500, "oi": 167616}], "top_pe": [{"strike": 23000, "oi": 148786}, {"strike": 22500, "oi": 147281}, {"strike": 23500, "oi": 134781}], "brent": 103.2, "dxy": 99.23, "usdinr": 95.68}, {"date": "25 May", "atm": 23750, "pcr": 1.0, "max_pain": 23800, "resistance": 24000, "support": 23000, "bias": "NEUTRAL", "top_ce": [{"strike": 24000, "oi": 195879}, {"strike": 25000, "oi": 171875}, {"strike": 24500, "oi": 167616}], "top_pe": [{"strike": 23000, "oi": 148786}, {"strike": 22500, "oi": 147281}, {"strike": 23500, "oi": 134781}], "brent": 100.21, "dxy": 99.03, "usdinr": 95.19}, {"date": "26 May", "atm": 23950, "pcr": 0.93, "max_pain": 24000, "resistance": 24000, "support": 23000, "bias": "NEUTRAL", "top_ce": [{"strike": 24000, "oi": 89886}, {"strike": 25000, "oi": 86956}, {"strike": 25500, "oi": 85329}], "top_pe": [{"strike": 23000, "oi": 71120}, {"strike": 22000, "oi": 69026}, {"strike": 24000, "oi": 62744}], "brent": 96.99, "dxy": 99.18, "usdinr": 95.67}, {"date": "29 May", "atm": 23950, "pcr": 0.86, "max_pain": 23950, "resistance": 25000, "support": 23000, "bias": "BEARISH", "top_ce": [{"strike": 25000, "oi": 135466}, {"strike": 24000, "oi": 133082}, {"strike": 24500, "oi": 120361}], "top_pe": [{"strike": 23000, "oi": 111794}, {"strike": 23200, "oi": 90458}, {"strike": 23900, "oi": 89092}], "brent": 92.93, "dxy": 98.99, "usdinr": 95.68}, {"date": "30 May", "atm": 23750, "pcr": 0.53, "max_pain": 23800, "resistance": 24000, "support": 23000, "bias": "BEARISH", "top_ce": [{"strike": 24000, "oi": 236473}, {"strike": 25000, "oi": 235118}, {"strike": 24200, "oi": 160889}], "top_pe": [{"strike": 23000, "oi": 133847}, {"strike": 23200, "oi": 120998}, {"strike": 23500, "oi": 103961}], "brent": 92.05, "dxy": 98.91, "usdinr": 94.99}, {"date": "31 May", "atm": 23750, "pcr": 0.53, "max_pain": 23800, "resistance": 24000, "support": 23000, "bias": "BEARISH", "top_ce": [{"strike": 24000, "oi": 236473}, {"strike": 25000, "oi": 235118}, {"strike": 24200, "oi": 160889}], "top_pe": [{"strike": 23000, "oi": 133847}, {"strike": 23200, "oi": 120998}, {"strike": 23500, "oi": 103961}], "brent": 91.12, "dxy": 98.91, "usdinr": 94.99}];
+const historyData = [{"date": "23 May", "atm": 23750, "pcr": 1.0, "max_pain": 23800, "resistance": 24000, "support": 23000, "bias": "NEUTRAL", "top_ce": [{"strike": 24000, "oi": 195879}, {"strike": 25000, "oi": 171875}, {"strike": 24500, "oi": 167616}], "top_pe": [{"strike": 23000, "oi": 148786}, {"strike": 22500, "oi": 147281}, {"strike": 23500, "oi": 134781}], "brent": 103.2, "dxy": 99.23, "usdinr": 95.68}, {"date": "25 May", "atm": 23750, "pcr": 1.0, "max_pain": 23800, "resistance": 24000, "support": 23000, "bias": "NEUTRAL", "top_ce": [{"strike": 24000, "oi": 195879}, {"strike": 25000, "oi": 171875}, {"strike": 24500, "oi": 167616}], "top_pe": [{"strike": 23000, "oi": 148786}, {"strike": 22500, "oi": 147281}, {"strike": 23500, "oi": 134781}], "brent": 100.21, "dxy": 99.03, "usdinr": 95.19}, {"date": "26 May", "atm": 23950, "pcr": 0.93, "max_pain": 24000, "resistance": 24000, "support": 23000, "bias": "NEUTRAL", "top_ce": [{"strike": 24000, "oi": 89886}, {"strike": 25000, "oi": 86956}, {"strike": 25500, "oi": 85329}], "top_pe": [{"strike": 23000, "oi": 71120}, {"strike": 22000, "oi": 69026}, {"strike": 24000, "oi": 62744}], "brent": 96.99, "dxy": 99.18, "usdinr": 95.67}, {"date": "29 May", "atm": 23950, "pcr": 0.86, "max_pain": 23950, "resistance": 25000, "support": 23000, "bias": "BEARISH", "top_ce": [{"strike": 25000, "oi": 135466}, {"strike": 24000, "oi": 133082}, {"strike": 24500, "oi": 120361}], "top_pe": [{"strike": 23000, "oi": 111794}, {"strike": 23200, "oi": 90458}, {"strike": 23900, "oi": 89092}], "brent": 92.93, "dxy": 98.99, "usdinr": 95.68}, {"date": "30 May", "atm": 23750, "pcr": 0.53, "max_pain": 23800, "resistance": 24000, "support": 23000, "bias": "BEARISH", "top_ce": [{"strike": 24000, "oi": 236473}, {"strike": 25000, "oi": 235118}, {"strike": 24200, "oi": 160889}], "top_pe": [{"strike": 23000, "oi": 133847}, {"strike": 23200, "oi": 120998}, {"strike": 23500, "oi": 103961}], "brent": 92.05, "dxy": 98.91, "usdinr": 94.99}, {"date": "31 May", "atm": 23750, "pcr": 0.53, "max_pain": 23800, "resistance": 24000, "support": 23000, "bias": "BEARISH", "top_ce": [{"strike": 24000, "oi": 236473}, {"strike": 25000, "oi": 235118}, {"strike": 24200, "oi": 160889}], "top_pe": [{"strike": 23000, "oi": 133847}, {"strike": 23200, "oi": 120998}, {"strike": 23500, "oi": 103961}], "brent": 91.12, "dxy": 98.91, "usdinr": 94.99}, {"date": "01 Jun", "atm": 23750, "pcr": 0.53, "max_pain": 23800, "resistance": 24000, "support": 23000, "bias": "BEARISH", "top_ce": [{"strike": 24000, "oi": 236473}, {"strike": 25000, "oi": 235118}, {"strike": 24200, "oi": 160889}], "top_pe": [{"strike": 23000, "oi": 133847}, {"strike": 23200, "oi": 120998}, {"strike": 23500, "oi": 103961}], "brent": 93.35, "dxy": 98.99, "usdinr": 94.87}];
 
 if (historyData.length > 1) {
   const histSection = document.createElement('div');
