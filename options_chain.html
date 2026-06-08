@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Nifty Options Chain — 08 Jun 2026 14:35</title>
+<title>Nifty Options Chain — 08 Jun 2026 15:09</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
@@ -33,7 +33,7 @@
 <body>
 <div class="wrap">
   <h1>🔗 Nifty Options Chain Analysis</h1>
-  <p class="sub">Generated: 08 Jun 2026 14:35 &nbsp;|&nbsp; DTE: 1 &nbsp;|&nbsp; Spot: 23,157
+  <p class="sub">Generated: 08 Jun 2026 15:09 &nbsp;|&nbsp; DTE: 1 &nbsp;|&nbsp; Spot: 23,128
     <span class="tag">Every 2 hours during market hours</span></p>
 
   <div class="nav">
@@ -47,7 +47,7 @@
     <div class="metric"><div class="lbl">PCR</div><div class="val" style="color:#b91c1c">0.81</div></div>
     <div class="metric"><div class="lbl">Max Pain</div><div class="val" style="color:#b45309">23,200</div></div>
     <div class="metric"><div class="lbl">IV</div><div class="val">21.91%</div></div>
-    <div class="metric"><div class="lbl">Range</div><div class="val" style="font-size:15px">22,453–23,861</div></div>
+    <div class="metric"><div class="lbl">Range</div><div class="val" style="font-size:15px">22,425–23,831</div></div>
     <div class="metric"><div class="lbl">Bias</div><div class="val"><span class="bias-tag">⚖️ NEUTRAL</span></div></div>
   </div>
 
@@ -78,7 +78,7 @@
       </div>
       <div style="background:#f9fafb;border-radius:8px;padding:12px;text-align:center">
         <div style="font-size:11px;color:#888;margin-bottom:4px">NEAR-ATM PCR (±500)</div>
-        <div style="font-size:22px;font-weight:700;color:#b45309">1.05</div>
+        <div style="font-size:22px;font-weight:700;color:#2d7a2d">1.11</div>
       </div>
       <div style="background:#f9fafb;border-radius:8px;padding:12px;text-align:center">
         <div style="font-size:11px;color:#888;margin-bottom:4px">ATM PCR</div>
@@ -93,7 +93,7 @@
       <b>Signal:</b> ⚖️ NEUTRAL<br>
       <b>Read:</b> Balanced — call and put writers in equilibrium<br>
       <b>Fresh OI:</b> Fresh OI balanced (0.95) — no directional conviction<br>
-      <b>Near Zone:</b> Near-ATM PCR 1.05 — balanced near spot<br>
+      <b>Near Zone:</b> Near-ATM PCR 1.11 — balanced near spot<br>
       <b style="color:#1F4E79">💡 Mixed signals — iron condor or stay flat until clearer print</b>
     </div>
     <p style="font-size:11px;color:#999;margin-top:8px">For educational purposes only. Not investment advice.</p>
@@ -103,19 +103,19 @@
     <h3>🎯 Trade Suggestions</h3>
     <div class="suggestions"> TRADE SUGGESTIONS
 🟢 SELL PE 23,000 | LTP ₹42.75 | OI 286,450
-   SL ₹85.5 (2× premium) | P(profit) 50.7% | EV ₹-83.76 ⚠️ -EV
+   SL ₹85.5 (2× premium) | P(profit) 50.6% | EV ₹-84.08 ⚠️ -EV
    ⚠️ Naked sell — do not carry overnight
 🔴 SELL CE 23,200 | LTP ₹88.6 | OI 257,704
-   SL ₹177.2 (2× premium) | P(profit) 50.2% | EV ₹-176.21 ⚠️ -EV
+   SL ₹177.2 (2× premium) | P(profit) 50.3% | EV ₹-175.55 ⚠️ -EV
    ⚠️ Naked sell — do not carry overnight
 
 📐 Credit Spread — 200pt width (Iron Condor)
-  Sell 23,150PE / Buy 22,950PE
-  Credit ₹64.3 (₹4180/lot) | Max loss ₹135.7 (₹8820/lot)
-  R:R 1:2.1 | P(profit) 50.0% | EV ₹-35.64 ⚠️ -EV
-  Sell 23,200CE / Buy 23,400CE
-  Credit ₹60.25 (₹3916/lot) | Max loss ₹139.75 (₹9084/lot)
-  R:R 1:2.3 | P(profit) 50.2% | EV ₹-39.38 ⚠️ -EV
+  Sell 23,100PE / Buy 22,900PE
+  Credit ₹50.45 (₹3279/lot) | Max loss ₹149.55 (₹9721/lot)
+  R:R 1:3.0 | P(profit) 50.1% | EV ₹-49.31 ⚠️ -EV
+  Sell 23,150CE / Buy 23,350CE
+  Credit ₹74.6 (₹4849/lot) | Max loss ₹125.4 (₹8151/lot)
+  R:R 1:1.7 | P(profit) 50.1% | EV ₹-25.21 ⚠️ -EV
   ✅ Risk defined — can be carried overnight. Max loss capped at spread width.
 
 ⚡ Bias flip alert: If bias turns directional → exit the against-bias IC leg immediately. Do not hold both sides once market picks direction.
@@ -128,9 +128,9 @@ For educational purposes only. Not investment advice.</div>
 </div>
 
 <script>
-const labels = ['22200', '22250', '22300', '22350', '22400', '22450', '22500', '22550', '22600', '22650', '22700', '22750', '22800', '22850', '22900', '22950', '23000', '23050', '23100', '23150', '23200', '23250', '23300', '23350', '23400', '23450', '23500', '23550', '23600', '23650', '23700', '23750', '23800', '23850', '23900', '23950', '24000', '24050', '24100', '24150'];
-const ceData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 3, 3, 23, 12, 53, 78, 167, 98, 142, 68, 131, 59, 180, 53, 97, 41, 91, 36, 79, 27, 70, 24, 148, 20, 54, 21];
-const peData = [35, 10, 49, 20, 50, 16, 114, 26, 47, 28, 78, 38, 86, 46, 91, 45, 186, 80, 154, 109, 139, 39, 63, 15, 34, 8, 41, 4, 15, 2, 19, 1, 4, 1, 3, 1, 10, 0, 1, 0];
+const labels = ['22150', '22200', '22250', '22300', '22350', '22400', '22450', '22500', '22550', '22600', '22650', '22700', '22750', '22800', '22850', '22900', '22950', '23000', '23050', '23100', '23150', '23200', '23250', '23300', '23350', '23400', '23450', '23500', '23550', '23600', '23650', '23700', '23750', '23800', '23850', '23900', '23950', '24000', '24050', '24100'];
+const ceData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 3, 3, 23, 12, 53, 78, 167, 98, 142, 68, 131, 59, 180, 53, 97, 41, 91, 36, 79, 27, 70, 24, 148, 20, 54];
+const peData = [10, 35, 10, 49, 20, 50, 16, 114, 26, 47, 28, 78, 38, 86, 46, 91, 45, 186, 80, 154, 109, 139, 39, 63, 15, 34, 8, 41, 4, 15, 2, 19, 1, 4, 1, 3, 1, 10, 0, 1];
 new Chart(document.getElementById('oiChart'), {
   type: 'bar',
   data: {
