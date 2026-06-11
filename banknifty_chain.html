@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BankNifty Options Chain — 11 Jun 2026 15:35</title>
+<title>BankNifty Options Chain — 11 Jun 2026 15:39</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
@@ -34,7 +34,7 @@
 <body>
 <div class="wrap">
   <h1>🏦 BankNifty Options Chain Analysis <span class="bnk-badge">LOT: 15 | SPREAD: 500pts</span></h1>
-  <p class="sub">Generated: 11 Jun 2026 15:35 &nbsp;|&nbsp; DTE: 12 &nbsp;|&nbsp; Spot: 55,221
+  <p class="sub">Generated: 11 Jun 2026 15:39 &nbsp;|&nbsp; DTE: 12 &nbsp;|&nbsp; Spot: 55,221
     <span class="tag">Every 2 hours during market hours</span></p>
 
   <div class="nav">
@@ -57,12 +57,12 @@
     <div class="card">
       <h3>🔴 CE Wall — Resistance</h3>
       <table><thead><tr><th>Strike</th><th>OI</th><th>Fresh</th><th>LTP</th></tr></thead>
-      <tbody><tr><td>60,000 CE</td><td>9L</td><td style='color:#378ADD'>+0L</td><td>₹25.85</td></tr><tr><td>56,000 CE</td><td>4L</td><td style='color:#378ADD'>+0L</td><td>₹601.95</td></tr><tr><td>55,500 CE</td><td>4L</td><td style='color:#378ADD'>+0L</td><td>₹825.0</td></tr><tr><td>57,000 CE</td><td>3L</td><td style='color:#378ADD'>+0L</td><td>₹286.6</td></tr><tr><td>58,000 CE</td><td>3L</td><td style='color:#378ADD'>+0L</td><td>₹124.4</td></tr></tbody></table>
+      <tbody><tr><td>60,000 CE</td><td>9.4L</td><td style='color:#378ADD'>—</td><td>₹25.85</td></tr><tr><td>56,000 CE</td><td>4.9L</td><td style='color:#378ADD'>+17K</td><td>₹601.95</td></tr><tr><td>55,500 CE</td><td>4.2L</td><td style='color:#378ADD'>+8K</td><td>₹825.0</td></tr><tr><td>57,000 CE</td><td>4.0L</td><td style='color:#378ADD'>—</td><td>₹286.6</td></tr><tr><td>58,000 CE</td><td>3.8L</td><td style='color:#378ADD'>+7K</td><td>₹124.4</td></tr></tbody></table>
     </div>
     <div class="card">
       <h3>🟢 PE Wall — Support</h3>
       <table><thead><tr><th>Strike</th><th>OI</th><th>Fresh</th><th>LTP</th></tr></thead>
-      <tbody><tr><td>54,000 PE</td><td>6L</td><td style='color:#4caf50'>+0L</td><td>₹461.5</td></tr><tr><td>55,000 PE</td><td>4L</td><td style='color:#4caf50'>+0L</td><td>₹790.7</td></tr><tr><td>50,000 PE</td><td>4L</td><td style='color:#4caf50'>+0L</td><td>₹48.3</td></tr><tr><td>53,000 PE</td><td>3L</td><td style='color:#4caf50'>+0L</td><td>₹257.6</td></tr><tr><td>53,500 PE</td><td>3L</td><td style='color:#4caf50'>+0L</td><td>₹347.0</td></tr></tbody></table>
+      <tbody><tr><td>54,000 PE</td><td>7.0L</td><td style='color:#4caf50'>+1K</td><td>₹461.5</td></tr><tr><td>55,000 PE</td><td>4.4L</td><td style='color:#4caf50'>—</td><td>₹790.7</td></tr><tr><td>50,000 PE</td><td>4.1L</td><td style='color:#4caf50'>+11K</td><td>₹48.3</td></tr><tr><td>53,000 PE</td><td>3.5L</td><td style='color:#4caf50'>+9K</td><td>₹257.6</td></tr><tr><td>53,500 PE</td><td>3.3L</td><td style='color:#4caf50'>+3K</td><td>₹347.0</td></tr></tbody></table>
     </div>
   </div>
 
@@ -131,8 +131,8 @@ For educational purposes only. Not investment advice.</div>
 
 <script>
 const labels = ['53300', '53400', '53500', '53600', '53700', '53800', '53900', '54000', '54100', '54200', '54300', '54400', '54500', '54600', '54700', '54800', '54900', '55000', '55100', '55200', '55300', '55400', '55500', '55600', '55700', '55800', '55900', '56000', '56100', '56200', '56300', '56400', '56500', '56600', '56700', '56800', '56900', '57000', '57100', '57200'];
-const ceData = [0, 0, 1, 0, 0, 0, 0, 4, 0, 0, 0, 0, 2, 0, 0, 0, 0, 4, 0, 0, 1, 0, 4, 0, 0, 0, 0, 4, 0, 0, 0, 0, 2, 0, 0, 0, 0, 3, 0, 0];
-const peData = [0, 0, 3, 0, 0, 0, 0, 6, 0, 0, 0, 0, 2, 0, 0, 0, 0, 4, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0];
+const ceData = [10290, 8370, 168810, 27795, 12975, 17985, 14625, 495210, 24300, 32520, 55590, 62490, 235470, 53925, 32865, 37560, 35385, 443265, 61980, 91740, 144570, 61560, 424515, 62355, 34950, 41100, 28785, 486045, 29715, 32880, 21645, 22890, 226470, 15930, 17880, 30270, 14850, 396420, 21000, 29175];
+const peData = [26820, 31185, 326250, 38985, 34950, 37650, 28020, 697740, 35835, 53235, 61380, 45900, 263415, 62400, 56985, 74535, 54570, 435150, 60315, 69975, 91515, 43005, 284205, 28650, 14850, 16890, 9645, 176085, 6825, 4635, 4755, 2010, 64800, 1365, 1485, 810, 690, 125220, 645, 465];
 new Chart(document.getElementById('oiChart'), {
   type: 'bar',
   data: {
