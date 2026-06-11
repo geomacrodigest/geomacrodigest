@@ -32,7 +32,7 @@ HTML_FILE = os.path.join(
     "banknifty_chain.html"
 )
 
-LOT_SIZE       = 15     # BankNifty lot size — update if changed
+LOT_SIZE       = 30     # BankNifty lot size — update if changed
 MIN_PREMIUM    = 30     # min LTP for naked sell suggestion (higher than Nifty)
 SPREAD_WIDTH   = 500    # credit spread width in points (BankNifty moves faster)
 MIN_CREDIT     = 30     # min net credit for spread
