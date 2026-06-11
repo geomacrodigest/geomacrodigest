@@ -38,6 +38,22 @@ SPREAD_WIDTH   = 500    # credit spread width in points (BankNifty moves faster)
 MIN_CREDIT     = 30     # min net credit for spread
 SL_MULTIPLIER  = 2.0   # SL = entry × this
 
+def fmt_oi(oi_contracts):
+    """Smart OI display: L if >=1L, K if >=1K, else raw contracts."""
+    val = oi_contracts * LOT_SIZE
+    if val >= 100000:
+        return f"{val/100000:.1f}L".rstrip('0').rstrip('.')  + "L" if False else f"{val/100000:.1f}L"
+    elif val >= 1000:
+        return f"{int(val/1000)}K"
+    else:
+        return str(int(val))
+
+def fmt_chg_oi(oi_contracts):
+    """Same as fmt_oi but returns None if zero (to suppress display)."""
+    if oi_contracts <= 0:
+        return None
+    return fmt_oi(oi_contracts)
+
 # ── NSE Trading Holidays 2025–2026 ────────────────────────────────────────────
 NSE_HOLIDAYS = {
     date(2026, 1, 15),  # Municipal Corporation Election - Maharashtra
@@ -448,8 +464,8 @@ def build_channel_msg(rows, spot, atm, pcr, mp, iv, wm, bias, dte, ce_top, pe_to
     bias_emoji = "📈" if "BULL" in bias else "📉" if "BEAR" in bias else "⚖️"
     dte_label  = "Expiry today" if dte == 0 else f"DTE: {dte}"
 
-    ce_lines = "\n".join(f"  {int(r['strike']):,} CE — {int(r['ce_oi']*LOT_SIZE/100000):,}L" for r in ce_top)
-    pe_lines = "\n".join(f"  {int(r['strike']):,} PE — {int(r['pe_oi']*LOT_SIZE/100000):,}L" for r in pe_top)
+    ce_lines = "\n".join(f"  {int(r['strike']):,} CE — {fmt_oi(r['ce_oi'])}" for r in ce_top)
+    pe_lines = "\n".join(f"  {int(r['strike']):,} PE — {fmt_oi(r['pe_oi'])}" for r in pe_top)
 
     pcr_raw = get_pcr_analysis(rows, spot, pcr)
     pcr_clean = (pcr_raw.replace("<b>","").replace("</b>","")
@@ -499,8 +515,8 @@ def build_x_thread(rows, spot, atm, pcr, mp, iv, wm, bias, dte, ce_top, pe_top, 
         f"{bias_emoji} Bias: {bias}"
     )
 
-    ce_str = " | ".join(f"{int(r['strike']):,}CE ({int(r['ce_oi']*LOT_SIZE/100000):,}L)" for r in ce_top)
-    pe_str = " | ".join(f"{int(r['strike']):,}PE ({int(r['pe_oi']*LOT_SIZE/100000):,}L)" for r in pe_top)
+    ce_str = " | ".join(f"{int(r['strike']):,}CE ({fmt_oi(r['ce_oi'])})" for r in ce_top)
+    pe_str = " | ".join(f"{int(r['strike']):,}PE ({fmt_oi(r['pe_oi'])})" for r in pe_top)
     t2 = (
         f"📊 OI Walls\n\n"
         f"🔴 Resistance: {ce_str}\n\n"
@@ -580,8 +596,14 @@ def analyse(rows, spot, dte):
     else:
         bias = "NEUTRAL"
 
-    def fmt_ce(r): return f"  {int(r['strike']):,} CE — {int(r['ce_oi']*LOT_SIZE/100000):,}L  (+{int(r['ce_chg_oi']*LOT_SIZE/100000):,}L fresh)"
-    def fmt_pe(r): return f"  {int(r['strike']):,} PE — {int(r['pe_oi']*LOT_SIZE/100000):,}L  (+{int(r['pe_chg_oi']*LOT_SIZE/100000):,}L fresh)"
+    def fmt_ce(r):
+        chg = fmt_chg_oi(r['ce_chg_oi'])
+        chg_str = f"  (+{chg} fresh)" if chg else ""
+        return f"  {int(r['strike']):,} CE — {fmt_oi(r['ce_oi'])}{chg_str}"
+    def fmt_pe(r):
+        chg = fmt_chg_oi(r['pe_chg_oi'])
+        chg_str = f"  (+{chg} fresh)" if chg else ""
+        return f"  {int(r['strike']):,} PE — {fmt_oi(r['pe_oi'])}{chg_str}"
 
     personal_msg = (
         f"<b>BankNifty Options — {now}</b>\n\n"
@@ -591,8 +613,8 @@ def analyse(rows, spot, dte):
         f"<b>Bias:</b> {bias}  |  <b>DTE:</b> {dte}\n\n"
         f"<b>Resistance:</b>\n" + "\n".join(fmt_ce(r) for r in ce_top) + "\n\n"
         f"<b>Support:</b>\n" + "\n".join(fmt_pe(r) for r in pe_top) + "\n\n"
-        f"<b>Fresh CE:</b>\n" + "\n".join(f"  {int(r['strike']):,} CE +{int(r['ce_chg_oi']*LOT_SIZE/100000):,}L" for r in ce_fr) + "\n\n"
-        f"<b>Fresh PE:</b>\n" + "\n".join(f"  {int(r['strike']):,} PE +{int(r['pe_chg_oi']*LOT_SIZE/100000):,}L" for r in pe_fr)
+        f"<b>Fresh CE:</b>\n" + "\n".join(f"  {int(r['strike']):,} CE +{fmt_oi(r['ce_chg_oi'])}" for r in ce_fr if r['ce_chg_oi'] > 0) + "\n\n"
+        f"<b>Fresh PE:</b>\n" + "\n".join(f"  {int(r['strike']):,} PE +{fmt_oi(r['pe_chg_oi'])}" for r in pe_fr if r['pe_chg_oi'] > 0)
         + get_pcr_analysis(rows, spot, pcr)
         + get_trade_suggestions(rows, spot, atm, bias, iv, dte)
     )
@@ -674,7 +696,7 @@ def get_pcr_analysis(rows, spot, pcr) -> str:
 
     return (
         f"\n\n<b>📊 PCR / CALL-PUT RATIO ANALYSIS</b>\n"
-        f"  Overall PCR:   <b>{pcr}</b>  ({int(total_pe/100000):,}L PE / {int(total_ce/100000):,}L CE)\n"
+        f"  Overall PCR:   <b>{pcr}</b>  ({fmt_oi(total_pe/LOT_SIZE)} PE / {fmt_oi(total_ce/LOT_SIZE)} CE)\n"
         f"  Near-ATM PCR:  <b>{near_pcr}</b>  (±1000pts from spot)\n"
         f"  ATM PCR:       <b>{atm_pcr}</b>  ({int(atm):,} strike only)\n"
         f"  Fresh OI Ratio:<b>{fresh_ratio}</b>  (+PE chg / +CE chg)\n\n"
@@ -695,17 +717,19 @@ def build_options_html(rows, spot, atm, pcr, mp, iv, wm, bias, dte, ce_top, pe_t
 
     ce_rows = ""
     for r in ce_top:
-        ce_rows += f"<tr><td>{int(r['strike']):,} CE</td><td>{int(r['ce_oi']*LOT_SIZE/100000):,}L</td><td style='color:#378ADD'>+{int(r['ce_chg_oi']*LOT_SIZE/100000):,}L</td><td>₹{r['ce_ltp']}</td></tr>"
+        chg = fmt_chg_oi(r['ce_chg_oi'])
+        ce_rows += f"<tr><td>{int(r['strike']):,} CE</td><td>{fmt_oi(r['ce_oi'])}</td><td style='color:#378ADD'>{'+'+chg if chg else '—'}</td><td>₹{r['ce_ltp']}</td></tr>"
 
     pe_rows = ""
     for r in pe_top:
-        pe_rows += f"<tr><td>{int(r['strike']):,} PE</td><td>{int(r['pe_oi']*LOT_SIZE/100000):,}L</td><td style='color:#4caf50'>+{int(r['pe_chg_oi']*LOT_SIZE/100000):,}L</td><td>₹{r['pe_ltp']}</td></tr>"
+        chg = fmt_chg_oi(r['pe_chg_oi'])
+        pe_rows += f"<tr><td>{int(r['strike']):,} PE</td><td>{fmt_oi(r['pe_oi'])}</td><td style='color:#4caf50'>{'+'+chg if chg else '—'}</td><td>₹{r['pe_ltp']}</td></tr>"
 
     # OI distribution chart data (near ATM ±2000 for BankNifty)
     chart_strikes = [r for r in rows if abs(r['strike'] - spot) <= 2000]
     chart_labels  = [str(int(r['strike'])) for r in chart_strikes]
-    chart_ce      = [int(r['ce_oi']*LOT_SIZE/100000) for r in chart_strikes]
-    chart_pe      = [int(r['pe_oi']*LOT_SIZE/100000) for r in chart_strikes]
+    chart_ce      = [int(r['ce_oi'] * LOT_SIZE) for r in chart_strikes]
+    chart_pe      = [int(r['pe_oi'] * LOT_SIZE) for r in chart_strikes]
 
     suggestions_clean = personal_msg.split('🎯')[1] if '🎯' in personal_msg else ""
     suggestions_clean = suggestions_clean.replace('<b>','').replace('</b>','').replace('<i>','').replace('</i>','')
