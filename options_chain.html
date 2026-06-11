@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Nifty Options Chain — 11 Jun 2026 15:15</title>
+<title>Nifty Options Chain — 11 Jun 2026 15:16</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
@@ -33,7 +33,7 @@
 <body>
 <div class="wrap">
   <h1>🔗 Nifty Options Chain Analysis</h1>
-  <p class="sub">Generated: 11 Jun 2026 15:15 &nbsp;|&nbsp; DTE: 0 &nbsp;|&nbsp; Spot: 23,159
+  <p class="sub">Generated: 11 Jun 2026 15:16 &nbsp;|&nbsp; DTE: 3 &nbsp;|&nbsp; Spot: 23,159
     <span class="tag">Every 2 hours during market hours</span></p>
 
   <div class="nav">
@@ -101,17 +101,25 @@
 
   <div class="card" style="margin-bottom:20px">
     <h3>🎯 Trade Suggestions</h3>
-    <div class="suggestions"> 0DTE SCALP SUGGESTIONS
-🟢 0DTE SCALP — SELL PE 22,000
-   LTP ₹2.4 | OI 120,504 | 1159 pts OTM
-   Target: ₹1.2 (50% decay) | SL: spot breaks 22,000
-   ⏰ Exit by 3:15 PM regardless
-🔴 0DTE SCALP — SELL CE 24,000
-   LTP ₹4.05 | OI 132,876 | 841 pts OTM
-   Target: ₹2.02 (50% decay) | SL: spot breaks 24,000
-   ⏰ Exit by 3:15 PM regardless
+    <div class="suggestions"> TRADE SUGGESTIONS
+🟢 SELL PE 23,000 | LTP ₹78.5 | OI 120,239
+   SL ₹157.0 (2× premium) | P(profit) 50.7% | EV ₹-153.77 ⚠️ -EV
+   ⚠️ Naked sell — do not carry overnight
+🔴 SELL CE 23,500 | LTP ₹39.55 | OI 115,422
+   SL ₹79.1 (2× premium) | P(profit) 51.5% | EV ₹-75.61 ⚠️ -EV
+   ⚠️ Naked sell — do not carry overnight
 
-⚠️ 0DTE only — gamma risk high after 2:30 PM. No spreads suggested (bid-ask too wide).
+📐 Credit Spread — 200pt width (Iron Condor)
+  Sell 23,150PE / Buy 22,950PE
+  Credit ₹71.5 (₹4648/lot) | Max loss ₹128.5 (₹8352/lot)
+  R:R 1:1.8 | P(profit) 50.0% | EV ₹-28.42 ⚠️ -EV
+  Sell 23,200CE / Buy 23,400CE
+  Credit ₹75.95 (₹4937/lot) | Max loss ₹124.05 (₹8063/lot)
+  R:R 1:1.6 | P(profit) 50.2% | EV ₹-23.7 ⚠️ -EV
+  ✅ Risk defined — can be carried overnight. Max loss capped at spread width.
+
+⚡ Bias flip alert: If bias turns directional → exit the against-bias IC leg immediately. Do not hold both sides once market picks direction.
+
 For educational purposes only. Not investment advice.</div>
     <p style="font-size:11px;color:#999;margin-top:8px">For educational purposes only. Not investment advice.</p>
   </div>
