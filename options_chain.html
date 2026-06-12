@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Nifty Options Chain — 11 Jun 2026 15:46</title>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nifty Options Chain (Kite) — 12 Jun 2026 15:16</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
@@ -11,144 +9,83 @@
   .wrap{max-width:1200px;margin:0 auto}
   h1{font-size:20px;font-weight:600;margin-bottom:4px}
   .sub{color:#666;font-size:13px;margin-bottom:20px}
-  .nav{display:flex;gap:10px;margin-bottom:20px}
+  .nav{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
   .nav a{font-size:12px;color:#378ADD;text-decoration:none;padding:5px 12px;border:1px solid #378ADD;border-radius:8px}
   .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:20px}
   .metric{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px}
   .metric .lbl{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
   .metric .val{font-size:22px;font-weight:600}
-  .row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
-  .card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:16px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+  .card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:16px;margin-bottom:16px}
   .card h3{font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px}
   table{width:100%;border-collapse:collapse}
   th{background:#f3f4f6;padding:8px 10px;text-align:left;font-size:11px;font-weight:500;color:#666}
   td{padding:8px 10px;border-bottom:1px solid #f0f0f0;font-size:13px}
-  .bias-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;background:#b4530920;color:#b45309}
+  .bias-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600;background:#2d7a2d20;color:#2d7a2d}
   .chart-wrap{height:220px;position:relative}
   .suggestions{background:#f9fafb;border-radius:8px;padding:14px;font-size:13px;white-space:pre-wrap;line-height:1.7;color:#333}
   .footer{margin-top:16px;font-size:12px;color:#999;text-align:center}
-  .tag{font-size:11px;color:#b45309;background:#b4530920;padding:2px 10px;border-radius:20px;margin-left:8px}
+  .kite-badge{display:inline-block;background:#387ed120;color:#387ed1;font-size:11px;padding:2px 10px;border-radius:20px;margin-left:8px}
 </style>
-</head>
-<body>
+</head><body>
 <div class="wrap">
-  <h1>🔗 Nifty Options Chain Analysis</h1>
-  <p class="sub">Generated: 11 Jun 2026 15:46 &nbsp;|&nbsp; DTE: 3 &nbsp;|&nbsp; Spot: 23,161
-    <span class="tag">Every 2 hours during market hours</span></p>
-
+  <h1>📊 Nifty Options Chain <span class="kite-badge">KITE LIVE</span></h1>
+  <p class="sub">Generated: 12 Jun 2026 15:16 | Expiry: 16 Jun 2026 | DTE: 2 | Spot: 23,620</p>
   <div class="nav">
     <a href="index.html">🏠 Home</a>
-    <a href="index_nifty.html">📊 EOD Dashboard</a>
-    <a href="intraday.html">⚡ Stock Scanner</a>
+    <a href="banknifty_chain.html">🏦 BankNifty</a>
+    <a href="index_nifty.html">📈 EOD Dashboard</a>
+    <a href="intraday.html">⚡ Intraday</a>
+    <a href="scanner.html">📋 Swing Scanner</a>
   </div>
-
   <div class="grid">
-    <div class="metric"><div class="lbl">ATM</div><div class="val" style="color:#378ADD">23,150</div></div>
-    <div class="metric"><div class="lbl">PCR</div><div class="val" style="color:#b45309">0.92</div></div>
-    <div class="metric"><div class="lbl">Max Pain</div><div class="val" style="color:#b45309">23,200</div></div>
-    <div class="metric"><div class="lbl">IV</div><div class="val">14.02%</div></div>
-    <div class="metric"><div class="lbl">Range</div><div class="val" style="font-size:15px">22,711–23,611</div></div>
-    <div class="metric"><div class="lbl">Bias</div><div class="val"><span class="bias-tag">⚖️ NEUTRAL</span></div></div>
+    <div class="metric"><div class="lbl">ATM</div><div class="val" style="color:#378ADD">23,600</div></div>
+    <div class="metric"><div class="lbl">PCR</div><div class="val" style="color:#2d7a2d">1.68</div></div>
+    <div class="metric"><div class="lbl">Max Pain</div><div class="val" style="color:#2d7a2d">23,500</div></div>
+    <div class="metric"><div class="lbl">IV</div><div class="val">20.0%</div></div>
+    <div class="metric"><div class="lbl">Range</div><div class="val" style="font-size:15px">22,965–24,275</div></div>
+    <div class="metric"><div class="lbl">Bias</div><div class="val"><span class="bias-tag">📈 BULLISH</span></div></div>
   </div>
-
-  <div class="row">
-    <div class="card">
-      <h3>🔴 CE Wall — Resistance</h3>
-      <table><thead><tr><th>Strike</th><th>OI</th><th>Fresh</th><th>LTP</th></tr></thead>
-      <tbody><tr><td>24,000 CE</td><td>93L</td><td style='color:#378ADD'>+20L</td><td>₹3.8</td></tr><tr><td>23,500 CE</td><td>73L</td><td style='color:#378ADD'>+8L</td><td>₹43.0</td></tr><tr><td>24,500 CE</td><td>70L</td><td style='color:#378ADD'>+9L</td><td>₹1.35</td></tr><tr><td>23,200 CE</td><td>65L</td><td style='color:#378ADD'>+28L</td><td>₹151.0</td></tr><tr><td>23,600 CE</td><td>64L</td><td style='color:#378ADD'>+30L</td><td>₹25.6</td></tr></tbody></table>
-    </div>
-    <div class="card">
-      <h3>🟢 PE Wall — Support</h3>
-      <table><thead><tr><th>Strike</th><th>OI</th><th>Fresh</th><th>LTP</th></tr></thead>
-      <tbody><tr><td>21,200 PE</td><td>87L</td><td style='color:#4caf50'>+0L</td><td>₹1.1</td></tr><tr><td>22,000 PE</td><td>84L</td><td style='color:#4caf50'>+13L</td><td>₹2.15</td></tr><tr><td>23,000 PE</td><td>71L</td><td style='color:#4caf50'>+25L</td><td>₹72.1</td></tr><tr><td>22,500 PE</td><td>71L</td><td style='color:#4caf50'>+12L</td><td>₹8.1</td></tr><tr><td>22,300 PE</td><td>59L</td><td style='color:#4caf50'>+34L</td><td>₹3.95</td></tr></tbody></table>
-    </div>
+  <div class="row2">
+    <div class="card"><h3>🔴 CE Wall — Resistance</h3>
+      <table><thead><tr><th>Strike</th><th>OI</th><th>Fresh</th><th>LTP</th></tr></thead><tbody><tr><td>24,000 CE</td><td>9,012L</td><td style='color:#378ADD'>+2,231L</td><td>₹30.05</td></tr><tr><td>23,800 CE</td><td>5,387L</td><td style='color:#378ADD'>+768L</td><td>₹74.05</td></tr><tr><td>24,500 CE</td><td>5,264L</td><td style='color:#378ADD'>+90L</td><td>₹4.3</td></tr><tr><td>23,700 CE</td><td>4,598L</td><td style='color:#378ADD'>+147L</td><td>₹112.9</td></tr><tr><td>25,000 CE</td><td>4,536L</td><td style='color:#378ADD'>+1,724L</td><td>₹1.25</td></tr></tbody></table></div>
+    <div class="card"><h3>🟢 PE Wall — Support</h3>
+      <table><thead><tr><th>Strike</th><th>OI</th><th>Fresh</th><th>LTP</th></tr></thead><tbody><tr><td>23,400 PE</td><td>9,948L</td><td style='color:#4caf50'>+8,678L</td><td>₹52.65</td></tr><tr><td>23,500 PE</td><td>9,360L</td><td style='color:#4caf50'>+8,058L</td><td>₹78.6</td></tr><tr><td>22,500 PE</td><td>9,055L</td><td style='color:#4caf50'>+4,163L</td><td>₹4.95</td></tr><tr><td>23,000 PE</td><td>8,441L</td><td style='color:#4caf50'>+3,174L</td><td>₹12.8</td></tr><tr><td>23,300 PE</td><td>8,283L</td><td style='color:#4caf50'>+6,071L</td><td>₹35.8</td></tr></tbody></table></div>
   </div>
-
-  <div class="card" style="margin-bottom:20px">
-    <h3>OI Distribution — CE vs PE (near ATM)</h3>
-    <div class="chart-wrap"><canvas id="oiChart"></canvas></div>
-  </div>
-
-  <div class="card" style="margin-bottom:20px">
-    <h3>📊 PCR / Call-Put Ratio Analysis</h3>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px">
-      <div style="background:#f9fafb;border-radius:8px;padding:12px;text-align:center">
-        <div style="font-size:11px;color:#888;margin-bottom:4px">OVERALL PCR</div>
-        <div style="font-size:22px;font-weight:700;color:#b45309">0.92</div>
-      </div>
-      <div style="background:#f9fafb;border-radius:8px;padding:12px;text-align:center">
-        <div style="font-size:11px;color:#888;margin-bottom:4px">NEAR-ATM PCR (±500)</div>
-        <div style="font-size:22px;font-weight:700;color:#b45309">1.08</div>
-      </div>
-      <div style="background:#f9fafb;border-radius:8px;padding:12px;text-align:center">
-        <div style="font-size:11px;color:#888;margin-bottom:4px">ATM PCR</div>
-        <div style="font-size:22px;font-weight:700;color:#2d7a2d">1.86</div>
-      </div>
-      <div style="background:#f9fafb;border-radius:8px;padding:12px;text-align:center">
-        <div style="font-size:11px;color:#888;margin-bottom:4px">FRESH OI RATIO</div>
-        <div style="font-size:22px;font-weight:700;color:#2d7a2d">1.31</div>
-      </div>
-    </div>
-    <div style="background:#f9fafb;border-radius:8px;padding:12px;font-size:13px;line-height:1.8">
-      <b>Signal:</b> ⚖️ NEUTRAL<br>
-      <b>Read:</b> Balanced — call and put writers in equilibrium<br>
-      <b>Fresh OI:</b> Fresh PE > CE (1.31×) — new money defending downside<br>
-      <b>Near Zone:</b> Near-ATM PCR 1.08 — balanced near spot<br>
-      <b style="color:#1F4E79">💡 Mixed signals — iron condor or stay flat until clearer print</b>
-    </div>
-    <p style="font-size:11px;color:#999;margin-top:8px">For educational purposes only. Not investment advice.</p>
-  </div>
-
-  <div class="card" style="margin-bottom:20px">
-    <h3>🎯 Trade Suggestions</h3>
-    <div class="suggestions"> TRADE SUGGESTIONS
-🟢 SELL PE 23,000 | LTP ₹72.1 | OI 109,876
-   SL ₹144.2 (2× premium) | P(profit) 50.7% | EV ₹-141.19 ⚠️ -EV
-   ⚠️ Naked sell — do not carry overnight
-🔴 SELL CE 23,500 | LTP ₹43.0 | OI 113,730
-   SL ₹86.0 (2× premium) | P(profit) 51.5% | EV ₹-82.22 ⚠️ -EV
+  <div class="card"><h3>OI Distribution — CE vs PE (±1000pts)</h3>
+    <div class="chart-wrap"><canvas id="oiChart"></canvas></div></div>
+  <div class="card"><h3>🎯 Trade Suggestions</h3>
+    <div class="suggestions">TRADE SUGGESTIONS
+🟢 SELL PE 23,400 | LTP ₹52.65 | OI 9,948L
+   SL ₹105.3 | P(profit) 50.9% | EV ₹-102.35 ⚠️ -EV
    ⚠️ Naked sell — do not carry overnight
 
-📐 Credit Spread — 200pt width (Iron Condor)
-  Sell 23,150PE / Buy 22,950PE
-  Credit ₹66.85 (₹4345/lot) | Max loss ₹133.15 (₹8655/lot)
-  R:R 1:2.0 | P(profit) 50.0% | EV ₹-33.06 ⚠️ -EV
-  Sell 23,200CE / Buy 23,400CE
-  Credit ₹81.95 (₹5327/lot) | Max loss ₹118.05 (₹7673/lot)
-  R:R 1:1.4 | P(profit) 50.2% | EV ₹-17.71 ⚠️ -EV
-  ✅ Risk defined — can be carried overnight. Max loss capped at spread width.
+📐 Credit Spread — 200pt width
+  Sell 23,600PE / Buy 23,400PE
+  Credit ₹62.8 (₹4710/lot) | Max loss ₹137.2 (₹10290/lot)
+  R:R 1:2.2 | P(profit) 50.1% | EV ₹-37.03 ⚠️ -EV
+  Sell 23,550PE / Buy 23,350PE
+  Credit ₹51.9 (₹3892/lot) | Max loss ₹148.1 (₹11108/lot)
+  R:R 1:2.9 | P(profit) 50.3% | EV ₹-47.5 ⚠️ -EV
+  ✅ Risk defined — can be carried overnight.
 
-⚡ Bias flip alert: If bias turns directional → exit the against-bias IC leg immediately. Do not hold both sides once market picks direction.
+⚡ Bias flip: If turns BEARISH → exit PE sells immediately.
 
 For educational purposes only. Not investment advice.</div>
     <p style="font-size:11px;color:#999;margin-top:8px">For educational purposes only. Not investment advice.</p>
   </div>
-
-  <div class="footer">Data: NSE Options Chain (CSV) &nbsp;·&nbsp; For educational purposes only &nbsp;·&nbsp; Not investment advice</div>
+  <div class="footer">Data: Zerodha Kite API | LOT: 75 | Spread: 200pts | For educational purposes only</div>
 </div>
-
 <script>
-const labels = ['22200', '22250', '22300', '22350', '22400', '22450', '22500', '22550', '22600', '22650', '22700', '22750', '22800', '22850', '22900', '22950', '23000', '23050', '23100', '23150', '23200', '23250', '23300', '23350', '23400', '23450', '23500', '23550', '23600', '23650', '23700', '23750', '23800', '23850', '23900', '23950', '24000', '24050', '24100', '24150'];
-const ceData = [0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 1, 0, 3, 1, 14, 4, 17, 16, 65, 24, 59, 21, 54, 21, 73, 22, 64, 21, 61, 15, 62, 21, 36, 13, 93, 15, 31, 13];
-const peData = [25, 12, 59, 11, 37, 11, 71, 14, 44, 13, 40, 25, 42, 29, 39, 14, 71, 17, 52, 30, 61, 13, 31, 7, 17, 3, 18, 1, 6, 2, 4, 0, 3, 0, 1, 0, 6, 0, 0, 0];
 new Chart(document.getElementById('oiChart'), {
-  type: 'bar',
-  data: {
-    labels,
-    datasets: [
-      {label:'CE OI (L)', data:ceData, backgroundColor:'#378ADD80', borderColor:'#378ADD', borderWidth:1},
-      {label:'PE OI (L)', data:peData, backgroundColor:'#D4537E80', borderColor:'#D4537E', borderWidth:1}
-    ]
-  },
-  options: {
-    responsive:true, maintainAspectRatio:false,
+  type:'bar',
+  data:{labels:['22650', '22700', '22750', '22800', '22850', '22900', '22950', '23000', '23050', '23100', '23150', '23200', '23250', '23300', '23350', '23400', '23450', '23500', '23550', '23600', '23650', '23700', '23750', '23800', '23850', '23900', '23950', '24000', '24050', '24100', '24150', '24200', '24250', '24300', '24350', '24400', '24450', '24500', '24550', '24600'],datasets:[
+    {label:'CE OI (L)',data:[27, 76, 29, 101, 38, 191, 90, 788, 127, 520, 383, 1796, 558, 2582, 841, 3324, 1423, 4858, 1742, 4359, 2301, 4598, 1882, 5387, 1544, 3354, 1680, 9012, 1594, 3060, 1041, 3475, 862, 2478, 824, 1828, 524, 5264, 497, 2985],backgroundColor:'#378ADD80',borderColor:'#378ADD',borderWidth:1},
+    {label:'PE OI (L)',data:[1290, 3321, 2778, 5817, 3228, 4205, 1781, 8441, 2164, 4901, 3185, 6728, 2967, 8283, 4518, 9948, 5317, 9360, 3320, 5450, 1500, 1725, 311, 840, 114, 253, 41, 593, 19, 45, 5, 64, 3, 28, 2, 22, 1, 127, 0, 5],backgroundColor:'#D4537E80',borderColor:'#D4537E',borderWidth:1}
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,
     plugins:{legend:{display:true,labels:{font:{size:11}}}},
-    scales:{
-      x:{grid:{display:false},ticks:{font:{size:10},maxRotation:45}},
-      y:{ticks:{font:{size:10}}}
-    }
+    scales:{x:{grid:{display:false},ticks:{font:{size:10},maxRotation:45}},y:{ticks:{font:{size:10}}}}
   }
 });
-</script>
-</body>
-</html>
+</script></body></html>
