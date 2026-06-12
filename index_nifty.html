@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NIFTY Options Dashboard (Kite) — 12 Jun 2026 20:44</title>
+<title>NIFTY Options Dashboard (Kite) — 12 Jun 2026 20:54</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
@@ -27,7 +27,7 @@
 </head><body>
 <div class="wrap">
 <h1>NIFTY Options Dashboard <span class="kite-badge">KITE LIVE</span></h1>
-<p class="sub">Expiry: 16 Jun 2026 &nbsp;|&nbsp; Spot: 23,623 &nbsp;|&nbsp; Generated: 12 Jun 2026 20:44</p>
+<p class="sub">Expiry: 16 Jun 2026 &nbsp;|&nbsp; Spot: 23,623 &nbsp;|&nbsp; Generated: 12 Jun 2026 20:54</p>
 
 <div class="metrics">
   <div class="mcard"><div class="lbl">ATM Strike</div><div class="val" style="color:#1d4ed8">23,700</div></div>
@@ -90,7 +90,7 @@ new Chart(document.getElementById('distChart'),{type:'bar',data:{labels:dStrikes
   scales:{x:{grid:{display:false},ticks:{font:{size:10},maxRotation:45,autoSkip:true,maxTicksLimit:20}},
            y:{ticks:{font:{size:10},callback:v=>v>=1000?Math.round(v/1000)+'K':v}}}}}));
 
-const historyData = [{"date": "12 Jun", "atm": 23700, "pcr": 1.75, "max_pain": 23500, "resistance": 24000, "support": 22500, "bias": "BULLISH", "top_ce": [{"strike": 24000, "oi": 10684115}, {"strike": 24500, "oi": 7181525}, {"strike": 23800, "oi": 6449040}], "top_pe": [{"strike": 22500, "oi": 14394705}, {"strike": 23000, "oi": 11915930}, {"strike": 22000, "oi": 11344645}], "brent": 87.7, "dxy": 99.74, "usdinr": 95.1}];
+const historyData = [{"date": "12 Jun", "atm": 23700, "pcr": 1.75, "max_pain": 23500, "resistance": 24000, "support": 22500, "bias": "BULLISH", "top_ce": [{"strike": 24000, "oi": 10684115}, {"strike": 24500, "oi": 7181525}, {"strike": 23800, "oi": 6449040}], "top_pe": [{"strike": 22500, "oi": 14394705}, {"strike": 23000, "oi": 11915930}, {"strike": 22000, "oi": 11344645}], "brent": 87.3, "dxy": 99.72, "usdinr": 95.1}];
 if (historyData.length > 1) {
   const histSection = document.createElement('div');
   histSection.className = 'card'; histSection.style.marginBottom = '16px';
