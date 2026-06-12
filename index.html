@@ -1,1 +1,71 @@
-<html><body style="background:#0f1117;color:#fff;font-family:sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;gap:12px"><h2>Geo Macro Digest</h2><a href="index_nifty.html" style="color:#378ADD">Nifty Dashboard</a><a href="scanner.html" style="color:#378ADD">Swing Scanner</a><a href="intraday.html" style="color:#378ADD">Intraday Scanner</a></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Geo Macro Digest — Daily Market Intelligence</title>
+<style>
+  * { box-sizing:border-box; margin:0; padding:0 }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:#0f1117; color:#fff; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px }
+  .logo { font-size:28px; font-weight:700; margin-bottom:8px; letter-spacing:-0.5px }
+  .logo span { color:#378ADD }
+  .tagline { color:#888; font-size:15px; margin-bottom:48px; text-align:center }
+  .cards { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; width:100%; max-width:840px }
+  .card { background:#1a1d27; border:1px solid #2a2d3a; border-radius:16px; padding:28px; text-decoration:none; color:#fff; transition:border-color .2s, transform .2s }
+  .card:hover { border-color:#378ADD; transform:translateY(-2px) }
+  .card-icon { font-size:32px; margin-bottom:16px }
+  .card-title { font-size:18px; font-weight:600; margin-bottom:8px }
+  .card-desc { font-size:13px; color:#888; line-height:1.6 }
+  .card-tag { display:inline-block; font-size:11px; padding:3px 10px; border-radius:20px; margin-top:14px; font-weight:500 }
+  .tag-blue { background:#378ADD20; color:#378ADD }
+  .tag-green { background:#2d7a2d20; color:#4caf50 }
+  .tag-amber { background:#b4530920; color:#f59e0b }
+  .footer { margin-top:48px; font-size:12px; color:#555; text-align:center }
+  .footer a { color:#378ADD; text-decoration:none }
+  @media(max-width:700px) { .cards { grid-template-columns:1fr } }
+</style>
+</head>
+<body>
+  <div class="logo">Geo <span>Macro</span> Digest</div>
+  <p class="tagline">Daily market intelligence — options chain, macro context & stock setups</p>
+
+  <div class="cards">
+    <a class="card" href="index_nifty.html">
+      <div class="card-icon">📊</div>
+      <div class="card-title">Nifty Options Dashboard</div>
+      <div class="card-desc">EOD OI analysis — CE/PE walls, PCR, Max Pain, macro context (Brent, DXY, USD/INR), credit spread setups with EV</div>
+      <span class="card-tag tag-blue">Updated daily after 6 PM</span>
+    </a>
+    <a class="card" href="options_chain.html">
+      <div class="card-icon">🔗</div>
+      <div class="card-title">Intraday Options Chain</div>
+      <div class="card-desc">Live Nifty options chain analysis — OI, PCR, fresh buildup, bias, intraday trade suggestions</div>
+      <span class="card-tag tag-amber">Every 2 hours during market hours</span>
+    </a>
+    <a class="card" href="scanner.html">
+      <div class="card-icon">🔍</div>
+      <div class="card-title">F&amp;O Swing Scanner</div>
+      <div class="card-desc">NSE bhavcopy momentum scanner — 52W breakouts, bullish candles, volume signals + 10-20 day position tracker</div>
+      <span class="card-tag tag-green">Updated daily after 6 PM</span>
+    </a>
+    <a class="card" href="intraday.html">
+      <div class="card-icon">⚡</div>
+      <div class="card-title">Intraday Stock Scanner</div>
+      <div class="card-desc">Live NSE Market Watch — momentum setups from Nifty 50, Midcap 100 & Smallcap 100. Max hold 2 days.</div>
+      <span class="card-tag tag-amber">Every 2 hours during market hours</span>
+    </a>
+    <a class="card" href="short_scanner.html" style="border-color:#7c1d1d">
+      <div class="card-icon">🔻</div>
+      <div class="card-title">Short Scanner</div>
+      <div class="card-desc">Bearish setups — Bear Put Spreads, Bear Call Spreads & Put Ratio Backspreads. No naked shorts. Defined-risk only.</div>
+      <span class="card-tag" style="background:#7c1d1d30;color:#fca5a5">Every 2 hours during market hours</span>
+    </a>
+  </div>
+
+  <div class="footer">
+    <a href="https://x.com/geomacrodigest">𝕏 @geomacrodigest</a> &nbsp;·&nbsp;
+    <a href="https://t.me/geomacrodigest">Telegram</a> &nbsp;·&nbsp;
+    For educational purposes only. Not investment advice.
+  </div>
+</body>
+</html>
