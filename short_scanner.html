@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Short Scanner (Kite) — 12 Jun 2026 15:17</title>
+<title>Short Scanner (Kite) — 15 Jun 2026 13:50</title>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f9fa;color:#1a1a1a;padding:20px;font-size:14px}
-  .wrap{max-width:1400px;margin:0 auto}
+  .wrap{max-width:1500px;margin:0 auto}
   h1{font-size:20px;font-weight:600;margin-bottom:4px}
   .sub{color:#666;font-size:13px;margin-bottom:20px}
   .nav{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
   .nav a{font-size:12px;color:#378ADD;text-decoration:none;padding:5px 12px;border:1px solid #378ADD;border-radius:8px}
   .card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:16px;margin-bottom:16px}
   .card h3{font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px}
-  .breakdown-banner{background:#fff5f5;border:2px solid #b91c1c;border-radius:10px;padding:14px;margin-bottom:16px}
-  .breakdown-banner h3{color:#991b1b;font-size:14px;font-weight:700;margin-bottom:10px}
-  .bd-item{padding:8px 0;border-bottom:1px solid #fecaca;font-size:13px;line-height:1.6}
-  .bd-item:last-child{border-bottom:none}
   table{width:100%;border-collapse:collapse}
   th{background:#f3f4f6;padding:8px 10px;text-align:left;font-size:11px;font-weight:500;color:#666}
   td{padding:8px 10px;border-bottom:1px solid #f0f0f0;font-size:13px}
-  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+  .metrics{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:20px}
   .mcard{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px}
   .mcard .lbl{font-size:11px;color:#888;text-transform:uppercase;margin-bottom:4px}
   .mcard .val{font-size:22px;font-weight:600}
@@ -30,93 +26,140 @@
 </head><body>
 <div class="wrap">
   <h1>🔻 Short Scanner <span class="kite-badge">KITE LIVE</span></h1>
-  <p class="sub">Generated: 12 Jun 2026 15:17 | Below 200 SMA only | 7 setup(s) | 1 breakdown(s)</p>
+  <p class="sub">Generated: 15 Jun 2026 13:50 | Below 200 SMA | 9 setup(s) | 2 breakdown(s)</p>
   <div class="nav">
     <a href="index.html">🏠 Home</a>
-    <a href="index_nifty.html">📈 EOD Dashboard</a>
+    <a href="index_nifty.html">📈 EOD</a>
     <a href="options_chain.html">📊 Nifty Options</a>
-    <a href="scanner.html">📋 Swing Scanner</a>
+    <a href="scanner.html">📋 Swing</a>
     <a href="intraday.html">⚡ Intraday</a>
   </div>
-  <div class="rule-box">⚠️ <b>Short rules:</b> Only stocks BELOW 200 SMA shown. Stocks above 200 SMA are excluded. 200 SMA breakdown = fresh cross below = highlighted as premium short. No naked shorts — defined-risk spreads only.</div>
+  <div class="rule-box">⚠️ <b>Short rules:</b> Below 200 SMA only. 200 SMA/20 EMA breakdown = fresh cross below = highlighted. No naked shorts — defined-risk spreads only.</div>
   <div class="metrics">
-    <div class="mcard"><div class="lbl">Setups</div><div class="val" style="color:#b91c1c">7</div></div>
-    <div class="mcard"><div class="lbl">Breakdowns</div><div class="val" style="color:#991b1b">1</div></div>
-    <div class="mcard"><div class="lbl">Universe</div><div class="val">121</div></div>
+    <div class="mcard"><div class="lbl">Setups</div><div class="val" style="color:#b91c1c">9</div></div>
+    <div class="mcard"><div class="lbl">🔥 Double BD</div><div class="val" style="color:#7c1d1d">0</div></div>
+    <div class="mcard"><div class="lbl">🌟 200 SMA BD</div><div class="val" style="color:#991b1b">1</div></div>
+    <div class="mcard"><div class="lbl">⚡ 20 EMA BD</div><div class="val" style="color:#5b21b6">1</div></div>
+    <div class="mcard"><div class="lbl">💀 2d Low BD</div><div class="val" style="color:#b91c1c">1</div></div>
     <div class="mcard"><div class="lbl">200 SMA Filter</div><div class="val" style="color:#2d7a2d;font-size:14px">ACTIVE</div></div>
   </div>
 
-  <div class="breakdown-banner"><h3>🌟 200 SMA BREAKDOWNS — Premium Short Setups (Price just crossed below 200 SMA)</h3><div class="bd-item"><b>POWERGRID</b> ₹284.60 &nbsp;▼0.72% &nbsp;|&nbsp; SMA200: ₹285.83 &nbsp;|&nbsp; <b>Bear Call Spread (Credit)</b>: SELL OTM Call (+1.5% strike) | BUY further OTM Call (+3%)</div></div>
+  <div style="background:#fff5f5;border:1px solid #b91c1c;border-radius:10px;padding:12px;margin-bottom:12px"><b style="color:#991b1b">🌟 200 SMA BREAKDOWNS</b><br><div style="padding:4px 0;font-size:13px"><b>POWERGRID</b> ₹284.50 | SMA200 ₹285.81 | Bear Call Spread (Credit) | 🌟 200 SMA BREAKDOWN ₹285.81 — strong short! | Pinned to day low 🔩</div></div><div style="background:#fdf4ff;border:1px solid #7c3aed;border-radius:10px;padding:12px;margin-bottom:12px"><b style="color:#5b21b6">⚡ 20 EMA BREAKDOWNS</b><br><div style="padding:4px 0;font-size:13px"><b>TECHM</b> ₹1,426.00 | EMA20 ₹1462.84 | ⚡ 20 EMA BREAKDOWN ₹1462.84 — momentum shift down! | Pinned to day low 🔩</div></div><div style="background:#fef2f2;border:1px solid #f87171;border-radius:10px;padding:12px;margin-bottom:12px"><b style="color:#b91c1c">💀 2-DAY LOW BREAKDOWNS</b><br><div style="padding:4px 0;font-size:13px"><b>NTPC</b> ₹348.30 < 2d low ₹348.8 | Just below 200 SMA (-1.7%) 📉 | 💀 Breaking 2-day low ₹348.80</div></div>
 
   <div class="card">
     <h3>All Short Setups — Below 200 SMA Only</h3>
     <table>
-      <thead><tr><th>Symbol</th><th>LTP</th><th>Chg %</th><th>200 SMA</th><th>Score</th><th>Structure</th><th>Action</th><th>Signals</th></tr></thead>
+      <thead><tr><th>Symbol</th><th>LTP</th><th>Chg %</th><th>200 SMA</th><th>20 EMA</th><th>2d Low</th><th>Vol×</th><th>Score</th><th>Structure</th><th>Action</th><th>Signals</th></tr></thead>
       <tbody><tr style="background:#fff5f5;border-left:4px solid #b91c1c">
-          <td><span style="background:#fee2e2;color:#991b1b;font-size:11px;padding:2px 7px;border-radius:12px;font-weight:700">🌟 BREAKDOWN</span> <b>POWERGRID</b></td>
-          <td>₹284.60</td>
-          <td style="color:#b91c1c;font-weight:600">▼0.72%</td>
-          <td>₹285.83</td>
-          <td><b>5</b></td>
+          <td><span style="background:#fee2e220;color:#991b1b;font-size:11px;padding:2px 7px;border-radius:12px;font-weight:700">🌟</span> <b>POWERGRID</b></td>
+          <td>₹284.50</td>
+          <td style="color:#b91c1c;font-weight:600">▼0.11%</td>
+          <td>₹285.81</td>
+          <td>₹291.08</td>
+          <td>₹282.70</td>
+          <td style="color:#888;font-weight:600">0.5×</td>
+          <td><b>6</b></td>
           <td style="font-size:12px;color:#d97706;font-weight:600">Bear Call Spread (Credit)</td>
           <td style="font-size:11px;color:#555">SELL OTM Call (+1.5% strike) | BUY further OTM Call (+3%)</td>
-          <td style="font-size:11px;color:#555">🌟 200 SMA BREAKDOWN ₹285.83 — strong short! | ₹142Cr on down day</td>
-        </tr><tr style="">
-          <td><b>ONGC</b></td>
-          <td>₹246.10</td>
-          <td style="color:#b91c1c;font-weight:600">▼2.57%</td>
-          <td>₹252.91</td>
-          <td><b>5</b></td>
-          <td style="font-size:12px;color:#d97706;font-weight:600">Bear Call Spread (Credit)</td>
-          <td style="font-size:11px;color:#555">SELL OTM Call (+1.5% strike) | BUY further OTM Call (+3%)</td>
-          <td style="font-size:11px;color:#555">Just below 200 SMA (-2.7%) 📉 | Significant drop -2.57% 📉</td>
-        </tr><tr style="">
-          <td><b>TECHM</b></td>
-          <td>₹1,429.00</td>
-          <td style="color:#b91c1c;font-weight:600">▼2.46%</td>
-          <td>₹1,493.95</td>
-          <td><b>5</b></td>
-          <td style="font-size:12px;color:#d97706;font-weight:600">Bear Call Spread (Credit)</td>
-          <td style="font-size:11px;color:#555">SELL OTM Call (+1.5% strike) | BUY further OTM Call (+3%)</td>
-          <td style="font-size:11px;color:#555">Negative -2.46% | Pinned to day low 🔩</td>
-        </tr><tr style="">
-          <td><b>COFORGE</b></td>
-          <td>₹1,367.80</td>
-          <td style="color:#b91c1c;font-weight:600">▼1.87%</td>
-          <td>₹1,551.54</td>
-          <td><b>5</b></td>
-          <td style="font-size:12px;color:#d97706;font-weight:600">Bear Call Spread (Credit)</td>
-          <td style="font-size:11px;color:#555">SELL OTM Call (+1.5% strike) | BUY further OTM Call (+3%)</td>
-          <td style="font-size:11px;color:#555">Negative -1.87% | Pinned to day low 🔩</td>
-        </tr><tr style="">
-          <td><b>PERSISTENT</b></td>
-          <td>₹4,808.50</td>
-          <td style="color:#b91c1c;font-weight:600">▼1.34%</td>
-          <td>₹5,535.75</td>
+          <td style="font-size:11px;color:#555">🌟 200 SMA BREAKDOWN ₹285.81 — strong short! | Pinned to day low 🔩</td>
+        </tr><tr style="background:#fdf4ff;border-left:4px solid #7c3aed">
+          <td><span style="background:#7c3aed20;color:#5b21b6;font-size:11px;padding:2px 7px;border-radius:12px;font-weight:700">⚡</span> <b>TECHM</b></td>
+          <td>₹1,426.00</td>
+          <td style="color:#b91c1c;font-weight:600">▼0.22%</td>
+          <td>₹1,493.46</td>
+          <td>₹1,462.84</td>
+          <td>₹1,425.00</td>
+          <td style="color:#888;font-weight:600">0.5×</td>
           <td><b>4</b></td>
           <td style="font-size:12px;color:#f59e0b;font-weight:600">Bear Call Spread (Credit)</td>
           <td style="font-size:11px;color:#555">SELL ATM/OTM Call | BUY higher strike Call (+2.5%)</td>
-          <td style="font-size:11px;color:#555">Pinned to day low 🔩 | ₹175Cr on down day</td>
+          <td style="font-size:11px;color:#555">⚡ 20 EMA BREAKDOWN ₹1462.84 — momentum shift down! | Pinned to day low 🔩</td>
         </tr><tr style="">
-          <td><b>TATACONSUM</b></td>
-          <td>₹1,100.50</td>
-          <td style="color:#b91c1c;font-weight:600">▼0.73%</td>
-          <td>₹1,141.81</td>
+          <td><b>NTPC</b></td>
+          <td>₹348.30</td>
+          <td style="color:#b91c1c;font-weight:600">▼1.58%</td>
+          <td>₹354.36</td>
+          <td>₹369.34</td>
+          <td>₹348.80</td>
+          <td style="color:#888;font-weight:600">1.0×</td>
+          <td><b>7</b></td>
+          <td style="font-size:12px;color:#b91c1c;font-weight:600">Bear Put Spread (Debit)</td>
+          <td style="font-size:11px;color:#555">BUY ATM Put | SELL OTM Put (-2.5% strike)</td>
+          <td style="font-size:11px;color:#555">Just below 200 SMA (-1.7%) 📉 | 💀 Breaking 2-day low ₹348.80</td>
+        </tr><tr style="">
+          <td><b>IRCTC</b></td>
+          <td>₹520.00</td>
+          <td style="color:#b91c1c;font-weight:600">▼0.26%</td>
+          <td>₹630.17</td>
+          <td>₹524.55</td>
+          <td>₹507.40</td>
+          <td style="color:#888;font-weight:600">1.0×</td>
+          <td><b>5</b></td>
+          <td style="font-size:12px;color:#d97706;font-weight:600">Bear Call Spread (Credit)</td>
+          <td style="font-size:11px;color:#555">SELL OTM Call (+1.5% strike) | BUY further OTM Call (+3%)</td>
+          <td style="font-size:11px;color:#555">Just below 20 EMA (-0.9%) 📉 | Below yesterday's low ₹520.05</td>
+        </tr><tr style="">
+          <td><b>ICICIBANK</b></td>
+          <td>₹1,334.20</td>
+          <td style="color:#b91c1c;font-weight:600">▼0.49%</td>
+          <td>₹1,348.22</td>
+          <td>₹1,280.57</td>
+          <td>₹1,286.50</td>
+          <td style="color:#888;font-weight:600">0.5×</td>
+          <td><b>4</b></td>
+          <td style="font-size:12px;color:#f59e0b;font-weight:600">Bear Call Spread (Credit)</td>
+          <td style="font-size:11px;color:#555">SELL ATM/OTM Call | BUY higher strike Call (+2.5%)</td>
+          <td style="font-size:11px;color:#555">Just below 200 SMA (-1.0%) 📉 | Pinned to day low 🔩</td>
+        </tr><tr style="">
+          <td><b>CIPLA</b></td>
+          <td>₹1,381.10</td>
+          <td style="color:#b91c1c;font-weight:600">▼0.60%</td>
+          <td>₹1,427.79</td>
+          <td>₹1,382.02</td>
+          <td>₹1,373.90</td>
+          <td style="color:#888;font-weight:600">0.7×</td>
+          <td><b>4</b></td>
+          <td style="font-size:12px;color:#f59e0b;font-weight:600">Bear Call Spread (Credit)</td>
+          <td style="font-size:11px;color:#555">SELL ATM/OTM Call | BUY higher strike Call (+2.5%)</td>
+          <td style="font-size:11px;color:#555">Just below 20 EMA (-0.1%) 📉 | Below yesterday's low ₹1382.20</td>
+        </tr><tr style="">
+          <td><b>VEDL</b></td>
+          <td>₹304.85</td>
+          <td style="color:#b91c1c;font-weight:600">▼1.55%</td>
+          <td>₹309.64</td>
+          <td>₹321.09</td>
+          <td>₹292.80</td>
+          <td style="color:#888;font-weight:600">0.9×</td>
+          <td><b>4</b></td>
+          <td style="font-size:12px;color:#f59e0b;font-weight:600">Bear Call Spread (Credit)</td>
+          <td style="font-size:11px;color:#555">SELL ATM/OTM Call | BUY higher strike Call (+2.5%)</td>
+          <td style="font-size:11px;color:#555">Just below 200 SMA (-1.5%) 📉 | Negative -1.55%</td>
+        </tr><tr style="">
+          <td><b>HDFCBANK</b></td>
+          <td>₹778.10</td>
+          <td style="color:#2d7a2d;font-weight:600">▲0.73%</td>
+          <td>₹904.49</td>
+          <td>₹759.08</td>
+          <td>₹740.10</td>
+          <td style="color:#888;font-weight:600">0.8×</td>
           <td><b>3</b></td>
           <td style="font-size:12px;color:#f59e0b;font-weight:600">Bear Call Spread (Credit)</td>
           <td style="font-size:11px;color:#555">SELL ATM/OTM Call | BUY higher strike Call (+2.5%)</td>
-          <td style="font-size:11px;color:#555">Lower half of range | ₹153Cr on down day</td>
+          <td style="font-size:11px;color:#555">⚠️ Above yesterday's high ₹774.45 — counter-trend | Pinned to day low 🔩</td>
         </tr><tr style="">
-          <td><b>SBILIFE</b></td>
-          <td>₹1,707.20</td>
-          <td style="color:#b91c1c;font-weight:600">▼0.69%</td>
-          <td>₹1,922.09</td>
+          <td><b>KOTAKBANK</b></td>
+          <td>₹403.65</td>
+          <td style="color:#2d7a2d;font-weight:600">▲0.09%</td>
+          <td>₹405.75</td>
+          <td>₹386.73</td>
+          <td>₹384.55</td>
+          <td style="color:#888;font-weight:600">0.5×</td>
           <td><b>3</b></td>
           <td style="font-size:12px;color:#f59e0b;font-weight:600">Bear Call Spread (Credit)</td>
           <td style="font-size:11px;color:#555">SELL ATM/OTM Call | BUY higher strike Call (+2.5%)</td>
-          <td style="font-size:11px;color:#555">Lower half of range | ₹210Cr on down day</td>
+          <td style="font-size:11px;color:#555">Just below 200 SMA (-0.5%) 📉 | Pinned to day low 🔩</td>
         </tr></tbody>
     </table>
   </div>
-  <div class="footer">Data: Zerodha Kite API | Below 200 SMA filter active | Defined risk only | For educational purposes only</div>
+  <div class="footer">Data: Zerodha Kite API | Below 200 SMA | Key level breakdowns | Volume surge | Defined risk only | Educational only</div>
 </div></body></html>
