@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NIFTY Options Dashboard — 16 Jun 2026</title>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NIFTY Options Dashboard (Kite) — 17 Jun 2026 12:31</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
@@ -15,291 +13,122 @@
   .mcard{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px}
   .mcard .lbl{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
   .mcard .val{font-size:22px;font-weight:600}
-  .mcard .val.green{color:#2d7a2d}
-  .mcard .val.amber{color:#b45309}
-  .mcard .val.red{color:#b91c1c}
-  .mcard .val.blue{color:#1d4ed8}
   .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
-  .card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:16px}
+  .card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:16px;margin-bottom:16px}
   .slbl{font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px}
-  .insight{background:#fff;border:1px solid #e5e7eb;border-left:3px solid #378ADD;border-radius:0 8px 8px 0;padding:12px 14px;margin-bottom:8px}
-  .itag{display:inline-block;font-size:12px;font-weight:600;padding:2px 10px;border-radius:20px;margin-bottom:6px}
-  .idesc{font-size:13px;color:#444;line-height:1.6}
   .bias-bar{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:16px;margin-bottom:16px;display:flex;align-items:center;gap:16px}
-  .bias-pill{font-size:13px;font-weight:700;padding:6px 16px;border-radius:20px;white-space:nowrap}
+  .bias-pill{font-size:13px;font-weight:700;padding:6px 16px;border-radius:20px;white-space:nowrap;background:#BA751720;color:#BA7517}
+  .bias-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
   .bias-desc{font-size:13px;color:#444;line-height:1.6}
+  .kite-badge{display:inline-block;background:#387ed120;color:#387ed1;font-size:11px;padding:2px 10px;border-radius:20px;margin-left:8px}
   .footer{margin-top:24px;font-size:12px;color:#999;text-align:center}
   canvas{display:block}
   @media(max-width:700px){.row2{grid-template-columns:1fr}}
 </style>
-</head>
-<body>
+</head><body>
 <div class="wrap">
-
-<h1>NIFTY Options Dashboard</h1>
-<p class="sub">Expiry: 16 Jun 2026 &nbsp;|&nbsp; Source: fo/op110626.csv &nbsp;|&nbsp; Generated: 12 Jun 2026 13:21</p>
+<h1>NIFTY Options Dashboard <span class="kite-badge">KITE LIVE</span></h1>
+<p class="sub">Expiry: 23 Jun 2026 &nbsp;|&nbsp; Spot: 24,041 &nbsp;|&nbsp; Generated: 17 Jun 2026 12:31</p>
 
 <div class="metrics">
-  <div class="mcard"><div class="lbl">ATM Strike</div><div class="val blue">23,150</div></div>
-  <div class="mcard"><div class="lbl">PCR (OI)</div><div class="val amber">0.92</div></div>
-  <div class="mcard"><div class="lbl">Max Pain</div><div class="val amber">23,200</div></div>
-  <div class="mcard"><div class="lbl">Total CE OI</div><div class="val">1,988,310</div></div>
-  <div class="mcard"><div class="lbl">Total PE OI</div><div class="val">1,827,389</div></div>
-  <div class="mcard"><div class="lbl">Implied Range</div><div class="val" style="font-size:15px">21,200–24,000</div></div>
+  <div class="mcard"><div class="lbl">ATM Strike</div><div class="val" style="color:#1d4ed8">24,050</div></div>
+  <div class="mcard"><div class="lbl">PCR (OI)</div><div class="val" style="color:#BA7517">1.05</div></div>
+  <div class="mcard"><div class="lbl">Max Pain</div><div class="val" style="color:#BA7517">24,000</div></div>
+  <div class="mcard"><div class="lbl">Total CE OI</div><div class="val">1,173L</div></div>
+  <div class="mcard"><div class="lbl">Total PE OI</div><div class="val">1,226L</div></div>
+  <div class="mcard"><div class="lbl">DTE</div><div class="val">4</div></div>
 </div>
 
 <div class="bias-bar">
-  <div class="bias-pill" style="background:#BA751720;color:#BA7517">NEUTRAL</div>
-  <div class="bias-desc">PCR 0.92 — balanced. No strong directional lean from option writers.</div>
+  <div class="bias-pill">⚖️ NEUTRAL</div>
+  <div class="bias-desc">PCR 1.05 — balanced. No strong directional lean.</div>
 </div>
 
 <div class="row2">
   <div class="card">
-    <div class="slbl">Top CE OI — Resistance levels</div>
-    <div style="position:relative;height:220px"><canvas id="ceChart" role="img" aria-label="Top CE OI strikes"></canvas></div>
+  <h3>🌍 Global Macro Context</h3>
+  <div style="padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:13px;color:#2d7a2d">Brent $78.15 (-1.03%) — benign, supportive for INR/inflation</div><div style="padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:13px;color:#666">DXY 99.55 (+0.01%) — neutral zone, watch 98/102</div><div style="padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:13px;color:#b91c1c">USD/INR 94.37 (-0.39%) — INR weak, FII caution</div><div style="padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:13px;color:#2d7a2d">US futures: Dow +0.90% | S&P +1.20% | Nasdaq +1.81%</div><div style="padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:13px;color:#2d7a2d">Asia: Nikkei +0.72% | HangSeng -0.83% | Kospi +1.58%</div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e5e7eb;font-size:13px;color:#444">
+    <b>Global cue:</b> RISK-ON — futures + Asia lean positive, gap-up bias for Nifty open
   </div>
+  <div style="margin-top:8px"><span class="bias-tag" style="background:#2d7a2d20;color:#2d7a2d">✅ MACRO SUPPORTIVE</span></div>
+</div>
   <div class="card">
-    <div class="slbl">Top PE OI — Support levels</div>
-    <div style="position:relative;height:220px"><canvas id="peChart" role="img" aria-label="Top PE OI strikes"></canvas></div>
-  </div>
-</div>
-
-<div class="card" style="margin-bottom:16px">
-  <div class="slbl">OI Distribution — CE vs PE across strikes</div>
-  <div style="position:relative;height:250px">
-    <canvas id="distChart" role="img" aria-label="CE vs PE OI distribution"></canvas>
-  </div>
-</div>
-
-<div class="card" style="margin-bottom:16px">
-  <div class="slbl">Key insights</div>
-  <div class="insight" style="border-left-color:#BA7517">
-    <div class="itag" style="background:#BA751720;color:#BA7517">Bias — NEUTRAL</div>
-    <p class="idesc">PCR 0.92 — balanced. No strong directional lean from option writers.</p>
-  </div>
-  <div class="insight" style="border-left-color:#1d4ed8">
-    <div class="itag" style="background:#dbeafe;color:#1d4ed8">Resistance — 24,000 CE</div>
-    <p class="idesc">Highest CE OI wall. Writers actively defending this level. Market needs sustained buying to break through.</p>
-  </div>
-  <div class="insight" style="border-left-color:#2d7a2d">
-    <div class="itag" style="background:#dcfce7;color:#2d7a2d">Support — 21,200 PE</div>
-    <p class="idesc">Highest PE OI. Put writers have committed large capital here — structurally strong floor for this expiry.</p>
-  </div>
-  <div class="insight" style="border-left-color:#b45309">
-    <div class="itag" style="background:#fef3c7;color:#b45309">Max Pain — 23,200</div>
-    <p class="idesc">Max pain at 23,200 is close to ATM (50 pts away). Magnetic pull — Nifty may gravitate here into expiry.</p>
-  </div>
-</div>
-
-
-<div class="card" style="margin-bottom:16px">
-  <div class="slbl">📊 PCR / Call-Put Ratio Analysis</div>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:14px">
-    <div style="background:#f9fafb;border-radius:8px;padding:12px;text-align:center">
-      <div style="font-size:11px;color:#888;margin-bottom:4px">OVERALL PCR</div>
-      <div style="font-size:24px;font-weight:700;color:#b45309">0.92</div>
-      <div style="margin-top:4px"><span style="color:#2d7a2d;font-size:13px">▲ 0.1 vs yesterday</span></div>
-    </div>
-    <div style="background:#f9fafb;border-radius:8px;padding:12px;text-align:center">
-      <div style="font-size:11px;color:#888;margin-bottom:4px">NEAR-ATM PCR (±500)</div>
-      <div style="font-size:24px;font-weight:700;color:#b45309">0.91</div>
-      <div style="font-size:11px;color:#888;margin-top:4px">Balanced near ATM (range-bound)</div>
-    </div>
-    <div style="background:#f9fafb;border-radius:8px;padding:12px;text-align:center">
-      <div style="font-size:11px;color:#888;margin-bottom:4px">ATM PCR (23,150)</div>
-      <div style="font-size:24px;font-weight:700;color:#b45309">0.92</div>
-      <div style="font-size:11px;color:#888;margin-top:4px">Single strike</div>
-    </div>
-  </div>
-  <div style="background:#f9fafb;border-radius:8px;padding:12px;font-size:13px;line-height:1.9">
-    <b>Signal:</b> ⚖️ NEUTRAL<br>
-    <b>Read:</b> Balanced — call and put writers in equilibrium<br>
-    <b>OI Change:</b> Stable — no strong directional shift<br>
-    <b style="color:#1d4ed8">💡 Mixed signals — iron condor or stay flat until clearer print</b>
-  </div>
-  <p style="font-size:11px;color:#999;margin-top:8px">For educational purposes only. Not investment advice.</p>
-</div>
-
-<div class="card" style="margin-bottom:16px">
-  <div class="slbl">Trade setups (directional option selling)</div>
+  <h3>🎯 Nifty ATM Straddle</h3>
+  <div style="font-size:13px;color:#444">ATM 24,050 | CE ₹151.55 + PE ₹170.95 = <b>₹322.5</b></div>
+  <div style="font-size:13px;color:#444;margin-top:4px">Implied move: <b>322pts (1.34%)</b></div>
+  <div style="font-size:13px;color:#444;margin-top:4px">Breakeven range: <b>23,719–24,364</b></div>
   
-        <div class="insight" style="border-left-color:#639922">
-            <div class="itag" style="background:#63992220;color:#639922">SELL PE 23,000</div>
-            <p class="idesc">LTP ₹80.25 &nbsp;|&nbsp; OI 70.4L contracts<br>Range-bound. OI backing. SL: ₹160.5 (2× premium). ⚠️ Do not carry overnight.</p>
-        </div>
-        <div class="insight" style="border-left-color:#D4537E">
-            <div class="itag" style="background:#D4537E20;color:#D4537E">SELL CE 23,500</div>
-            <p class="idesc">LTP ₹38.85 &nbsp;|&nbsp; OI 72.2L contracts<br>Range-bound. OI backing. SL: ₹77.7 (2× premium). ⚠️ Do not carry overnight.</p>
-        </div>
+    <div style="margin-top:10px">
+      <div style="font-size:12px;color:#666;margin-bottom:4px">Implied move consumed: 16.2%</div>
+      <div style="background:#f0f0f0;border-radius:6px;height:10px;overflow:hidden">
+        <div style="background:#2d7a2d;height:100%;width:16.2%"></div>
+      </div>
+      <div style="font-size:12px;color:#666;margin-top:4px">Realized: +52pts (+0.22%)</div>
+    </div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e5e7eb;font-size:13px;color:#333">Only 16.2% of implied move used (52pt of 322pt implied). Market quiet relative to pricing — good backdrop for premium selling if it persists.</div>
+</div>
+</div>
+
+<div class="row2">
+  <div class="card"><div class="slbl">Top CE OI — Resistance</div>
+    <div style="position:relative;height:220px"><canvas id="ceChart"></canvas></div></div>
+  <div class="card"><div class="slbl">Top PE OI — Support</div>
+    <div style="position:relative;height:220px"><canvas id="peChart"></canvas></div></div>
+</div>
+
+<div class="card"><div class="slbl">OI Distribution — CE vs PE across strikes</div>
+  <div style="position:relative;height:250px"><canvas id="distChart"></canvas></div></div>
+
+<div class="card"><div class="slbl">Trade Setups (Directional Option Selling)</div>
+  <div style="background:#f9fafb;border-left:3px solid #639922;border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:8px"><div style="font-size:12px;font-weight:700;color:#639922;margin-bottom:4px">SELL PE 24,000</div><div style="font-size:13px;color:#444">LTP ₹146.35 | OI 121.5L | Range-bound. OI backing. SL: ₹292.7. ⚠️ No overnight.</div></div><div style="background:#f9fafb;border-left:3px solid #D4537E;border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:8px"><div style="font-size:12px;font-weight:700;color:#D4537E;margin-bottom:4px">SELL CE 24,000</div><div style="font-size:13px;color:#444">LTP ₹176.7 | OI 96.7L | Range-bound. OI backing. SL: ₹353.4. ⚠️ No overnight.</div></div>
   <p style="font-size:12px;color:#888;margin-top:8px">For educational purposes only. Not investment advice.</p>
 </div>
 
-<div class="card" style="margin-bottom:16px">
-  <div class="slbl">Credit spread setups — 200pt width (next expiry)</div>
-  <p style="font-size:12px;color:#888;margin:0 0 12px">Spot: 23,150 | DTE: 2 | Expiry: 16 Jun 2026 | ATM IV: 20.0%</p><p style="color:#888;font-size:13px">No spread candidates found — check bhavcopy data.</p>
+<div class="card"><div class="slbl">Credit Spread Setups — 200pt width</div>
+  <p style="font-size:12px;color:#888;margin:0 0 12px">Spot: 24,041 | DTE: 4 | Expiry: 23 Jun 2026</p>
+  <p style="color:#888;font-size:13px">No spread candidates — check data.</p>
+  <p style="font-size:12px;color:#888;margin-top:8px">For educational purposes only. Not investment advice.</p>
 </div>
 
-<div class="card" style="margin-bottom:16px">
-  <div class="slbl">X thread (Geo Macro Digest)</div>
-  <div style="background:#f9fafb;border-radius:8px;padding:14px;font-size:13px;line-height:1.8;color:#222;white-space:pre-wrap" id="xthread"></div>
-</div>
-
-<div class="footer">Nifty Bhavcopy Dashboard &nbsp;·&nbsp; For personal trading research only</div>
+<div class="footer">Data: Zerodha Kite API | LOT: 75 | For educational purposes only</div>
 </div>
 
 <script>
-const ceLabels = ["24000", "23500", "24500", "23200", "23600", "23800", "23700"];
-const ceOI     = [140976, 111077, 108570, 99005, 98649, 94764, 94052];
-const ceVol    = [568, 1008, 275, 1537, 647, 474, 650];
-const peLabels = ["21200", "22000", "23000", "22500", "23200", "22300", "23100"];
-const peOI     = [134007, 125269, 108267, 107766, 91391, 89279, 79932];
-const peVol    = [162, 361, 1205, 465, 1651, 330, 1524];
-const dStrikes = ["21200", "21250", "21300", "21350", "21400", "21450", "21500", "21550", "21600", "21650", "21700", "21750", "21800", "21850", "21900", "21950", "22000", "22050", "22100", "22150", "22200", "22250", "22300", "22350", "22400", "22450", "22500", "22550", "22600", "22650", "22700", "22750", "22800", "22850", "22900", "22950", "23000", "23050", "23100", "23150", "23200", "23250", "23300", "23350", "23400", "23450", "23500", "23550", "23600", "23650", "23700", "23750", "23800", "23850", "23900", "23950", "24000", "24050", "24100", "24150", "24200", "24250", "24300", "24350", "24400", "24450", "24500", "24550", "24600", "24650", "24700", "24750", "24800", "24850", "24900", "24950", "25000", "25050", "25100", "25150", "25200", "25250", "25300", "25350", "25400", "25450", "25500", "25550", "25600", "25650", "25700", "25750", "25800", "25850", "25900", "25950", "26000", "26050", "26100"];
-const dCE      = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 800, 0, 0, 0, 0, 0, 0, 0, 143, 0, 4002, 282, 791, 620, 1768, 723, 2984, 886, 5139, 1974, 22137, 6780, 26948, 25135, 99005, 36706, 89674, 32842, 82729, 32112, 111077, 34350, 98649, 32438, 94052, 23984, 94764, 32127, 55202, 20994, 140976, 24267, 47778, 21192, 66246, 19702, 38308, 9599, 31030, 10885, 108570, 10145, 51290, 7379, 39482, 12113, 32998, 6361, 29497, 4732, 74737, 8901, 19811, 4611, 15110, 4622, 3954, 1265, 1458, 463, 30975, 593, 2679, 470, 2276, 545, 1826, 344, 2355, 664, 16597, 1306, 8381];
-const dPE      = [134007, 6513, 21066, 1418, 14409, 1259, 64871, 1067, 12833, 1947, 15723, 4677, 40791, 2781, 22336, 7471, 125269, 7848, 38483, 13445, 39562, 19074, 89279, 17351, 55993, 17421, 107766, 22026, 67701, 20992, 62373, 39924, 64656, 45412, 60216, 21718, 108267, 25494, 79932, 46477, 91391, 19569, 45369, 11124, 26058, 5153, 26692, 2653, 9234, 3131, 7215, 1057, 5964, 493, 2857, 317, 9460, 0, 720, 0, 1014, 0, 519, 0, 478, 0, 2843, 0, 0, 0, 0, 0, 729, 0, 135, 0, 2316, 0, 0, 0, 0, 0, 0, 0, 0, 0, 460, 0, 0, 0, 0, 0, 0, 0, 0, 0, 590, 0, 0];
-const atm      = 23150;
-const atmIdx   = dStrikes.findIndex(s => parseInt(s) >= atm);
+const ceLabels=['24000', '24100', '25000', '24500', '24050', '24200', '25500'], ceOI=[96.7, 88.4, 73.7, 71.0, 54.9, 54.5, 43.6], ceVol=[949.9, 880.5, 201.8, 395.3, 696.9, 487.2, 105.0];
+const peLabels=['24000', '23000', '23900', '24050', '23500', '23800', '23300'], peOI=[121.5, 81.0, 72.5, 50.6, 49.7, 48.9, 45.4], peVol=[927.9, 165.9, 426.5, 533.7, 172.1, 281.5, 127.7];
+const dStrikes=['21200', '21250', '21300', '21350', '21400', '21450', '21500', '21550', '21600', '21650', '21700', '21750', '21800', '21850', '21900', '21950', '22000', '22050', '22100', '22150', '22200', '22250', '22300', '22350', '22400', '22450', '22500', '22550', '22600', '22650', '22700', '22750', '22800', '22850', '22900', '22950', '23000', '23050', '23100', '23150', '23200', '23250', '23300', '23350', '23400', '23450', '23500', '23550', '23600', '23650', '23700', '23750', '23800', '23850', '23900', '23950', '24000', '24050', '24100', '24150', '24200', '24250', '24300', '24350', '24400', '24450', '24500', '24550', '24600', '24650', '24700', '24750', '24800', '24850', '24900', '24950', '25000', '25050', '25100', '25150', '25200', '25250', '25300', '25350', '25400', '25450', '25500', '25550', '25600', '25650', '25700', '25750', '25800', '25850', '25900', '25950', '26000', '26050', '26100', '26150', '26200', '26250', '26300'], dCE=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.2, 0.0, 0.0, 0.0, 0.1, 0.0, 0.2, 0.1, 0.5, 0.1, 5.3, 0.2, 1.2, 0.5, 4.4, 0.7, 4.4, 0.9, 8.9, 0.6, 9.0, 0.8, 10.1, 1.0, 7.6, 1.8, 14.3, 4.9, 29.0, 16.4, 96.7, 54.9, 88.4, 28.5, 54.5, 30.0, 41.5, 15.1, 34.0, 15.7, 71.0, 15.2, 32.6, 10.4, 40.6, 11.5, 27.3, 6.3, 20.8, 9.0, 73.7, 11.2, 30.3, 6.0, 27.4, 6.7, 23.6, 4.7, 20.0, 4.3, 43.6, 6.0, 11.9, 4.5, 12.7, 4.3, 20.1, 1.0, 1.8, 0.9, 20.4, 0.9, 1.2, 0.7, 1.3, 1.0, 3.8], dPE=[39.1, 0.7, 4.6, 0.3, 1.4, 0.6, 21.1, 0.3, 3.2, 0.3, 3.3, 0.2, 7.7, 0.7, 4.6, 0.7, 43.8, 0.8, 2.9, 0.6, 7.7, 3.2, 7.8, 1.5, 9.4, 2.3, 41.8, 2.8, 10.9, 2.5, 14.1, 6.0, 24.3, 7.2, 24.6, 11.9, 81.0, 11.5, 22.2, 7.8, 43.4, 15.6, 45.4, 12.9, 37.3, 13.3, 49.7, 15.7, 38.1, 16.1, 40.5, 18.7, 48.9, 25.3, 72.5, 36.1, 121.5, 50.6, 45.2, 8.4, 12.7, 2.5, 5.7, 0.8, 2.3, 0.4, 4.2, 0.2, 0.5, 0.0, 0.3, 0.0, 0.2, 0.0, 0.1, 0.0, 2.9, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.4, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0];
+const atmIdx=57;
 
-new Chart(document.getElementById('ceChart'), {
-  type:'bar',
-  data:{labels:ceLabels, datasets:[
-    {label:'OI',data:ceOI,backgroundColor:'#378ADD',borderRadius:3},
-    {label:'Vol (÷1L)',data:ceVol,backgroundColor:'#97C459',borderRadius:3}
-  ]},
-  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
-    scales:{x:{grid:{display:false},ticks:{font:{size:11}}},y:{ticks:{font:{size:10}}}}}
-});
+new Chart(document.getElementById('ceChart'),{type:'bar',data:{labels:ceLabels,datasets:[
+  {label:'OI (L)',data:ceOI,backgroundColor:'#378ADD',borderRadius:3},
+  {label:'Vol (÷1L)',data:ceVol,backgroundColor:'#97C459',borderRadius:3}
+]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{font:{size:11}}},y:{ticks:{font:{size:10}}}}}}));
 
-new Chart(document.getElementById('peChart'), {
-  type:'bar',
-  data:{labels:peLabels, datasets:[
-    {label:'OI',data:peOI,backgroundColor:'#D4537E',borderRadius:3},
-    {label:'Vol (÷1L)',data:peVol,backgroundColor:'#EF9F27',borderRadius:3}
-  ]},
-  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
-    scales:{x:{grid:{display:false},ticks:{font:{size:11}}},y:{ticks:{font:{size:10}}}}}
-});
+new Chart(document.getElementById('peChart'),{type:'bar',data:{labels:peLabels,datasets:[
+  {label:'OI (L)',data:peOI,backgroundColor:'#D4537E',borderRadius:3},
+  {label:'Vol (÷1L)',data:peVol,backgroundColor:'#EF9F27',borderRadius:3}
+]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{font:{size:11}}},y:{ticks:{font:{size:10}}}}}}));
 
-new Chart(document.getElementById('distChart'), {
-  type:'bar',
-  data:{labels:dStrikes, datasets:[
-    {label:'CE OI',data:dCE,backgroundColor:'#378ADD',borderRadius:2},
-    {label:'PE OI',data:dPE,backgroundColor:'#D4537E',borderRadius:2}
-  ]},
-  options:{responsive:true,maintainAspectRatio:false,
-    plugins:{legend:{display:false},
-      annotation:{ annotations:{ atm:{ type:'line', xMin:atmIdx-0.5, xMax:atmIdx+0.5, borderColor:'#639922', borderWidth:2, borderDash:[4,4], label:{ content:'ATM', enabled:true, position:'start', font:{size:10} } } } } },
-    scales:{
-      x:{grid:{display:false},ticks:{font:{size:10},maxRotation:45,autoSkip:true,maxTicksLimit:20}},
-      y:{ticks:{font:{size:10},callback:v=>v>=1000?Math.round(v/1000)+'K':v}}
-    }
-  }
-});
+new Chart(document.getElementById('distChart'),{type:'bar',data:{labels:dStrikes,datasets:[
+  {label:'CE OI (L)',data:dCE,backgroundColor:'#378ADD',borderRadius:2},
+  {label:'PE OI (L)',data:dPE,backgroundColor:'#D4537E',borderRadius:2}
+]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+  scales:{x:{grid:{display:false},ticks:{font:{size:10},maxRotation:45,autoSkip:true,maxTicksLimit:20}},
+           y:{ticks:{font:{size:10},callback:v=>v>=1000?Math.round(v/1000)+'K':v}}}}}));
 
-// X thread
-const sym    = "NIFTY";
-const exp    = "16 Jun 2026";
-const pcr    = "0.92";
-const bias   = "NEUTRAL";
-const res    = "24,000";
-const sup    = "21,200";
-const mp     = "23,200";
-const range_ = "21,200–24,000";
-const atmStr = "23,150";
-
-const oi_read = bias.includes('BULL')
-  ? `Put writers defending ${sup}. Floor is strong. ${res} CE is the wall.`
-  : bias.includes('BEAR')
-  ? `Call writers defending ${res}. Ceiling is strong. ${sup} PE is the floor.`
-  : `Range locked between ${sup} PE and ${res} CE. Writers on both sides.`;
-
-const thread = `🔍 ${sym} Options Chain — Expiry ${exp}
-
-📍 ATM: ${atmStr} | PCR: ${pcr} | Max Pain: ${mp}
-Bias: ${bias}
-
-📊 Key levels:
-🔴 Resistance: ${res} CE (highest CE OI)
-🟢 Support: ${sup} PE (highest PE OI)
-📦 Implied range: ${range_}
-
-⚙️ What the OI is saying:
-${oi_read}
-
-📌 For educational purposes only. Not investment advice.
-
-#Nifty #OptionsChain #GeoMacroDigest #NSE #WeeklyExpiry`;
-
-document.getElementById('xthread').textContent = thread;
-</script>
-
-<script>
-// ── 7-Day History Charts ─────────────────────────────────────────────────────
-const historyData = [{"date": "03 Jun", "atm": 23600, "pcr": 0.95, "max_pain": 23500, "resistance": 24000, "support": 23300, "bias": "NEUTRAL", "top_ce": [{"strike": 24000, "oi": 86981}, {"strike": 23500, "oi": 66725}, {"strike": 25000, "oi": 66312}], "top_pe": [{"strike": 23300, "oi": 77093}, {"strike": 22000, "oi": 68250}, {"strike": 23000, "oi": 68087}], "brent": 97.92, "dxy": 99.36, "usdinr": 95.78}, {"date": "04 Jun", "atm": 23500, "pcr": 0.98, "max_pain": 23500, "resistance": 24000, "support": 22000, "bias": "NEUTRAL", "top_ce": [{"strike": 24000, "oi": 131867}, {"strike": 23500, "oi": 112265}, {"strike": 25000, "oi": 108122}], "top_pe": [{"strike": 22000, "oi": 100039}, {"strike": 21100, "oi": 98919}, {"strike": 23300, "oi": 98232}], "brent": 97.74, "dxy": 99.52, "usdinr": 95.69}, {"date": "05 Jun", "atm": 23500, "pcr": 0.96, "max_pain": 23450, "resistance": 24000, "support": 22500, "bias": "NEUTRAL", "top_ce": [{"strike": 24000, "oi": 179205}, {"strike": 25000, "oi": 133862}, {"strike": 24500, "oi": 124675}], "top_pe": [{"strike": 22500, "oi": 150517}, {"strike": 23000, "oi": 122993}, {"strike": 22000, "oi": 119496}], "brent": 94.47, "dxy": 99.28, "usdinr": 95.36}, {"date": "06 Jun", "atm": 23400, "pcr": 0.7, "max_pain": 23450, "resistance": 24000, "support": 22500, "bias": "BEARISH", "top_ce": [{"strike": 24000, "oi": 265524}, {"strike": 25000, "oi": 170059}, {"strike": 23500, "oi": 154056}], "top_pe": [{"strike": 22500, "oi": 157007}, {"strike": 23000, "oi": 142238}, {"strike": 23300, "oi": 113709}], "brent": 92.99, "dxy": 100.07, "usdinr": 94.93}, {"date": "09 Jun", "atm": 23300, "pcr": 1.06, "max_pain": 23300, "resistance": 24000, "support": 21200, "bias": "NEUTRAL", "top_ce": [{"strike": 24000, "oi": 76473}, {"strike": 23500, "oi": 64312}, {"strike": 25000, "oi": 63887}], "top_pe": [{"strike": 21200, "oi": 112805}, {"strike": 22000, "oi": 91675}, {"strike": 23200, "oi": 69389}], "brent": 91.61, "dxy": 99.93, "usdinr": 95.34}, {"date": "11 Jun", "atm": 23250, "pcr": 0.82, "max_pain": 23300, "resistance": 24000, "support": 21200, "bias": "BEARISH", "top_ce": [{"strike": 24000, "oi": 113189}, {"strike": 23500, "oi": 100756}, {"strike": 24500, "oi": 94545}], "top_pe": [{"strike": 21200, "oi": 132838}, {"strike": 22000, "oi": 109235}, {"strike": 22500, "oi": 89524}], "brent": 95.15, "dxy": 100.01, "usdinr": 95.36}, {"date": "12 Jun", "atm": 23150, "pcr": 0.92, "max_pain": 23200, "resistance": 24000, "support": 21200, "bias": "NEUTRAL", "top_ce": [{"strike": 24000, "oi": 140976}, {"strike": 23500, "oi": 111077}, {"strike": 24500, "oi": 108570}], "top_pe": [{"strike": 21200, "oi": 134007}, {"strike": 22000, "oi": 125269}, {"strike": 23000, "oi": 108267}], "brent": 88.48, "dxy": 99.9, "usdinr": 95.46}];
-
+const historyData = [{"date": "12 Jun", "atm": 23700, "pcr": 1.75, "max_pain": 23500, "resistance": 24000, "support": 22500, "bias": "BULLISH", "top_ce": [{"strike": 24000, "oi": 10684115}, {"strike": 24500, "oi": 7181525}, {"strike": 23800, "oi": 6449040}], "top_pe": [{"strike": 22500, "oi": 14394705}, {"strike": 23000, "oi": 11915930}, {"strike": 22000, "oi": 11344645}], "brent": 87.29, "dxy": 99.72, "usdinr": 95.1}, {"date": "13 Jun", "atm": 23700, "pcr": 1.75, "max_pain": 23500, "resistance": 24000, "support": 22500, "bias": "BULLISH", "top_ce": [{"strike": 24000, "oi": 10684115}, {"strike": 24500, "oi": 7181525}, {"strike": 23800, "oi": 6449040}], "top_pe": [{"strike": 22500, "oi": 14394705}, {"strike": 23000, "oi": 11915930}, {"strike": 22000, "oi": 11344645}], "brent": 87.33, "dxy": 99.75, "usdinr": 95.1}, {"date": "16 Jun", "atm": 23950, "pcr": 0.94, "max_pain": 23850, "resistance": 24000, "support": 23500, "bias": "NEUTRAL", "top_ce": [{"strike": 24000, "oi": 4233580}, {"strike": 25000, "oi": 3913390}, {"strike": 24500, "oi": 3000790}], "top_pe": [{"strike": 23500, "oi": 3013270}, {"strike": 23000, "oi": 2772575}, {"strike": 23400, "oi": 2591095}], "brent": 82.98, "dxy": 99.76, "usdinr": 94.66}, {"date": "17 Jun", "atm": 24050, "pcr": 1.05, "max_pain": 24000, "resistance": 24000, "support": 24000, "bias": "NEUTRAL", "top_ce": [{"strike": 24000, "oi": 9665240}, {"strike": 24100, "oi": 8840910}, {"strike": 25000, "oi": 7367620}], "top_pe": [{"strike": 24000, "oi": 12145770}, {"strike": 23000, "oi": 8099000}, {"strike": 23900, "oi": 7250360}], "brent": 78.15, "dxy": 99.55, "usdinr": 94.37}];
 if (historyData.length > 1) {
   const histSection = document.createElement('div');
-  histSection.className = 'card';
-  histSection.style.marginBottom = '16px';
+  histSection.className = 'card'; histSection.style.marginBottom = '16px';
   histSection.innerHTML = '<div class="slbl">7-Day PCR & OI Trend</div>' +
     '<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">' +
-    '<div style="position:relative;height:180px"><canvas id="pcrChart" role="img" aria-label="7 day PCR trend"></canvas></div>' +
-    '<div style="position:relative;height:180px"><canvas id="oiChart" role="img" aria-label="7 day OI resistance and support"></canvas></div>' +
-    '</div>';
-
-  // Insert before footer
-  const footer = document.querySelector('.footer');
-  footer.parentNode.insertBefore(histSection, footer);
-
+    '<div style="position:relative;height:180px"><canvas id="pcrChart"></canvas></div>' +
+    '<div style="position:relative;height:180px"><canvas id="oiTrendChart"></canvas></div></div>';
+  document.querySelector('.footer').before(histSection);
   const dates = historyData.map(h => h.date);
-  const pcrs  = historyData.map(h => h.pcr);
-  const res   = historyData.map(h => h.resistance);
-  const sup   = historyData.map(h => h.support);
-
-  new Chart(document.getElementById('pcrChart'), {
-    type: 'line',
-    data: {
-      labels: dates,
-      datasets: [{
-        label: 'PCR', data: pcrs,
-        borderColor: '#378ADD', backgroundColor: '#378ADD20',
-        pointRadius: 4, borderWidth: 2, tension: 0.3, fill: true
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false },
-        annotation: { annotations: { neutral: {
-          type: 'line', yMin: 1, yMax: 1,
-          borderColor: '#BA7517', borderWidth: 1, borderDash: [4,4]
-        } } }
-      },
-      scales: {
-        x: { grid: { display: false }, ticks: { font: { size: 10 } } },
-        y: { ticks: { font: { size: 10 }, callback: v => v.toFixed(2) } }
-      }
-    }
-  });
-
-  new Chart(document.getElementById('oiChart'), {
-    type: 'line',
-    data: {
-      labels: dates,
-      datasets: [
-        { label: 'Resistance CE', data: res, borderColor: '#D4537E', pointRadius: 4, borderWidth: 2, tension: 0.3 },
-        { label: 'Support PE',    data: sup, borderColor: '#639922', pointRadius: 4, borderWidth: 2, tension: 0.3 }
-      ]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: true, labels: { font: { size: 10 }, boxWidth: 12 } } },
-      scales: {
-        x: { grid: { display: false }, ticks: { font: { size: 10 } } },
-        y: { ticks: { font: { size: 10 }, callback: v => v.toLocaleString('en-IN') } }
-      }
-    }
-  });
+  new Chart(document.getElementById('pcrChart'),{type:'line',data:{labels:dates,datasets:[{label:'PCR',data:historyData.map(h=>h.pcr),borderColor:'#378ADD',backgroundColor:'#378ADD20',pointRadius:4,borderWidth:2,tension:0.3,fill:true}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{font:{size:10}}},y:{ticks:{font:{size:10},callback:v=>v.toFixed(2)}}}}}));
+  new Chart(document.getElementById('oiTrendChart'),{type:'line',data:{labels:dates,datasets:[{label:'Resistance CE',data:historyData.map(h=>h.resistance),borderColor:'#D4537E',pointRadius:4,borderWidth:2,tension:0.3},{label:'Support PE',data:historyData.map(h=>h.support),borderColor:'#639922',pointRadius:4,borderWidth:2,tension:0.3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,labels:{font:{size:10},boxWidth:12}}},scales:{x:{grid:{display:false},ticks:{font:{size:10}}},y:{ticks:{font:{size:10},callback:v=>v.toLocaleString('en-IN')}}}}}));
 }
 </script>
-</body>
-</html>
+</body></html>
