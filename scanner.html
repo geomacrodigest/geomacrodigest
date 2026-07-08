@@ -3,21 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Morning Scanner (Kite) — 08 Jul 2026 08:30</title>
+<title>Morning Scanner (Kite) — 12 Jun 2026 15:21</title>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f9fa;color:#1a1a1a;padding:20px;font-size:14px}
-  .wrap{max-width:1300px;margin:0 auto}
+  .wrap{max-width:1200px;margin:0 auto}
   h1{font-size:20px;font-weight:600;margin-bottom:4px}
   .sub{color:#666;font-size:13px;margin-bottom:20px}
   .nav{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
   .nav a{font-size:12px;color:#378ADD;text-decoration:none;padding:5px 12px;border:1px solid #378ADD;border-radius:8px}
   .card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:16px;margin-bottom:16px}
   .card h3{font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px}
+  .crossover-banner{background:#fffbe6;border:1px solid #f59e0b;border-radius:10px;padding:14px;margin-bottom:16px}
+  .crossover-banner h3{color:#b45309;font-size:13px;font-weight:700;margin-bottom:8px}
+  .co-item{padding:8px 0;border-bottom:1px solid #fde68a;font-size:13px}
+  .co-item:last-child{border-bottom:none}
   table{width:100%;border-collapse:collapse}
   th{background:#f3f4f6;padding:8px 10px;text-align:left;font-size:11px;font-weight:500;color:#666}
   td{padding:8px 10px;border-bottom:1px solid #f0f0f0;font-size:13px}
-  .metrics{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:20px}
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
   .mcard{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px}
   .mcard .lbl{font-size:11px;color:#888;text-transform:uppercase;margin-bottom:4px}
   .mcard .val{font-size:22px;font-weight:600}
@@ -28,7 +32,7 @@
 <body>
 <div class="wrap">
   <h1>📊 Morning Scanner <span class="kite-badge">KITE LIVE</span></h1>
-  <p class="sub">Generated: 08 Jul 2026 08:30 | Above 200 EMA only | 0 setup(s) | 0 crossover(s)</p>
+  <p class="sub">Generated: 12 Jun 2026 15:21 | Above 200 SMA only | 19 setup(s) | 4 crossover(s)</p>
 
   <div class="nav">
     <a href="index.html">🏠 Home</a>
@@ -40,238 +44,177 @@
   </div>
 
   <div class="metrics">
-    <div class="mcard"><div class="lbl">Setups</div><div class="val" style="color:#378ADD">0</div></div>
-    <div class="mcard"><div class="lbl">🔥 Double CO</div><div class="val" style="color:#e65100">0</div></div>
-    <div class="mcard"><div class="lbl">🌟 200 EMA CO</div><div class="val" style="color:#b45309">0</div></div>
-    <div class="mcard"><div class="lbl">⚡ 20 EMA CO</div><div class="val" style="color:#0369a1">0</div></div>
-    <div class="mcard"><div class="lbl">🚀 2d Break</div><div class="val" style="color:#166534">0</div></div>
-    <div class="mcard"><div class="lbl">📂 Open Pos</div><div class="val" style="color:#1d4ed8">9</div></div>
+    <div class="mcard"><div class="lbl">Setups Found</div><div class="val" style="color:#378ADD">19</div></div>
+    <div class="mcard"><div class="lbl">Crossovers</div><div class="val" style="color:#b45309">4</div></div>
+    <div class="mcard"><div class="lbl">Open Positions</div><div class="val">14</div></div>
+    <div class="mcard"><div class="lbl">Closed (All Time)</div><div class="val">0</div></div>
   </div>
 
-  
+  <div class="crossover-banner"><h3>🌟 200 SMA CROSSOVERS — Strong Setups (Price just crossed above 200 SMA)</h3><div class="co-item"><b>IDFCFIRSTB</b> ₹76.48 &nbsp;|&nbsp; SMA200: ₹74.72 &nbsp;|&nbsp; 🌟 200 SMA CROSSOVER ₹74.72 — strong setup! | Strong move +4.84% ✅ | Bullish candle 🕯️</div><div class="co-item"><b>VEDL</b> ₹309.55 &nbsp;|&nbsp; SMA200: ₹309.24 &nbsp;|&nbsp; 🌟 200 SMA CROSSOVER ₹309.24 — strong setup! | Positive move +1.53% | Gap up +2.98% ⬆️</div><div class="co-item"><b>OBEROIRLTY</b> ₹1,628.60 &nbsp;|&nbsp; SMA200: ₹1,621.47 &nbsp;|&nbsp; 🌟 200 SMA CROSSOVER ₹1621.47 — strong setup! | Positive move +2.9% | Bullish candle 🕯️</div><div class="co-item"><b>HINDZINC</b> ₹560.60 &nbsp;|&nbsp; SMA200: ₹551.22 &nbsp;|&nbsp; 🌟 200 SMA CROSSOVER ₹551.22 — strong setup! | Positive move +2.86% | Gap up +2.93% ⬆️</div></div>
 
   <div class="card">
-    <h3>All Setups — Above 200 EMA Only</h3>
+    <h3>All Setups — Above 200 SMA Only</h3>
     <table>
-      <thead><tr><th>Symbol</th><th>Index</th><th>LTP</th><th>Chg %</th><th>200 EMA</th><th>20 EMA</th><th>2d High</th><th>Vol×</th><th>SL</th><th>Target</th><th>Score</th><th>Signals</th></tr></thead>
-      <tbody></tbody>
+      <thead><tr><th>Symbol</th><th>LTP</th><th>Chg %</th><th>200 SMA</th><th>Score</th><th>Signals</th></tr></thead>
+      <tbody>
+        <tr style="background:#fffbe6;border-left:4px solid #f59e0b">
+          <td><b>IDFCFIRSTB</b><span style="background:#f59e0b20;color:#b45309;font-size:11px;padding:2px 8px;border-radius:12px;font-weight:700">🌟 CROSSOVER</span></td>
+          <td>₹76.48</td>
+          <td style="color:#2d7a2d;font-weight:600">▲4.84%</td>
+          <td>₹74.72</td>
+          <td><b>8</b></td>
+          <td style="font-size:12px;color:#555">🌟 200 SMA CROSSOVER ₹74.72 — strong setup! | Strong move +4.84% ✅ | Bullish candle 🕯️</td>
+        </tr>
+        <tr style="background:#fffbe6;border-left:4px solid #f59e0b">
+          <td><b>VEDL</b><span style="background:#f59e0b20;color:#b45309;font-size:11px;padding:2px 8px;border-radius:12px;font-weight:700">🌟 CROSSOVER</span></td>
+          <td>₹309.55</td>
+          <td style="color:#2d7a2d;font-weight:600">▲1.53%</td>
+          <td>₹309.24</td>
+          <td><b>6</b></td>
+          <td style="font-size:12px;color:#555">🌟 200 SMA CROSSOVER ₹309.24 — strong setup! | Positive move +1.53% | Gap up +2.98% ⬆️</td>
+        </tr>
+        <tr style="background:#fffbe6;border-left:4px solid #f59e0b">
+          <td><b>OBEROIRLTY</b><span style="background:#f59e0b20;color:#b45309;font-size:11px;padding:2px 8px;border-radius:12px;font-weight:700">🌟 CROSSOVER</span></td>
+          <td>₹1,628.60</td>
+          <td style="color:#2d7a2d;font-weight:600">▲2.90%</td>
+          <td>₹1,621.47</td>
+          <td><b>6</b></td>
+          <td style="font-size:12px;color:#555">🌟 200 SMA CROSSOVER ₹1621.47 — strong setup! | Positive move +2.9% | Bullish candle 🕯️</td>
+        </tr>
+        <tr style="background:#fffbe6;border-left:4px solid #f59e0b">
+          <td><b>HINDZINC</b><span style="background:#f59e0b20;color:#b45309;font-size:11px;padding:2px 8px;border-radius:12px;font-weight:700">🌟 CROSSOVER</span></td>
+          <td>₹560.60</td>
+          <td style="color:#2d7a2d;font-weight:600">▲2.86%</td>
+          <td>₹551.22</td>
+          <td><b>5</b></td>
+          <td style="font-size:12px;color:#555">🌟 200 SMA CROSSOVER ₹551.22 — strong setup! | Positive move +2.86% | Gap up +2.93% ⬆️</td>
+        </tr>
+        <tr style="">
+          <td><b>ADANIPOWER</b></td>
+          <td>₹223.44</td>
+          <td style="color:#2d7a2d;font-weight:600">▲3.68%</td>
+          <td>₹161.05</td>
+          <td><b>5</b></td>
+          <td style="font-size:12px;color:#555">Strong move +3.68% ✅ | Bullish candle 🕯️ | Closed near day high 💪</td>
+        </tr>
+        <tr style="">
+          <td><b>BANKBARODA</b></td>
+          <td>₹274.75</td>
+          <td style="color:#2d7a2d;font-weight:600">▲2.67%</td>
+          <td>₹268.30</td>
+          <td><b>5</b></td>
+          <td style="font-size:12px;color:#555">Just above 200 SMA (+2.4%) 📈 | Positive move +2.67% | Bullish candle 🕯️</td>
+        </tr>
+        <tr style="">
+          <td><b>BANDHANBNK</b></td>
+          <td>₹204.15</td>
+          <td style="color:#2d7a2d;font-weight:600">▲5.29%</td>
+          <td>₹166.10</td>
+          <td><b>5</b></td>
+          <td style="font-size:12px;color:#555">Strong move +5.29% ✅ | Gap up +2.11% ⬆️ | Closed near day high 💪</td>
+        </tr>
+        <tr style="">
+          <td><b>SUZLON</b></td>
+          <td>₹55.02</td>
+          <td style="color:#2d7a2d;font-weight:600">▲3.25%</td>
+          <td>₹51.78</td>
+          <td><b>5</b></td>
+          <td style="font-size:12px;color:#555">Strong move +3.25% ✅ | Bullish candle 🕯️ | Closed near day high 💪</td>
+        </tr>
+        <tr style="">
+          <td><b>ANGELONE</b></td>
+          <td>₹339.45</td>
+          <td style="color:#2d7a2d;font-weight:600">▲4.85%</td>
+          <td>₹262.08</td>
+          <td><b>5</b></td>
+          <td style="font-size:12px;color:#555">Strong move +4.85% ✅ | Bullish candle 🕯️ | Closed near day high 💪</td>
+        </tr>
+        <tr style="">
+          <td><b>NYKAA</b></td>
+          <td>₹275.30</td>
+          <td style="color:#2d7a2d;font-weight:600">▲5.78%</td>
+          <td>₹255.24</td>
+          <td><b>5</b></td>
+          <td style="font-size:12px;color:#555">Strong move +5.78% ✅ | Bullish candle 🕯️ | Closed near day high 💪</td>
+        </tr>
+        <tr style="">
+          <td><b>SBIN</b></td>
+          <td>₹1,016.70</td>
+          <td style="color:#2d7a2d;font-weight:600">▲1.60%</td>
+          <td>₹990.23</td>
+          <td><b>4</b></td>
+          <td style="font-size:12px;color:#555">Just above 200 SMA (+2.7%) 📈 | Positive move +1.6% | Closed near day high 💪</td>
+        </tr>
+        <tr style="">
+          <td><b>AXISBANK</b></td>
+          <td>₹1,356.40</td>
+          <td style="color:#2d7a2d;font-weight:600">▲2.97%</td>
+          <td>₹1,250.18</td>
+          <td><b>4</b></td>
+          <td style="font-size:12px;color:#555">Positive move +2.97% | Bullish candle 🕯️ | Closed near day high 💪</td>
+        </tr>
+        <tr style="">
+          <td><b>LT</b></td>
+          <td>₹4,043.00</td>
+          <td style="color:#2d7a2d;font-weight:600">▲4.69%</td>
+          <td>₹3,903.62</td>
+          <td><b>4</b></td>
+          <td style="font-size:12px;color:#555">Strong move +4.69% ✅ | Bullish candle 🕯️ | Closed near day high 💪</td>
+        </tr>
+        <tr style="">
+          <td><b>TITAN</b></td>
+          <td>₹4,191.10</td>
+          <td style="color:#2d7a2d;font-weight:600">▲4.12%</td>
+          <td>₹3,975.32</td>
+          <td><b>4</b></td>
+          <td style="font-size:12px;color:#555">Strong move +4.12% ✅ | Bullish candle 🕯️ | Closed near day high 💪</td>
+        </tr>
+        <tr style="">
+          <td><b>AUBANK</b></td>
+          <td>₹1,018.00</td>
+          <td style="color:#2d7a2d;font-weight:600">▲5.68%</td>
+          <td>₹915.88</td>
+          <td><b>4</b></td>
+          <td style="font-size:12px;color:#555">Strong move +5.68% ✅ | Bullish candle 🕯️ | Closed near day high 💪</td>
+        </tr>
+        <tr style="">
+          <td><b>GAIL</b></td>
+          <td>₹171.00</td>
+          <td style="color:#2d7a2d;font-weight:600">▲2.96%</td>
+          <td>₹164.90</td>
+          <td><b>4</b></td>
+          <td style="font-size:12px;color:#555">Positive move +2.96% | Bullish candle 🕯️ | Closed near day high 💪</td>
+        </tr>
+        <tr style="">
+          <td><b>INDUSINDBK</b></td>
+          <td>₹916.65</td>
+          <td style="color:#2d7a2d;font-weight:600">▲3.12%</td>
+          <td>₹845.58</td>
+          <td><b>3</b></td>
+          <td style="font-size:12px;color:#555">Strong move +3.12% ✅ | Closed near day high 💪 | Vol 2.6M</td>
+        </tr>
+        <tr style="">
+          <td><b>PFC</b></td>
+          <td>₹421.00</td>
+          <td style="color:#2d7a2d;font-weight:600">▲1.80%</td>
+          <td>₹400.43</td>
+          <td><b>3</b></td>
+          <td style="font-size:12px;color:#555">Positive move +1.8% | Closed near day high 💪 | High volume 5.4M 📶</td>
+        </tr>
+        <tr style="">
+          <td><b>NATIONALUM</b></td>
+          <td>₹377.50</td>
+          <td style="color:#2d7a2d;font-weight:600">▲1.86%</td>
+          <td>₹319.16</td>
+          <td><b>3</b></td>
+          <td style="font-size:12px;color:#555">Positive move +1.86% | Gap up +2.54% ⬆️ | High volume 7.3M 📶</td>
+        </tr></tbody>
     </table>
   </div>
 
   
-  <div class="open-pos-card">
-    <h3>📂 OPEN POSITIONS (9) — Live P&L &nbsp;|&nbsp; <span style="color:#2d7a2d">Overall: +0%</span> &nbsp;|&nbsp; 🟢0 🔴0</h3>
-    <table><thead><tr><th>Symbol</th><th>Entry</th><th>LTP</th><th>P&amp;L %</th><th>Stop Loss</th><th>Target</th><th>Dist to SL</th><th>⏰ Time Exit</th><th>Entry Date</th><th>Score</th></tr></thead>
-    <tbody><tr>
-          <td><b>HINDZINC</b><br></td>
-          <td>₹559.70</td>
-          <td style="font-weight:600">⚠️ No quote</td>
-          <td style="color:#888;font-weight:700">—</td>
-          <td style="color:#b91c1c;font-weight:600">₹555.10 🔺</td>
-          <td style="color:#166534;font-weight:600">₹566.60</td>
-          <td style="font-size:12px;color:#888"></td>
-          <td style="font-size:12px;color:#b91c1c;font-weight:600">⚠️ EXIT TODAY</td>
-          <td style="font-size:12px">12 Jun 2026</td>
-          <td style="font-size:12px">5</td>
-        </tr><tr>
-          <td><b>ADANIPOWER</b><br></td>
-          <td>₹223.44</td>
-          <td style="font-weight:600">⚠️ No quote</td>
-          <td style="color:#888;font-weight:700">—</td>
-          <td style="color:#b91c1c;font-weight:600">₹216.43 </td>
-          <td style="color:#166534;font-weight:600">₹233.95</td>
-          <td style="font-size:12px;color:#888"></td>
-          <td style="font-size:12px;color:#b91c1c;font-weight:600">⚠️ EXIT TODAY</td>
-          <td style="font-size:12px">12 Jun 2026</td>
-          <td style="font-size:12px">5</td>
-        </tr><tr>
-          <td><b>BANKBARODA</b><br></td>
-          <td>₹274.75</td>
-          <td style="font-weight:600">⚠️ No quote</td>
-          <td style="color:#888;font-weight:700">—</td>
-          <td style="color:#b91c1c;font-weight:600">₹268.65 🔺</td>
-          <td style="color:#166534;font-weight:600">₹283.90</td>
-          <td style="font-size:12px;color:#888"></td>
-          <td style="font-size:12px;color:#b91c1c;font-weight:600">⚠️ EXIT TODAY</td>
-          <td style="font-size:12px">12 Jun 2026</td>
-          <td style="font-size:12px">5</td>
-        </tr><tr>
-          <td><b>DMART</b><br></td>
-          <td>₹4,166.90</td>
-          <td style="font-weight:600">⚠️ No quote</td>
-          <td style="color:#888;font-weight:700">—</td>
-          <td style="color:#b91c1c;font-weight:600">₹4,109.00 🔺</td>
-          <td style="color:#166534;font-weight:600">₹4,253.75</td>
-          <td style="font-size:12px;color:#888"></td>
-          <td style="font-size:12px;color:#b91c1c;font-weight:600">⚠️ EXIT TODAY</td>
-          <td style="font-size:12px">16 Jun 2026</td>
-          <td style="font-size:12px">9</td>
-        </tr><tr>
-          <td><b>CHOLAFIN</b><br></td>
-          <td>₹1,660.20</td>
-          <td style="font-weight:600">⚠️ No quote</td>
-          <td style="color:#888;font-weight:700">—</td>
-          <td style="color:#b91c1c;font-weight:600">₹1,649.80 🔺</td>
-          <td style="color:#166534;font-weight:600">₹1,675.80</td>
-          <td style="font-size:12px;color:#888"></td>
-          <td style="font-size:12px;color:#b91c1c;font-weight:600">⚠️ EXIT TODAY</td>
-          <td style="font-size:12px">16 Jun 2026</td>
-          <td style="font-size:12px">5</td>
-        </tr><tr>
-          <td><b>ABB</b><br></td>
-          <td>₹7,004.00</td>
-          <td style="font-weight:600">⚠️ No quote</td>
-          <td style="color:#888;font-weight:700">—</td>
-          <td style="color:#b91c1c;font-weight:600">₹6,939.00 🔺</td>
-          <td style="color:#166534;font-weight:600">₹7,101.50</td>
-          <td style="font-size:12px;color:#888"></td>
-          <td style="font-size:12px;color:#b91c1c;font-weight:600">⚠️ EXIT TODAY</td>
-          <td style="font-size:12px">16 Jun 2026</td>
-          <td style="font-size:12px">4</td>
-        </tr><tr>
-          <td><b>GRAVITA</b><br></td>
-          <td>₹1,724.40</td>
-          <td style="font-weight:600">⚠️ No quote</td>
-          <td style="color:#888;font-weight:700">—</td>
-          <td style="color:#b91c1c;font-weight:600">₹1,750.20 🔺</td>
-          <td style="color:#166534;font-weight:600">₹1,791.00</td>
-          <td style="font-size:12px;color:#888"></td>
-          <td style="font-size:12px;color:#166534;font-weight:600">Day 6/15</td>
-          <td style="font-size:12px">03 Jul 2026</td>
-          <td style="font-size:12px">10</td>
-        </tr><tr>
-          <td><b>360ONE</b><br></td>
-          <td>₹1,130.80</td>
-          <td style="font-weight:600">⚠️ No quote</td>
-          <td style="color:#888;font-weight:700">—</td>
-          <td style="color:#b91c1c;font-weight:600">₹1,126.40 🔺</td>
-          <td style="color:#166534;font-weight:600">₹1,137.40</td>
-          <td style="font-size:12px;color:#888"></td>
-          <td style="font-size:12px;color:#166534;font-weight:600">Day 2/15</td>
-          <td style="font-size:12px">07 Jul 2026</td>
-          <td style="font-size:12px">5</td>
-        </tr><tr>
-          <td><b>M&MFIN</b><br></td>
-          <td>₹331.25</td>
-          <td style="font-weight:600">⚠️ No quote</td>
-          <td style="color:#888;font-weight:700">—</td>
-          <td style="color:#b91c1c;font-weight:600">₹324.00 🔺</td>
-          <td style="color:#166534;font-weight:600">₹342.12</td>
-          <td style="font-size:12px;color:#888"></td>
-          <td style="font-size:12px;color:#166534;font-weight:600">Day 2/15</td>
-          <td style="font-size:12px">07 Jul 2026</td>
-          <td style="font-size:12px">4</td>
-        </tr></tbody></table>
-  </div>
 
-  
-  <div class="card">
-    <h3>📤 Closed Positions — Performance Log</h3>
-    <div class="metrics2" style="margin-bottom:14px">
-      <div class="mcard"><div class="lbl">Total Closed</div><div class="val">125</div></div>
-      <div class="mcard"><div class="lbl">Overall P&amp;L</div><div class="val" style="color:#2d7a2d">+36.7%</div></div>
-      <div class="mcard"><div class="lbl">Win Rate</div><div class="val" style="color:#2d7a2d">42%</div></div>
-      <div class="mcard"><div class="lbl">Avg Win</div><div class="val" style="color:#2d7a2d">+2.81%</div></div>
-      <div class="mcard"><div class="lbl">Avg Loss</div><div class="val" style="color:#b91c1c">-1.5%</div></div>
-      <div class="mcard"><div class="lbl">Wins / Losses</div><div class="val">52W / 73L</div></div>
-      <div class="mcard"><div class="lbl">🏆 Max Profit</div><div class="val" style="color:#2d7a2d;font-size:16px">+10.81%<br><span style="font-size:11px;font-weight:400">NYKAA</span></div></div>
-      <div class="mcard"><div class="lbl">💥 Max Loss</div><div class="val" style="color:#b91c1c;font-size:16px">-5.45%<br><span style="font-size:11px;font-weight:400">IDBI</span></div></div>
-    </div>
-    <table><thead><tr><th>Symbol</th><th>Entry</th><th>Exit</th><th>P&amp;L %</th><th>Status</th><th>Entry Date</th><th>Exit Date</th></tr></thead>
-    <tbody><tr>
-          <td><b>PPLPHARMA</b></td><td>₹177.66</td><td>₹175.23</td>
-          <td style="color:#b91c1c;font-weight:700">-1.37%</td>
-          <td><span style="font-size:11px;background:#fee2e2;color:#991b1b;padding:2px 10px;border-radius:12px;font-weight:600">SL HIT</span></td>
-          <td style="font-size:12px">07 Jul 2026</td>
-          <td style="font-size:12px;color:#888">08 Jul 2026</td>
-        </tr><tr>
-          <td><b>TATASTEEL</b></td><td>₹190.30</td><td>₹189.79</td>
-          <td style="color:#b91c1c;font-weight:700">-0.27%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">MOMENTUM EXIT</span></td>
-          <td style="font-size:12px">07 Jul 2026</td>
-          <td style="font-size:12px;color:#888">08 Jul 2026</td>
-        </tr><tr>
-          <td><b>ETERNAL</b></td><td>₹287.80</td><td>₹283.80</td>
-          <td style="color:#b91c1c;font-weight:700">-1.39%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">GAP DOWN EXIT</span></td>
-          <td style="font-size:12px">07 Jul 2026</td>
-          <td style="font-size:12px;color:#888">08 Jul 2026</td>
-        </tr><tr>
-          <td><b>RITES</b></td><td>₹233.26</td><td>₹226.30</td>
-          <td style="color:#b91c1c;font-weight:700">-2.98%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">GAP DOWN EXIT</span></td>
-          <td style="font-size:12px">07 Jul 2026</td>
-          <td style="font-size:12px;color:#888">08 Jul 2026</td>
-        </tr><tr>
-          <td><b>SUMICHEM</b></td><td>₹476.90</td><td>₹473.35</td>
-          <td style="color:#b91c1c;font-weight:700">-0.74%</td>
-          <td><span style="font-size:11px;background:#fee2e2;color:#991b1b;padding:2px 10px;border-radius:12px;font-weight:600">SL HIT</span></td>
-          <td style="font-size:12px">07 Jul 2026</td>
-          <td style="font-size:12px;color:#888">08 Jul 2026</td>
-        </tr><tr>
-          <td><b>HUDCO</b></td><td>₹211.33</td><td>₹210.69</td>
-          <td style="color:#b91c1c;font-weight:700">-0.3%</td>
-          <td><span style="font-size:11px;background:#fee2e2;color:#991b1b;padding:2px 10px;border-radius:12px;font-weight:600">SL HIT</span></td>
-          <td style="font-size:12px">07 Jul 2026</td>
-          <td style="font-size:12px;color:#888">08 Jul 2026</td>
-        </tr><tr>
-          <td><b>BEL</b></td><td>₹420.60</td><td>₹419.15</td>
-          <td style="color:#b91c1c;font-weight:700">-0.34%</td>
-          <td><span style="font-size:11px;background:#fee2e2;color:#991b1b;padding:2px 10px;border-radius:12px;font-weight:600">SL HIT</span></td>
-          <td style="font-size:12px">07 Jul 2026</td>
-          <td style="font-size:12px;color:#888">08 Jul 2026</td>
-        </tr><tr>
-          <td><b>POONAWALLA</b></td><td>₹469.30</td><td>₹471.75</td>
-          <td style="color:#2d7a2d;font-weight:700">+0.52%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">MOMENTUM EXIT</span></td>
-          <td style="font-size:12px">06 Jul 2026</td>
-          <td style="font-size:12px;color:#888">08 Jul 2026</td>
-        </tr><tr>
-          <td><b>DIXON</b></td><td>₹13,093.00</td><td>₹13,242.00</td>
-          <td style="color:#2d7a2d;font-weight:700">+1.14%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">MOMENTUM EXIT</span></td>
-          <td style="font-size:12px">06 Jul 2026</td>
-          <td style="font-size:12px;color:#888">08 Jul 2026</td>
-        </tr><tr>
-          <td><b>EICHERMOT</b></td><td>₹7,424.50</td><td>₹7,499.00</td>
-          <td style="color:#2d7a2d;font-weight:700">+1.0%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">GAP DOWN EXIT</span></td>
-          <td style="font-size:12px">06 Jul 2026</td>
-          <td style="font-size:12px;color:#888">08 Jul 2026</td>
-        </tr><tr>
-          <td><b>JUBLINGREA</b></td><td>₹678.95</td><td>₹688.00</td>
-          <td style="color:#2d7a2d;font-weight:700">+1.33%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">GAP DOWN EXIT</span></td>
-          <td style="font-size:12px">03 Jul 2026</td>
-          <td style="font-size:12px;color:#888">08 Jul 2026</td>
-        </tr><tr>
-          <td><b>TATASTEEL</b></td><td>₹191.06</td><td>₹190.30</td>
-          <td style="color:#b91c1c;font-weight:700">-0.4%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">MOMENTUM EXIT</span></td>
-          <td style="font-size:12px">06 Jul 2026</td>
-          <td style="font-size:12px;color:#888">07 Jul 2026</td>
-        </tr><tr>
-          <td><b>ASHOKLEY</b></td><td>₹167.09</td><td>₹164.89</td>
-          <td style="color:#b91c1c;font-weight:700">-1.32%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">MOMENTUM EXIT</span></td>
-          <td style="font-size:12px">06 Jul 2026</td>
-          <td style="font-size:12px;color:#888">07 Jul 2026</td>
-        </tr><tr>
-          <td><b>SUMICHEM</b></td><td>₹487.30</td><td>₹476.90</td>
-          <td style="color:#b91c1c;font-weight:700">-2.13%</td>
-          <td><span style="font-size:11px;background:#fee2e2;color:#991b1b;padding:2px 10px;border-radius:12px;font-weight:600">SL HIT</span></td>
-          <td style="font-size:12px">06 Jul 2026</td>
-          <td style="font-size:12px;color:#888">07 Jul 2026</td>
-        </tr><tr>
-          <td><b>IIFL</b></td><td>₹527.55</td><td>₹522.15</td>
-          <td style="color:#b91c1c;font-weight:700">-1.02%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">MOMENTUM EXIT</span></td>
-          <td style="font-size:12px">06 Jul 2026</td>
-          <td style="font-size:12px;color:#888">07 Jul 2026</td>
-        </tr></tbody></table>
-  </div>
-
-  <div class="footer">Data: Zerodha Kite API | 200 EMA filter | 20 EMA crossover signal | For educational purposes only</div>
+  <div class="footer">Data: Zerodha Kite API | 200 SMA filter active | For educational purposes only</div>
 </div>
 </body>
 </html>
