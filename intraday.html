@@ -1,712 +1,318 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Intraday Scanner (Kite) — 20 Jul 2026 09:40</title>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Intraday Scanner — 11 Jun 2026 15:47</title>
 <style>
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f9fa;color:#1a1a1a;padding:20px;font-size:14px}
-  .wrap{max-width:1400px;margin:0 auto}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f9fa;color:#1a1a1a;padding:24px;font-size:14px}
+  .wrap{max-width:1500px;margin:0 auto}
   h1{font-size:20px;font-weight:600;margin-bottom:4px}
   .sub{color:#666;font-size:13px;margin-bottom:20px}
-  .nav{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
-  .nav a{font-size:12px;color:#378ADD;text-decoration:none;padding:5px 12px;border:1px solid #378ADD;border-radius:8px}
-  .card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:16px;margin-bottom:16px}
-  .card h3{font-size:12px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px}
-  table{width:100%;border-collapse:collapse}
-  th{background:#f3f4f6;padding:8px 10px;text-align:left;font-size:11px;font-weight:500;color:#666}
-  td{padding:8px 10px;border-bottom:1px solid #f0f0f0;font-size:13px}
-  .metrics{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin-bottom:20px}
-  .metrics2{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
-  .mcard{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px}
-  .mcard .lbl{font-size:11px;color:#888;text-transform:uppercase;margin-bottom:4px}
-  .mcard .val{font-size:22px;font-weight:600}
-  .kite-badge{display:inline-block;background:#387ed120;color:#387ed1;font-size:11px;padding:2px 10px;border-radius:20px;margin-left:8px}
-  .footer{margin-top:16px;font-size:12px;color:#999;text-align:center}
-  .open-pos-card{background:#fff;border:2px solid #3b82f6;border-radius:10px;padding:16px;margin-bottom:16px}
-  .open-pos-card h3{color:#1d4ed8;font-size:13px;font-weight:700;margin-bottom:12px}
+  .pills{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+  .pill{background:#fff;border:1px solid #e5e7eb;border-radius:20px;padding:6px 14px;font-size:12px;color:#444}
+  .pill b{color:#1F4E79}
+  table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.08);margin-bottom:24px}
+  th{background:#1F4E79;color:#fff;padding:10px 10px;text-align:left;font-size:11px;font-weight:500;white-space:nowrap}
+  td{padding:9px 10px;border-bottom:1px solid #f0f0f0;font-size:13px;vertical-align:middle}
+  tr:hover td{background:#f9fafb}
+  tr:last-child td{border-bottom:none}
+  .section-title{font-size:11px;font-weight:600;color:#666;text-transform:uppercase;letter-spacing:.06em;margin:0 0 10px}
+  .perf-card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:16px;margin-bottom:24px}
+  .footer{font-size:12px;color:#999;text-align:center;margin-top:8px}
+  .nav{display:flex;gap:12px;margin-bottom:20px}
+  .nav a{font-size:13px;color:#378ADD;text-decoration:none;padding:6px 12px;border:1px solid #378ADD;border-radius:8px}
+  .nav a:hover{background:#378ADD15}
 </style>
-</head><body>
+</head>
+<body>
 <div class="wrap">
-  <h1>⚡ Intraday Scanner <span class="kite-badge">KITE LIVE</span></h1>
-  <p class="sub">Generated: 20 Jul 2026 09:40 | Above 200 EMA | 28 setup(s) | 14 crossover(s) | 32 excluded (open/closed today)</p>
+  <h1>⚡ Intraday Momentum Scanner</h1>
+  <p class="sub">Generated: 11 Jun 2026 15:47 &nbsp;|&nbsp; 18 setup(s) &nbsp;|&nbsp; Max hold: 2 days</p>
+
   <div class="nav">
+    <a href="index_nifty.html">📊 Nifty Dashboard</a>
+    <a href="scanner.html">📈 Swing Scanner</a>
     <a href="index.html">🏠 Home</a>
-    <a href="options_chain.html">📊 Nifty Options</a>
-    <a href="banknifty_chain.html">🏦 BankNifty</a>
-    <a href="scanner.html">📋 Swing</a>
-    <a href="short_scanner.html">🔻 Short</a>
+    <a href="/">🏠 Home</a>
   </div>
 
-  <div class="metrics">
-    <div class="mcard"><div class="lbl">Setups</div><div class="val" style="color:#378ADD">28</div></div>
-    <div class="mcard"><div class="lbl">🔥 Double</div><div class="val" style="color:#e65100">3</div></div>
-    <div class="mcard"><div class="lbl">🌟 200 EMA</div><div class="val" style="color:#b45309">6</div></div>
-    <div class="mcard"><div class="lbl">⚡ 20 EMA</div><div class="val" style="color:#0369a1">5</div></div>
-    <div class="mcard"><div class="lbl">🚀 2d Break</div><div class="val" style="color:#166534">10</div></div>
-    <div class="mcard"><div class="lbl">📂 Open Pos</div><div class="val" style="color:#1d4ed8">15</div></div>
+  <div class="pills">
+    <div class="pill">Total setups: <b>18</b></div>
+    <div class="pill">Score ≥ 5: <b>8</b></div>
+    <div class="pill">52W breakouts: <b>13</b></div>
+    <div class="pill">Gap ups: <b>0</b></div>
   </div>
 
-  
-  <div class="open-pos-card">
-    <h3>📂 OPEN POSITIONS (15) — Live P&L &nbsp;|&nbsp; <span style="color:#2d7a2d">Overall Open: +6.09%</span> &nbsp;|&nbsp; 🟢13 🔴0</h3>
-    <table>
-      <thead><tr>
-        <th>Symbol</th><th>Entry</th><th>LTP</th><th>P&amp;L %</th>
-        <th>Stop Loss</th><th>Target</th><th>Dist to SL</th><th>⏰ Time Exit</th><th>Entry Date</th><th>Score</th>
-      </tr></thead>
-      <tbody><tr>
-          <td><b>ANTHEM</b><br></td>
-          <td>₹780.40</td>
-          <td style="font-weight:600">₹790.20</td>
-          <td style="color:#2d7a2d;font-weight:700">+1.26%</td>
-          <td style="color:#b91c1c;font-weight:600">₹754.60 </td>
-          <td style="color:#166534;font-weight:600">₹819.10</td>
-          <td style="font-size:12px;color:#2d7a2d">4.5%</td>
-          <td style="font-size:12px;color:#166534;font-weight:600">Day 4/5</td>
-          <td style="font-size:12px">17 Jul 2026</td>
-          <td style="font-size:12px">11</td>
-        </tr><tr>
-          <td><b>EXIDEIND</b><br></td>
-          <td>₹431.70</td>
-          <td style="font-weight:600">₹441.00</td>
-          <td style="color:#2d7a2d;font-weight:700">+2.15%</td>
-          <td style="color:#b91c1c;font-weight:600">₹418.55 </td>
-          <td style="color:#166534;font-weight:600">₹451.42</td>
-          <td style="font-size:12px;color:#2d7a2d">5.1%</td>
-          <td style="font-size:12px;color:#166534;font-weight:600">Day 4/5</td>
-          <td style="font-size:12px">17 Jul 2026</td>
-          <td style="font-size:12px">5</td>
-        </tr><tr>
-          <td><b>SONACOMS</b><br></td>
-          <td>₹699.50</td>
-          <td style="font-weight:600">⚠️ No quote</td>
-          <td style="color:#888;font-weight:700">—</td>
-          <td style="color:#b91c1c;font-weight:600">₹680.35 🔺</td>
-          <td style="color:#166534;font-weight:600">₹728.22</td>
-          <td style="font-size:12px;color:#888"></td>
-          <td style="font-size:12px;color:#166534;font-weight:600">Day 4/5</td>
-          <td style="font-size:12px">17 Jul 2026</td>
-          <td style="font-size:12px">6</td>
-        </tr><tr>
-          <td><b>TECHM</b><br></td>
-          <td>₹1,540.80</td>
-          <td style="font-weight:600">⚠️ No quote</td>
-          <td style="color:#888;font-weight:700">—</td>
-          <td style="color:#b91c1c;font-weight:600">₹1,527.30 🔺</td>
-          <td style="color:#166534;font-weight:600">₹1,587.02</td>
-          <td style="font-size:12px;color:#888"></td>
-          <td style="font-size:12px;color:#166534;font-weight:600">Day 4/5</td>
-          <td style="font-size:12px">17 Jul 2026</td>
-          <td style="font-size:12px">6</td>
-        </tr><tr>
-          <td><b>HSCL</b><br></td>
-          <td>₹742.00</td>
-          <td style="font-weight:600">₹761.90</td>
-          <td style="color:#2d7a2d;font-weight:700">+2.68%</td>
-          <td style="color:#b91c1c;font-weight:600">₹706.55 </td>
-          <td style="color:#166534;font-weight:600">₹795.18</td>
-          <td style="font-size:12px;color:#2d7a2d">7.3%</td>
-          <td style="font-size:12px;color:#166534;font-weight:600">Day 4/5</td>
-          <td style="font-size:12px">17 Jul 2026</td>
-          <td style="font-size:12px">6</td>
-        </tr><tr>
-          <td><b>360ONE</b><br></td>
-          <td>₹1,107.00</td>
-          <td style="font-weight:600">₹1,107.00</td>
-          <td style="color:#2d7a2d;font-weight:700">+0.0%</td>
-          <td style="color:#b91c1c;font-weight:600">₹1,102.20 🔺</td>
-          <td style="color:#166534;font-weight:600">₹1,140.21</td>
-          <td style="font-size:12px;color:#b91c1c">0.4%</td>
-          <td style="font-size:12px;color:#166534;font-weight:600">Day 1/5</td>
-          <td style="font-size:12px">20 Jul 2026</td>
-          <td style="font-size:12px">5</td>
-        </tr><tr>
-          <td><b>AIIL</b><br></td>
-          <td>₹557.65</td>
-          <td style="font-weight:600">₹557.65</td>
-          <td style="color:#2d7a2d;font-weight:700">+0.0%</td>
-          <td style="color:#b91c1c;font-weight:600">₹549.00 🔺</td>
-          <td style="color:#166534;font-weight:600">₹574.38</td>
-          <td style="font-size:12px;color:#b91c1c">1.6%</td>
-          <td style="font-size:12px;color:#166534;font-weight:600">Day 1/5</td>
-          <td style="font-size:12px">20 Jul 2026</td>
-          <td style="font-size:12px">5</td>
-        </tr><tr>
-          <td><b>ONESOURCE</b><br></td>
-          <td>₹1,656.00</td>
-          <td style="font-weight:600">₹1,656.00</td>
-          <td style="color:#2d7a2d;font-weight:700">+0.0%</td>
-          <td style="color:#b91c1c;font-weight:600">₹1,638.20 🔺</td>
-          <td style="color:#166534;font-weight:600">₹1,705.68</td>
-          <td style="font-size:12px;color:#b91c1c">1.1%</td>
-          <td style="font-size:12px;color:#166534;font-weight:600">Day 1/5</td>
-          <td style="font-size:12px">20 Jul 2026</td>
-          <td style="font-size:12px">5</td>
-        </tr><tr>
-          <td><b>OIL</b><br></td>
-          <td>₹446.50</td>
-          <td style="font-weight:600">₹446.50</td>
-          <td style="color:#2d7a2d;font-weight:700">+0.0%</td>
-          <td style="color:#b91c1c;font-weight:600">₹437.15 🔺</td>
-          <td style="color:#166534;font-weight:600">₹460.53</td>
-          <td style="font-size:12px;color:#2d7a2d">2.1%</td>
-          <td style="font-size:12px;color:#166534;font-weight:600">Day 1/5</td>
-          <td style="font-size:12px">20 Jul 2026</td>
-          <td style="font-size:12px">9</td>
-        </tr><tr>
-          <td><b>TRENT</b><br></td>
-          <td>₹2,904.90</td>
-          <td style="font-weight:600">₹2,904.90</td>
-          <td style="color:#2d7a2d;font-weight:700">+0.0%</td>
-          <td style="color:#b91c1c;font-weight:600">₹2,837.00 🔺</td>
-          <td style="color:#166534;font-weight:600">₹3,006.75</td>
-          <td style="font-size:12px;color:#2d7a2d">2.3%</td>
-          <td style="font-size:12px;color:#166534;font-weight:600">Day 1/5</td>
-          <td style="font-size:12px">20 Jul 2026</td>
-          <td style="font-size:12px">8</td>
-        </tr><tr>
-          <td><b>NHPC</b><br></td>
-          <td>₹79.62</td>
-          <td style="font-weight:600">₹79.62</td>
-          <td style="color:#2d7a2d;font-weight:700">+0.0%</td>
-          <td style="color:#b91c1c;font-weight:600">₹78.63 🔺</td>
-          <td style="color:#166534;font-weight:600">₹82.01</td>
-          <td style="font-size:12px;color:#b91c1c">1.2%</td>
-          <td style="font-size:12px;color:#166534;font-weight:600">Day 1/5</td>
-          <td style="font-size:12px">20 Jul 2026</td>
-          <td style="font-size:12px">4</td>
-        </tr><tr>
-          <td><b>SRF</b><br></td>
-          <td>₹2,865.00</td>
-          <td style="font-weight:600">₹2,865.00</td>
-          <td style="color:#2d7a2d;font-weight:700">+0.0%</td>
-          <td style="color:#b91c1c;font-weight:600">₹2,845.90 🔺</td>
-          <td style="color:#166534;font-weight:600">₹2,950.95</td>
-          <td style="font-size:12px;color:#b91c1c">0.7%</td>
-          <td style="font-size:12px;color:#166534;font-weight:600">Day 1/5</td>
-          <td style="font-size:12px">20 Jul 2026</td>
-          <td style="font-size:12px">4</td>
-        </tr><tr>
-          <td><b>PPLPHARMA</b><br></td>
-          <td>₹176.66</td>
-          <td style="font-weight:600">₹176.66</td>
-          <td style="color:#2d7a2d;font-weight:700">+0.0%</td>
-          <td style="color:#b91c1c;font-weight:600">₹175.10 🔺</td>
-          <td style="color:#166534;font-weight:600">₹181.96</td>
-          <td style="font-size:12px;color:#b91c1c">0.9%</td>
-          <td style="font-size:12px;color:#166534;font-weight:600">Day 1/5</td>
-          <td style="font-size:12px">20 Jul 2026</td>
-          <td style="font-size:12px">3</td>
-        </tr><tr>
-          <td><b>MRPL</b><br></td>
-          <td>₹172.99</td>
-          <td style="font-weight:600">₹172.99</td>
-          <td style="color:#2d7a2d;font-weight:700">+0.0%</td>
-          <td style="color:#b91c1c;font-weight:600">₹171.14 🔺</td>
-          <td style="color:#166534;font-weight:600">₹178.18</td>
-          <td style="font-size:12px;color:#b91c1c">1.1%</td>
-          <td style="font-size:12px;color:#166534;font-weight:600">Day 1/5</td>
-          <td style="font-size:12px">20 Jul 2026</td>
-          <td style="font-size:12px">3</td>
-        </tr><tr>
-          <td><b>JSWSTEEL</b><br></td>
-          <td>₹1,256.60</td>
-          <td style="font-weight:600">₹1,256.60</td>
-          <td style="color:#2d7a2d;font-weight:700">+0.0%</td>
-          <td style="color:#b91c1c;font-weight:600">₹1,247.20 🔺</td>
-          <td style="color:#166534;font-weight:600">₹1,294.30</td>
-          <td style="font-size:12px;color:#b91c1c">0.7%</td>
-          <td style="font-size:12px;color:#166534;font-weight:600">Day 1/5</td>
-          <td style="font-size:12px">20 Jul 2026</td>
-          <td style="font-size:12px">6</td>
+  <table>
+    <thead>
+      <tr>
+        <th>Symbol</th><th>LTP</th><th>Chg %</th><th>Open</th><th>High</th><th>Low</th>
+        <th>SL (Day Low)</th><th>Target</th><th>Value</th><th>52W H%</th><th>Score</th><th>Signals</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><b>AEGISLOG</b><br><span style="font-size:11px;color:#888">Nifty Smallcap</span></td>
+          <td>₹942.00</td>
+          <td style="color:#2d7a2d"><b>▲17.6%</b></td>
+          <td>₹805.00</td>
+          <td>₹960.00</td>
+          <td>₹800.15</td>
+          <td style="color:#b91c1c">₹800.15</td>
+          <td style="color:#2d7a2d">₹1,154.78</td>
+          <td>₹3643Cr</td>
+          <td style="font-size:11px;color:#888">98.1%</td>
+          <td><span style="background:#1F4E7920;color:#1F4E79;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600">11</span></td>
+          <td style="font-size:11px;color:#555">Strong surge +17.6% 🚀  |  Near day high 💪  |  At 52W high! (98.1%) 🏆</td>
+        </tr>
+        <tr>
+          <td><b>WOCKPHARMA</b><br><span style="font-size:11px;color:#888">Nifty Smallcap</span></td>
+          <td>₹1,940.40</td>
+          <td style="color:#2d7a2d"><b>▲5.86%</b></td>
+          <td>₹1,840.00</td>
+          <td>₹1,959.00</td>
+          <td>₹1,835.10</td>
+          <td style="color:#b91c1c">₹1,835.10</td>
+          <td style="color:#2d7a2d">₹2,098.35</td>
+          <td>₹635Cr</td>
+          <td style="font-size:11px;color:#888">80.1%</td>
+          <td><span style="background:#1F4E7920;color:#1F4E79;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600">7</span></td>
+          <td style="font-size:11px;color:#555">Strong surge +5.86% 🚀  |  Upper half of range  |  30D trend +19.37% 📈</td>
+        </tr>
+        <tr>
+          <td><b>M&M</b><br><span style="font-size:11px;color:#888">Nifty 50</span></td>
+          <td>₹3,006.70</td>
+          <td style="color:#2d7a2d"><b>▲1.84%</b></td>
+          <td>₹2,930.00</td>
+          <td>₹3,012.20</td>
+          <td>₹2,900.40</td>
+          <td style="color:#b91c1c">₹2,900.40</td>
+          <td style="color:#2d7a2d">₹3,166.15</td>
+          <td>₹945Cr</td>
+          <td style="font-size:11px;color:#888">78.3%</td>
+          <td><span style="background:#1F4E7920;color:#1F4E79;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600">5</span></td>
+          <td style="font-size:11px;color:#555">Positive +1.84%  |  Near day high 💪  |  High activity ₹945Cr 📶</td>
+        </tr>
+        <tr>
+          <td><b>APOLLOHOSP</b><br><span style="font-size:11px;color:#888">Nifty 50</span></td>
+          <td>₹8,521.00</td>
+          <td style="color:#2d7a2d"><b>▲0.38%</b></td>
+          <td>₹8,478.00</td>
+          <td>₹8,531.00</td>
+          <td>₹8,425.00</td>
+          <td style="color:#b91c1c">₹8,425.00</td>
+          <td style="color:#2d7a2d">₹8,665.00</td>
+          <td>₹267Cr</td>
+          <td style="font-size:11px;color:#888">98.8%</td>
+          <td><span style="background:#1F4E7920;color:#1F4E79;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600">5</span></td>
+          <td style="font-size:11px;color:#555">Near day high 💪  |  At 52W high! (98.8%) 🏆  |  ₹267Cr traded</td>
+        </tr>
+        <tr>
+          <td><b>MCX</b><br><span style="font-size:11px;color:#888">Nifty Midcap 100</span></td>
+          <td>₹2,794.00</td>
+          <td style="color:#2d7a2d"><b>▲1.83%</b></td>
+          <td>₹2,715.00</td>
+          <td>₹2,795.00</td>
+          <td>₹2,709.90</td>
+          <td style="color:#b91c1c">₹2,709.90</td>
+          <td style="color:#2d7a2d">₹2,920.15</td>
+          <td>₹507Cr</td>
+          <td style="font-size:11px;color:#888">80.3%</td>
+          <td><span style="background:#1F4E7920;color:#1F4E79;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600">5</span></td>
+          <td style="font-size:11px;color:#555">Positive +1.83%  |  Near day high 💪  |  High activity ₹507Cr 📶</td>
+        </tr>
+        <tr>
+          <td><b>GLAND</b><br><span style="font-size:11px;color:#888">Nifty Smallcap</span></td>
+          <td>₹2,306.20</td>
+          <td style="color:#2d7a2d"><b>▲1.69%</b></td>
+          <td>₹2,243.00</td>
+          <td>₹2,395.00</td>
+          <td>₹2,215.40</td>
+          <td style="color:#b91c1c">₹2,215.40</td>
+          <td style="color:#2d7a2d">₹2,442.40</td>
+          <td>₹566Cr</td>
+          <td style="font-size:11px;color:#888">96.3%</td>
+          <td><span style="background:#1F4E7920;color:#1F4E79;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600">5</span></td>
+          <td style="font-size:11px;color:#555">Positive +1.69%  |  Near 52W high (96.3%) 🔥  |  30D trend +20.17% 📈</td>
+        </tr>
+        <tr>
+          <td><b>NAVINFLUOR</b><br><span style="font-size:11px;color:#888">Nifty Smallcap</span></td>
+          <td>₹7,184.00</td>
+          <td style="color:#2d7a2d"><b>▲1.95%</b></td>
+          <td>₹7,020.00</td>
+          <td>₹7,224.00</td>
+          <td>₹6,987.50</td>
+          <td style="color:#b91c1c">₹6,987.50</td>
+          <td style="color:#2d7a2d">₹7,478.75</td>
+          <td>₹106Cr</td>
+          <td style="font-size:11px;color:#888">95.5%</td>
+          <td><span style="background:#1F4E7920;color:#1F4E79;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600">5</span></td>
+          <td style="font-size:11px;color:#555">Positive +1.95%  |  Upper half of range  |  Near 52W high (95.5%) 🔥</td>
+        </tr>
+        <tr>
+          <td><b>APTUS</b><br><span style="font-size:11px;color:#888">Nifty Smallcap</span></td>
+          <td>₹259.30</td>
+          <td style="color:#2d7a2d"><b>▲2.67%</b></td>
+          <td>₹252.55</td>
+          <td>₹260.10</td>
+          <td>₹249.15</td>
+          <td style="color:#b91c1c">₹249.15</td>
+          <td style="color:#2d7a2d">₹274.53</td>
+          <td>₹32Cr</td>
+          <td style="font-size:11px;color:#888">71.2%</td>
+          <td><span style="background:#1F4E7920;color:#1F4E79;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600">5</span></td>
+          <td style="font-size:11px;color:#555">Good move +2.67% ✅  |  Near day high 💪  |  Bullish candle 🕯️</td>
+        </tr>
+        <tr>
+          <td><b>FEDERALBNK</b><br><span style="font-size:11px;color:#888">Nifty Midcap 100</span></td>
+          <td>₹310.80</td>
+          <td style="color:#b91c1c"><b>▼0.1%</b></td>
+          <td>₹309.00</td>
+          <td>₹311.70</td>
+          <td>₹307.05</td>
+          <td style="color:#b91c1c">₹307.05</td>
+          <td style="color:#2d7a2d">₹316.43</td>
+          <td>₹236Cr</td>
+          <td style="font-size:11px;color:#888">98.1%</td>
+          <td><span style="background:#1F4E7920;color:#1F4E79;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600">4</span></td>
+          <td style="font-size:11px;color:#555">Upper half of range  |  At 52W high! (98.1%) 🏆  |  ₹236Cr traded</td>
+        </tr>
+        <tr>
+          <td><b>ASTERDM</b><br><span style="font-size:11px;color:#888">Nifty Smallcap</span></td>
+          <td>₹814.75</td>
+          <td style="color:#2d7a2d"><b>▲0.23%</b></td>
+          <td>₹814.00</td>
+          <td>₹825.00</td>
+          <td>₹806.45</td>
+          <td style="color:#b91c1c">₹806.45</td>
+          <td style="color:#2d7a2d">₹827.20</td>
+          <td>₹79Cr</td>
+          <td style="font-size:11px;color:#888">98.8%</td>
+          <td><span style="background:#1F4E7920;color:#1F4E79;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600">4</span></td>
+          <td style="font-size:11px;color:#555">At 52W high! (98.8%) 🏆  |  30D trend +10.12% 📈</td>
+        </tr>
+        <tr>
+          <td><b>ADANIENT</b><br><span style="font-size:11px;color:#888">Nifty 50</span></td>
+          <td>₹2,913.40</td>
+          <td style="color:#b91c1c"><b>▼0.6%</b></td>
+          <td>₹2,895.10</td>
+          <td>₹2,966.80</td>
+          <td>₹2,895.10</td>
+          <td style="color:#b91c1c">₹2,895.10</td>
+          <td style="color:#2d7a2d">₹2,940.85</td>
+          <td>₹353Cr</td>
+          <td style="font-size:11px;color:#888">95.2%</td>
+          <td><span style="background:#1F4E7920;color:#1F4E79;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600">3</span></td>
+          <td style="font-size:11px;color:#555">Near 52W high (95.2%) 🔥  |  30D trend +16.53% 📈  |  ₹353Cr traded</td>
+        </tr>
+        <tr>
+          <td><b>SUNPHARMA</b><br><span style="font-size:11px;color:#888">Nifty 50</span></td>
+          <td>₹1,799.00</td>
+          <td style="color:#2d7a2d"><b>▲0.71%</b></td>
+          <td>₹1,780.00</td>
+          <td>₹1,805.00</td>
+          <td>₹1,778.70</td>
+          <td style="color:#b91c1c">₹1,778.70</td>
+          <td style="color:#2d7a2d">₹1,829.45</td>
+          <td>₹333Cr</td>
+          <td style="font-size:11px;color:#888">93.9%</td>
+          <td><span style="background:#1F4E7920;color:#1F4E79;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600">3</span></td>
+          <td style="font-size:11px;color:#555">Upper half of range  |  Approaching 52W high (93.9%)  |  ₹333Cr traded</td>
+        </tr>
+        <tr>
+          <td><b>TATACOMM</b><br><span style="font-size:11px;color:#888">Nifty Midcap 100</span></td>
+          <td>₹1,950.30</td>
+          <td style="color:#b91c1c"><b>▼1.43%</b></td>
+          <td>₹1,966.00</td>
+          <td>₹1,985.60</td>
+          <td>₹1,915.00</td>
+          <td style="color:#b91c1c">₹1,915.00</td>
+          <td style="color:#2d7a2d">₹2,003.25</td>
+          <td>₹87Cr</td>
+          <td style="font-size:11px;color:#888">95.1%</td>
+          <td><span style="background:#1F4E7920;color:#1F4E79;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600">3</span></td>
+          <td style="font-size:11px;color:#555">Near 52W high (95.1%) 🔥  |  30D trend +24.1% 📈</td>
+        </tr>
+        <tr>
+          <td><b>HSCL</b><br><span style="font-size:11px;color:#888">Nifty Smallcap</span></td>
+          <td>₹677.00</td>
+          <td style="color:#b91c1c"><b>▼2.31%</b></td>
+          <td>₹687.50</td>
+          <td>₹704.50</td>
+          <td>₹673.15</td>
+          <td style="color:#b91c1c">₹673.15</td>
+          <td style="color:#2d7a2d">₹682.78</td>
+          <td>₹888Cr</td>
+          <td style="font-size:11px;color:#888">95.7%</td>
+          <td><span style="background:#1F4E7920;color:#1F4E79;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600">3</span></td>
+          <td style="font-size:11px;color:#555">Near 52W high (95.7%) 🔥  |  High activity ₹888Cr 📶</td>
+        </tr>
+        <tr>
+          <td><b>RBLBANK</b><br><span style="font-size:11px;color:#888">Nifty Smallcap</span></td>
+          <td>₹359.40</td>
+          <td style="color:#2d7a2d"><b>▲0.69%</b></td>
+          <td>₹355.00</td>
+          <td>₹366.40</td>
+          <td>₹352.80</td>
+          <td style="color:#b91c1c">₹352.80</td>
+          <td style="color:#2d7a2d">₹369.30</td>
+          <td>₹233Cr</td>
+          <td style="font-size:11px;color:#888">98.1%</td>
+          <td><span style="background:#1F4E7920;color:#1F4E79;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600">3</span></td>
+          <td style="font-size:11px;color:#555">At 52W high! (98.1%) 🏆  |  ₹233Cr traded</td>
+        </tr>
+        <tr>
+          <td><b>CUB</b><br><span style="font-size:11px;color:#888">Nifty Smallcap</span></td>
+          <td>₹259.00</td>
+          <td style="color:#2d7a2d"><b>▲2.31%</b></td>
+          <td>₹254.00</td>
+          <td>₹260.95</td>
+          <td>₹253.75</td>
+          <td style="color:#b91c1c">₹253.75</td>
+          <td style="color:#2d7a2d">₹266.88</td>
+          <td>₹81Cr</td>
+          <td style="font-size:11px;color:#888">79.9%</td>
+          <td><span style="background:#1F4E7920;color:#1F4E79;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600">3</span></td>
+          <td style="font-size:11px;color:#555">Positive +2.31%  |  Upper half of range  |  Bullish candle 🕯️</td>
+        </tr>
+        <tr>
+          <td><b>LALPATHLAB</b><br><span style="font-size:11px;color:#888">Nifty Smallcap</span></td>
+          <td>₹1,599.90</td>
+          <td style="color:#2d7a2d"><b>▲1.99%</b></td>
+          <td>₹1,555.00</td>
+          <td>₹1,624.80</td>
+          <td>₹1,555.00</td>
+          <td style="color:#b91c1c">₹1,555.00</td>
+          <td style="color:#2d7a2d">₹1,667.25</td>
+          <td>₹59Cr</td>
+          <td style="font-size:11px;color:#888">90.4%</td>
+          <td><span style="background:#1F4E7920;color:#1F4E79;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600">3</span></td>
+          <td style="font-size:11px;color:#555">Positive +1.99%  |  Approaching 52W high (90.4%)  |  Bullish candle 🕯️</td>
+        </tr>
+        <tr>
+          <td><b>ANANDRATHI</b><br><span style="font-size:11px;color:#888">Nifty Smallcap</span></td>
+          <td>₹1,750.00</td>
+          <td style="color:#2d7a2d"><b>▲0.72%</b></td>
+          <td>₹1,731.00</td>
+          <td>₹1,754.00</td>
+          <td>₹1,729.20</td>
+          <td style="color:#b91c1c">₹1,729.20</td>
+          <td style="color:#2d7a2d">₹1,781.20</td>
+          <td>₹44Cr</td>
+          <td style="font-size:11px;color:#888">93.7%</td>
+          <td><span style="background:#1F4E7920;color:#1F4E79;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600">3</span></td>
+          <td style="font-size:11px;color:#555">Upper half of range  |  Approaching 52W high (93.7%)  |  Bullish candle 🕯️</td>
         </tr></tbody>
-    </table>
+  </table>
+
+  <div class="perf-card">
+    <div class="section-title">⏱ Position Tracker (max 2 days)</div>
+    <table style="width:100%;border-collapse:collapse;margin-bottom:12px"><thead><tr style="background:#1F4E79;color:#fff"><th style="padding:7px 9px;font-size:11px">Symbol</th><th style="padding:7px 9px;font-size:11px">Index</th><th style="padding:7px 9px;font-size:11px">Entry</th><th style="padding:7px 9px;font-size:11px">SL</th><th style="padding:7px 9px;font-size:11px">Target</th><th style="padding:7px 9px;font-size:11px">Current</th><th style="padding:7px 9px;font-size:11px">P&L %</th><th style="padding:7px 9px;font-size:11px">Days</th><th style="padding:7px 9px;font-size:11px">Status</th></tr></thead><tbody><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">AEGISLOG</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Smallcap</td><td style="padding:8px 10px">₹903.3 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹800.15 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹1058.02</td><td style="padding:8px 10px">₹942.0</td><td style="padding:8px 10px;color:#2d7a2d"><b>+4.28%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">NAVINFLUOR</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Smallcap</td><td style="padding:8px 10px">₹7103.5 (10 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹6895.0 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹7573.75</td><td style="padding:8px 10px">₹7184.0</td><td style="padding:8px 10px;color:#2d7a2d"><b>+1.13%</b></td><td style="padding:8px 10px;color:#888">1d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">ICICIBANK</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty 50</td><td style="padding:8px 10px">₹1301.0 (10 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹1271.3 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹1345.55</td><td style="padding:8px 10px">₹1313.9</td><td style="padding:8px 10px;color:#2d7a2d"><b>+0.99%</b></td><td style="padding:8px 10px;color:#888">1d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">KOTAKBANK</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty 50</td><td style="padding:8px 10px">₹389.55 (10 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹380.5 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹403.12</td><td style="padding:8px 10px">₹392.6</td><td style="padding:8px 10px;color:#2d7a2d"><b>+0.78%</b></td><td style="padding:8px 10px;color:#888">1d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">MCX</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Midcap 100</td><td style="padding:8px 10px">₹2779.6 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹2709.9 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹2884.15</td><td style="padding:8px 10px">₹2794.0</td><td style="padding:8px 10px;color:#2d7a2d"><b>+0.52%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">WOCKPHARMA</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Smallcap</td><td style="padding:8px 10px">₹1932.0 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹1835.1 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹2077.35</td><td style="padding:8px 10px">₹1940.4</td><td style="padding:8px 10px;color:#2d7a2d"><b>+0.43%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">ANANDRATHI</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Smallcap</td><td style="padding:8px 10px">₹1744.0 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹1729.2 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹1766.2</td><td style="padding:8px 10px">₹1750.0</td><td style="padding:8px 10px;color:#2d7a2d"><b>+0.34%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">RBLBANK</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Smallcap</td><td style="padding:8px 10px">₹358.25 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹354.8 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹363.42</td><td style="padding:8px 10px">₹359.4</td><td style="padding:8px 10px;color:#2d7a2d"><b>+0.32%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">APOLLOHOSP</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty 50</td><td style="padding:8px 10px">₹8499.0 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹8425.0 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹8610.0</td><td style="padding:8px 10px">₹8521.0</td><td style="padding:8px 10px;color:#2d7a2d"><b>+0.26%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">APTUS</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Smallcap</td><td style="padding:8px 10px">₹258.65 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹249.15 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹272.9</td><td style="padding:8px 10px">₹259.3</td><td style="padding:8px 10px;color:#2d7a2d"><b>+0.25%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">M&M</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty 50</td><td style="padding:8px 10px">₹3000.1 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹2900.4 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹3149.65</td><td style="padding:8px 10px">₹3006.7</td><td style="padding:8px 10px;color:#2d7a2d"><b>+0.22%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">LALPATHLAB</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Smallcap</td><td style="padding:8px 10px">₹1597.7 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹1555.0 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹1661.75</td><td style="padding:8px 10px">₹1599.9</td><td style="padding:8px 10px;color:#2d7a2d"><b>+0.14%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">MANAPPURAM</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Smallcap</td><td style="padding:8px 10px">₹291.45 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹282.55 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹304.8</td><td style="padding:8px 10px">₹291.8</td><td style="padding:8px 10px;color:#2d7a2d"><b>+0.12%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">ASTERDM</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Smallcap</td><td style="padding:8px 10px">₹814.05 (10 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹797.4 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹846.37</td><td style="padding:8px 10px">₹814.75</td><td style="padding:8px 10px;color:#2d7a2d"><b>+0.09%</b></td><td style="padding:8px 10px;color:#888">1d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">360ONE</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Midcap 100</td><td style="padding:8px 10px">₹1062.1 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹1031.3 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹1108.3</td><td style="padding:8px 10px">₹1063.0</td><td style="padding:8px 10px;color:#2d7a2d"><b>+0.08%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">AXISBANK</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty 50</td><td style="padding:8px 10px">₹1316.3 (10 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹1292.7 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹1365.5</td><td style="padding:8px 10px">₹1317.0</td><td style="padding:8px 10px;color:#2d7a2d"><b>+0.05%</b></td><td style="padding:8px 10px;color:#888">1d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">LUPIN</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Midcap 100</td><td style="padding:8px 10px">₹2273.3 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹2246.2 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹2313.95</td><td style="padding:8px 10px">₹2274.0</td><td style="padding:8px 10px;color:#2d7a2d"><b>+0.03%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">FEDERALBNK</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Midcap 100</td><td style="padding:8px 10px">₹310.8 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹307.05</td><td style="padding:8px 10px;color:#2d7a2d">₹316.43</td><td style="padding:8px 10px">₹310.8</td><td style="padding:8px 10px;color:#2d7a2d"><b>+0.0%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">SUNPHARMA</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty 50</td><td style="padding:8px 10px">₹1800.0 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹1778.7 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹1831.95</td><td style="padding:8px 10px">₹1799.0</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.06%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">CUB</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Smallcap</td><td style="padding:8px 10px">₹259.5 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹253.75 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹268.12</td><td style="padding:8px 10px">₹259.0</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.19%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">BHARATFORG</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Midcap 100</td><td style="padding:8px 10px">₹1952.6 (10 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹1877.0 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹2066.0</td><td style="padding:8px 10px">₹1948.0</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.24%</b></td><td style="padding:8px 10px;color:#888">1d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">AUROPHARMA</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Midcap 100</td><td style="padding:8px 10px">₹1469.9 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹1457.1 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹1489.1</td><td style="padding:8px 10px">₹1466.0</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.27%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">INDUSINDBK</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Midcap 100</td><td style="padding:8px 10px">₹894.2 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹881.75 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹912.88</td><td style="padding:8px 10px">₹891.6</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.29%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">GRASIM</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty 50</td><td style="padding:8px 10px">₹3099.6 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹3045.8 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹3180.3</td><td style="padding:8px 10px">₹3090.0</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.31%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">SBIN</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty 50</td><td style="padding:8px 10px">₹1004.2 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹993.0 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹1021.0</td><td style="padding:8px 10px">₹1001.1</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.31%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">CIPLA</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty 50</td><td style="padding:8px 10px">₹1390.3 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹1373.9 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹1414.9</td><td style="padding:8px 10px">₹1385.8</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.32%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">JSWSTEEL</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty 50</td><td style="padding:8px 10px">₹1284.5 (10 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹1252.5 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹1332.5</td><td style="padding:8px 10px">₹1280.0</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.35%</b></td><td style="padding:8px 10px;color:#888">1d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">MEESHO</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Smallcap</td><td style="padding:8px 10px">₹169.16 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹164.38 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹176.33</td><td style="padding:8px 10px">₹168.5</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.39%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">COROMANDEL</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Midcap 100</td><td style="padding:8px 10px">₹1883.0 (10 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹1809.8 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹1992.8</td><td style="padding:8px 10px">₹1875.0</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.42%</b></td><td style="padding:8px 10px;color:#888">1d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">APLAPOLLO</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Midcap 100</td><td style="padding:8px 10px">₹1774.4 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹1743.7 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹1820.45</td><td style="padding:8px 10px">₹1767.0</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.42%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">LAURUSLABS</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Midcap 100</td><td style="padding:8px 10px">₹1399.0 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹1376.6 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹1432.6</td><td style="padding:8px 10px">₹1393.0</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.43%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">DRREDDY</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty 50</td><td style="padding:8px 10px">₹1283.9 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹1266.4 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹1310.15</td><td style="padding:8px 10px">₹1277.7</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.48%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">TATACOMM</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Midcap 100</td><td style="padding:8px 10px">₹1960.1 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹1915.0 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹2027.75</td><td style="padding:8px 10px">₹1950.3</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.5%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">ADANIENT</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty 50</td><td style="padding:8px 10px">₹2927.9 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹2895.1 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹2977.1</td><td style="padding:8px 10px">₹2913.4</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.5%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">RELIANCE</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty 50</td><td style="padding:8px 10px">₹1272.5 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹1253.2 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹1301.45</td><td style="padding:8px 10px">₹1264.5</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.63%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">GLENMARK</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Midcap 100</td><td style="padding:8px 10px">₹2164.2 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹2140.4 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹2199.9</td><td style="padding:8px 10px">₹2149.0</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.7%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">KEI</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Midcap 100</td><td style="padding:8px 10px">₹5210.0 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹5118.0 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹5348.0</td><td style="padding:8px 10px">₹5173.0</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.71%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">ITC</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty 50</td><td style="padding:8px 10px">₹284.7 (10 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹278.65 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹293.77</td><td style="padding:8px 10px">₹282.65</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.72%</b></td><td style="padding:8px 10px;color:#888">1d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">BAJAJ-AUTO</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty 50</td><td style="padding:8px 10px">₹10200.0 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹10086.0 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹10371.0</td><td style="padding:8px 10px">₹10125.0</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.74%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">ETERNAL</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty 50</td><td style="padding:8px 10px">₹237.75 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹234.25 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹243.0</td><td style="padding:8px 10px">₹236.0</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.74%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">BIOCON</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Midcap 100</td><td style="padding:8px 10px">₹419.85 (10 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹412.9 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹430.28</td><td style="padding:8px 10px">₹416.5</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.8%</b></td><td style="padding:8px 10px;color:#888">1d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">SONACOMS</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Smallcap</td><td style="padding:8px 10px">₹591.75 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹582.1 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹606.22</td><td style="padding:8px 10px">₹586.7</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.85%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">INDUSTOWER</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Midcap 100</td><td style="padding:8px 10px">₹417.85 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹409.9 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹429.78</td><td style="padding:8px 10px">₹413.95</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.93%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">MAXHEALTH</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty 50</td><td style="padding:8px 10px">₹1020.5 (10 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹1000.15 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹1051.03</td><td style="padding:8px 10px">₹1010.8</td><td style="padding:8px 10px;color:#b91c1c"><b>-0.95%</b></td><td style="padding:8px 10px;color:#888">1d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">DELHIVERY</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Smallcap</td><td style="padding:8px 10px">₹436.0 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹428.1 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹447.85</td><td style="padding:8px 10px">₹431.65</td><td style="padding:8px 10px;color:#b91c1c"><b>-1.0%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">EICHERMOT</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty 50</td><td style="padding:8px 10px">₹7265.5 (10 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹7155.5 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹7430.5</td><td style="padding:8px 10px">₹7182.0</td><td style="padding:8px 10px;color:#b91c1c"><b>-1.15%</b></td><td style="padding:8px 10px;color:#888">1d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">NESTLEIND</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty 50</td><td style="padding:8px 10px">₹1437.1 (10 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹1409.3 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹1478.8</td><td style="padding:8px 10px">₹1420.0</td><td style="padding:8px 10px;color:#b91c1c"><b>-1.19%</b></td><td style="padding:8px 10px;color:#888">1d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">MANKIND</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Midcap 100</td><td style="padding:8px 10px">₹2404.0 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹2350.5 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹2484.25</td><td style="padding:8px 10px">₹2375.1</td><td style="padding:8px 10px;color:#b91c1c"><b>-1.2%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">HDFCBANK</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty 50</td><td style="padding:8px 10px">₹754.75 (10 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹736.4 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹782.28</td><td style="padding:8px 10px">₹745.3</td><td style="padding:8px 10px;color:#b91c1c"><b>-1.25%</b></td><td style="padding:8px 10px;color:#888">1d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">IIFL</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Smallcap</td><td style="padding:8px 10px">₹497.95 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹485.2 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹517.08</td><td style="padding:8px 10px">₹491.5</td><td style="padding:8px 10px;color:#b91c1c"><b>-1.3%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">WELCORP</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Smallcap</td><td style="padding:8px 10px">₹1396.0 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹1362.2 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹1446.7</td><td style="padding:8px 10px">₹1377.1</td><td style="padding:8px 10px;color:#b91c1c"><b>-1.35%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">NEULANDLAB</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Smallcap</td><td style="padding:8px 10px">₹17170.0 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹16711.0 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹17858.5</td><td style="padding:8px 10px">₹16911.0</td><td style="padding:8px 10px;color:#b91c1c"><b>-1.51%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">GLAND</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Smallcap</td><td style="padding:8px 10px">₹2367.0 (11 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹2215.4 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹2594.4</td><td style="padding:8px 10px">₹2306.2</td><td style="padding:8px 10px;color:#b91c1c"><b>-2.57%</b></td><td style="padding:8px 10px;color:#888">0d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">SYNGENE</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Smallcap</td><td style="padding:8px 10px">₹461.7 (10 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹446.2 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹484.95</td><td style="padding:8px 10px">₹449.3</td><td style="padding:8px 10px;color:#b91c1c"><b>-2.69%</b></td><td style="padding:8px 10px;color:#888">1d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">CHAMBLFERT</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Smallcap</td><td style="padding:8px 10px">₹477.45 (10 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹460.0 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹503.62</td><td style="padding:8px 10px">₹464.0</td><td style="padding:8px 10px;color:#b91c1c"><b>-2.82%</b></td><td style="padding:8px 10px;color:#888">1d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr><tr style="border-bottom:1px solid #f0f0f0"><td style="padding:8px 10px;font-weight:600">HSCL</td><td style="padding:8px 10px;font-size:11px;color:#888">Nifty Smallcap</td><td style="padding:8px 10px">₹701.7 (10 Jun 2026)</td><td style="padding:8px 10px;color:#b91c1c">₹663.0 📈</td><td style="padding:8px 10px;color:#2d7a2d">₹759.75</td><td style="padding:8px 10px">₹677.0</td><td style="padding:8px 10px;color:#b91c1c"><b>-3.52%</b></td><td style="padding:8px 10px;color:#888">1d</td><td style="padding:8px 10px;font-size:11px">🔄 Running</td></tr></tbody></table><p style="font-size:11px;color:#888;margin-bottom:8px">Recent closed:</p><table style="width:100%;border-collapse:collapse"><thead><tr style="background:#f3f4f6"><th style="padding:6px 9px;font-size:11px;color:#666;text-align:left">Symbol</th><th style="padding:6px 9px;font-size:11px;color:#666;text-align:left">Entry</th><th style="padding:6px 9px;font-size:11px;color:#666;text-align:left">Exit</th><th style="padding:6px 9px;font-size:11px;color:#666;text-align:left">P&L %</th><th style="padding:6px 9px;font-size:11px;color:#666;text-align:left">Reason</th><th style="padding:6px 9px;font-size:11px;color:#666;text-align:left">Days</th></tr></thead><tbody><tr style="border-bottom:1px solid #f9f9f9"><td style="padding:6px 9px;font-weight:500">STARHEALTH</td><td style="padding:6px 9px;font-size:12px">₹533.5 (11 Jun 2026)</td><td style="padding:6px 9px;font-size:12px">₹519.75 (11 Jun 2026)</td><td style="padding:6px 9px;color:#b91c1c"><b>-2.62%</b></td><td style="padding:6px 9px;font-size:12px">🛑 Stopped</td><td style="padding:6px 9px;font-size:12px;color:#888">0d</td></tr><tr style="border-bottom:1px solid #f9f9f9"><td style="padding:6px 9px;font-weight:500">PHOENIXLTD</td><td style="padding:6px 9px;font-size:12px">₹1794.5 (10 Jun 2026)</td><td style="padding:6px 9px;font-size:12px">₹1748.8 (11 Jun 2026)</td><td style="padding:6px 9px;color:#b91c1c"><b>-2.86%</b></td><td style="padding:6px 9px;font-size:12px">🛑 Stopped</td><td style="padding:6px 9px;font-size:12px;color:#888">1d</td></tr><tr style="border-bottom:1px solid #f9f9f9"><td style="padding:6px 9px;font-weight:500">ADANIPORTS</td><td style="padding:6px 9px;font-size:12px">₹1836.9 (10 Jun 2026)</td><td style="padding:6px 9px;font-size:12px">₹1812.2 (11 Jun 2026)</td><td style="padding:6px 9px;color:#b91c1c"><b>-1.78%</b></td><td style="padding:6px 9px;font-size:12px">🛑 Stopped</td><td style="padding:6px 9px;font-size:12px;color:#888">1d</td></tr><tr style="border-bottom:1px solid #f9f9f9"><td style="padding:6px 9px;font-weight:500">ADANIENT</td><td style="padding:6px 9px;font-size:12px">₹2980.4 (10 Jun 2026)</td><td style="padding:6px 9px;font-size:12px">₹2936.5 (11 Jun 2026)</td><td style="padding:6px 9px;color:#b91c1c"><b>-1.76%</b></td><td style="padding:6px 9px;font-size:12px">🛑 Stopped</td><td style="padding:6px 9px;font-size:12px;color:#888">1d</td></tr><tr style="border-bottom:1px solid #f9f9f9"><td style="padding:6px 9px;font-weight:500">TATATECH</td><td style="padding:6px 9px;font-size:12px">₹758.1 (10 Jun 2026)</td><td style="padding:6px 9px;font-size:12px">₹735.7 (11 Jun 2026)</td><td style="padding:6px 9px;color:#b91c1c"><b>-3.28%</b></td><td style="padding:6px 9px;font-size:12px">🛑 Stopped</td><td style="padding:6px 9px;font-size:12px;color:#888">1d</td></tr><tr style="border-bottom:1px solid #f9f9f9"><td style="padding:6px 9px;font-weight:500">TATACOMM</td><td style="padding:6px 9px;font-size:12px">₹1958.1 (11 Jun 2026)</td><td style="padding:6px 9px;font-size:12px">₹1954.0 (11 Jun 2026)</td><td style="padding:6px 9px;color:#b91c1c"><b>-2.05%</b></td><td style="padding:6px 9px;font-size:12px">🛑 Stopped</td><td style="padding:6px 9px;font-size:12px;color:#888">0d</td></tr><tr style="border-bottom:1px solid #f9f9f9"><td style="padding:6px 9px;font-weight:500">APOLLOHOSP</td><td style="padding:6px 9px;font-size:12px">₹8480.0 (11 Jun 2026)</td><td style="padding:6px 9px;font-size:12px">₹8499.0 (11 Jun 2026)</td><td style="padding:6px 9px;color:#2d7a2d"><b>+0.22%</b></td><td style="padding:6px 9px;font-size:12px">⏱ Expired</td><td style="padding:6px 9px;font-size:12px;color:#888">0d</td></tr><tr style="border-bottom:1px solid #f9f9f9"><td style="padding:6px 9px;font-weight:500">MEESHO</td><td style="padding:6px 9px;font-size:12px">₹165.95 (10 Jun 2026)</td><td style="padding:6px 9px;font-size:12px">₹169.16 (11 Jun 2026)</td><td style="padding:6px 9px;color:#2d7a2d"><b>+1.93%</b></td><td style="padding:6px 9px;font-size:12px">⏱ Expired</td><td style="padding:6px 9px;font-size:12px;color:#888">1d</td></tr></tbody></table>
   </div>
 
-  <div style="background:#fff3e0;border:2px solid #e65100;border-radius:10px;padding:12px;margin-bottom:12px"><b style="color:#e65100">🔥 DOUBLE CROSSOVER — 200 EMA + 20 EMA</b><br><div style="padding:4px 0;font-size:13px"><b>360ONE</b> <span style="color:#888;font-size:11px">[M150]</span> ₹1,107.00 ▲0.6% | EMA200 ₹1098.76 | EMA20 ₹1104.26 | 🔥 200 EMA + 20 EMA DOUBLE CROSSOVER! | 🔇 Low volume 0.1× avg</div><div style="padding:4px 0;font-size:13px"><b>AIIL</b> <span style="color:#888;font-size:11px">[M150]</span> ₹557.65 ▲2.34% | EMA200 ₹534.91 | EMA20 ₹523.58 | 🔥 200 EMA + 20 EMA DOUBLE CROSSOVER! | 🔇 Low volume 0.4× avg</div><div style="padding:4px 0;font-size:13px"><b>ONESOURCE</b> <span style="color:#888;font-size:11px">[S250]</span> ₹1,656.00 ▲0.17% | EMA200 ₹1641.09 | EMA20 ₹1649.2 | 🔥 200 EMA + 20 EMA DOUBLE CROSSOVER! | 🔇 Low volume 0.1× avg</div></div><div style="background:#fffbe6;border:1px solid #f59e0b;border-radius:10px;padding:12px;margin-bottom:12px"><b style="color:#b45309">🌟 200 EMA CROSSOVERS</b><br><div style="padding:4px 0;font-size:13px"><b>OIL</b> <span style="color:#888;font-size:11px">[M150]</span> ₹446.50 | EMA200 ₹442.86 | 🌟 200 EMA CROSSOVER ₹442.86 | 🚀 Breaking 2-day high ₹437.65</div><div style="padding:4px 0;font-size:13px"><b>TRENT</b> <span style="color:#888;font-size:11px">[N50]</span> ₹2,904.90 | EMA200 ₹2872.07 | 🌟 200 EMA CROSSOVER ₹2872.07 | Above yesterday's high ₹2873.90</div><div style="padding:4px 0;font-size:13px"><b>NHPC</b> <span style="color:#888;font-size:11px">[M150]</span> ₹79.62 | EMA200 ₹79.51 | 🌟 200 EMA CROSSOVER ₹79.51 | Above yesterday's high ₹79.45</div><div style="padding:4px 0;font-size:13px"><b>SRF</b> <span style="color:#888;font-size:11px">[M150]</span> ₹2,865.00 | EMA200 ₹2795.34 | 🌟 200 EMA CROSSOVER ₹2795.34 | 🔇 Low volume 0.1× avg</div><div style="padding:4px 0;font-size:13px"><b>PPLPHARMA</b> <span style="color:#888;font-size:11px">[S250]</span> ₹176.66 | EMA200 ₹172.91 | 🌟 200 EMA CROSSOVER ₹172.91 | 🔇 Low volume 0.1× avg</div><div style="padding:4px 0;font-size:13px"><b>MRPL</b> <span style="color:#888;font-size:11px">[S250]</span> ₹172.99 | EMA200 ₹159.03 | 🌟 200 EMA CROSSOVER ₹159.03 | 🔇 Low volume 0.2× avg</div></div><div style="background:#f0f9ff;border:1px solid #0ea5e9;border-radius:10px;padding:12px;margin-bottom:12px"><b style="color:#0369a1">⚡ 20 EMA CROSSOVERS</b><br><div style="padding:4px 0;font-size:13px"><b>JSWSTEEL</b> <span style="color:#888;font-size:11px">[N50]</span> ₹1,256.60 | EMA20 ₹1242.84 | ⚡ 20 EMA CROSSOVER ₹1242.84 | 🚀 Breaking 2-day high ₹1243.90</div><div style="padding:4px 0;font-size:13px"><b>ANTHEM</b> <span style="color:#888;font-size:11px">[M150]</span> ₹790.20 | EMA20 ₹765.62 | ⚡ 20 EMA CROSSOVER ₹765.62 | 🚀 Breaking 2-day high ₹782.95</div><div style="padding:4px 0;font-size:13px"><b>ASIANPAINT</b> <span style="color:#888;font-size:11px">[N50]</span> ₹2,693.30 | EMA20 ₹2683.28 | ⚡ 20 EMA CROSSOVER ₹2683.28 | 🔇 Low volume 0.0× avg</div><div style="padding:4px 0;font-size:13px"><b>ZEEL</b> <span style="color:#888;font-size:11px">[S250]</span> ₹108.40 | EMA20 ₹104.63 | ⚡ 20 EMA CROSSOVER ₹104.63 | 🔇 Low volume 0.2× avg</div><div style="padding:4px 0;font-size:13px"><b>GRAPHITE</b> <span style="color:#888;font-size:11px">[S250]</span> ₹635.15 | EMA20 ₹630.57 | ⚡ 20 EMA CROSSOVER ₹630.57 | ⚠️ Below yesterday's low ₹637.40 — caution</div></div><div style="background:#f0fdf4;border:1px solid #22c55e;border-radius:10px;padding:12px;margin-bottom:12px"><b style="color:#166534">🚀 2-DAY HIGH BREAKOUTS</b><br><div style="padding:4px 0;font-size:13px"><b>SPLPETRO</b> <span style="color:#888;font-size:11px">[S250]</span> ₹729.75 > 2d high ₹720.95 | Just above 20 EMA (+1.5%) | 🚀 Breaking 2-day high ₹720.95</div><div style="padding:4px 0;font-size:13px"><b>AEGISLOG</b> <span style="color:#888;font-size:11px">[S250]</span> ₹1,412.40 > 2d high ₹1358 | 🚀 Breaking 2-day high ₹1358.00 | 🔇 Low volume 0.2× avg</div><div style="padding:4px 0;font-size:13px"><b>SAREGAMA</b> <span style="color:#888;font-size:11px">[S250]</span> ₹509.00 > 2d high ₹497.6 | 🚀 Breaking 2-day high ₹497.60 | 🔇 Low volume 0.3× avg</div><div style="padding:4px 0;font-size:13px"><b>FLUOROCHEM</b> <span style="color:#888;font-size:11px">[M150]</span> ₹4,225.00 > 2d high ₹4169.9 | 🚀 Breaking 2-day high ₹4169.90 | 🔇 Low volume 0.3× avg</div><div style="padding:4px 0;font-size:13px"><b>HSCL</b> <span style="color:#888;font-size:11px">[S250]</span> ₹761.90 > 2d high ₹744.5 | 🚀 Breaking 2-day high ₹744.50 | Good move +2.74% ✅</div><div style="padding:4px 0;font-size:13px"><b>EXIDEIND</b> <span style="color:#888;font-size:11px">[M150]</span> ₹441.00 > 2d high ₹436.55 | 🚀 Breaking 2-day high ₹436.55 | 🔇 Low volume 0.3× avg</div><div style="padding:4px 0;font-size:13px"><b>THERMAX</b> <span style="color:#888;font-size:11px">[M150]</span> ₹4,684.00 > 2d high ₹4670 | 🚀 Breaking 2-day high ₹4670.00 | 🔇 Low volume 0.0× avg</div><div style="padding:4px 0;font-size:13px"><b>LLOYDSME</b> <span style="color:#888;font-size:11px">[M150]</span> ₹1,891.00 > 2d high ₹1877.9 | 🚀 Breaking 2-day high ₹1877.90 | 🔇 Low volume 0.3× avg</div><div style="padding:4px 0;font-size:13px"><b>ARE&M</b> <span style="color:#888;font-size:11px">[S250]</span> ₹918.80 > 2d high ₹917 | 🚀 Breaking 2-day high ₹917.00 | 🔇 Low volume 0.2× avg</div><div style="padding:4px 0;font-size:13px"><b>ABSLAMC</b> <span style="color:#888;font-size:11px">[S250]</span> ₹1,157.00 > 2d high ₹1156.3 | Just above 20 EMA (+1.1%) | 🚀 Breaking 2-day high ₹1156.30</div></div>
-
-  <div class="card">
-    <h3>All Intraday Setups — Above 200 EMA Only</h3>
-    <table>
-      <thead><tr><th>Symbol</th><th>Index</th><th>LTP</th><th>Chg %</th><th>200 EMA</th><th>20 EMA</th><th>2d High</th><th>Vol×</th><th>SL</th><th>Target</th><th>Score</th><th>Signals</th></tr></thead>
-      <tbody><tr style="background:#f0f9ff;border-left:4px solid #0ea5e9">
-          <td><span style="background:#0ea5e920;color:#0369a1;font-size:11px;padding:2px 7px;border-radius:12px;font-weight:700">⚡</span> <b>ASIANPAINT</b></td>
-          <td><span style="background:#1e40af15;color:#1e40af;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">N50</span></td>
-          <td>₹2,693.30</td>
-          <td style="color:#2d7a2d;font-weight:600">▲0.16%</td>
-          <td>₹2,575.76</td>
-          <td>₹2,683.28</td>
-          <td>₹2,700.00</td>
-          <td style="color:#888;font-weight:600">—</td>
-          <td>₹2680</td><td>₹2774.1</td>
-          <td><b>4</b></td>
-          <td style="font-size:12px;color:#555">⚡ 20 EMA CROSSOVER ₹2683.28 | 🔇 Low volume 0.0× avg | Near day high 💪</td>
-        </tr><tr style="background:#f0f9ff;border-left:4px solid #0ea5e9">
-          <td><span style="background:#0ea5e920;color:#0369a1;font-size:11px;padding:2px 7px;border-radius:12px;font-weight:700">⚡</span> <b>GRAPHITE</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">S250</span></td>
-          <td>₹635.15</td>
-          <td style="color:#b91c1c;font-weight:600">▼1.47%</td>
-          <td>₹624.18</td>
-          <td>₹630.57</td>
-          <td>₹665.90</td>
-          <td style="color:#888;font-weight:600">0.2×</td>
-          <td>₹627.35</td><td>₹654.2</td>
-          <td><b>4</b></td>
-          <td style="font-size:12px;color:#555">⚡ 20 EMA CROSSOVER ₹630.57 | ⚠️ Below yesterday's low ₹637.40 — caution | 🔇 Low volume 0.2× avg</td>
-        </tr><tr style="">
-          <td><b>CIPLA</b></td>
-          <td><span style="background:#1e40af15;color:#1e40af;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">N50</span></td>
-          <td>₹1,440.40</td>
-          <td style="color:#2d7a2d;font-weight:600">▲1.53%</td>
-          <td>₹1,423.70</td>
-          <td>₹1,430.51</td>
-          <td>₹1,444.00</td>
-          <td style="color:#888;font-weight:600">0.1×</td>
-          <td>₹1419.5</td><td>₹1483.61</td>
-          <td><b>7</b></td>
-          <td style="font-size:12px;color:#555">Just above 200 EMA (+1.2%) | Just above 20 EMA (+0.7%) | Above yesterday's high ₹1434.00</td>
-        </tr><tr style="">
-          <td><b>SAREGAMA</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">S250</span></td>
-          <td>₹509.00</td>
-          <td style="color:#2d7a2d;font-weight:600">▲2.86%</td>
-          <td>₹404.78</td>
-          <td>₹481.08</td>
-          <td>₹497.60</td>
-          <td style="color:#888;font-weight:600">0.3×</td>
-          <td>₹491.35</td><td>₹535.47</td>
-          <td><b>7</b></td>
-          <td style="font-size:12px;color:#555">🚀 Breaking 2-day high ₹497.60 | 🔇 Low volume 0.3× avg | Good move +2.86% ✅</td>
-        </tr><tr style="">
-          <td><b>FLUOROCHEM</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">M150</span></td>
-          <td>₹4,225.00</td>
-          <td style="color:#2d7a2d;font-weight:600">▲1.93%</td>
-          <td>₹3,581.03</td>
-          <td>₹3,963.76</td>
-          <td>₹4,169.90</td>
-          <td style="color:#888;font-weight:600">0.3×</td>
-          <td>₹4120.4</td><td>₹4381.9</td>
-          <td><b>6</b></td>
-          <td style="font-size:12px;color:#555">🚀 Breaking 2-day high ₹4169.90 | 🔇 Low volume 0.3× avg | Positive +1.93%</td>
-        </tr><tr style="">
-          <td><b>GODREJIND</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">M150</span></td>
-          <td>₹1,369.20</td>
-          <td style="color:#2d7a2d;font-weight:600">▲2.58%</td>
-          <td>₹1,071.42</td>
-          <td>₹1,261.76</td>
-          <td>₹1,385.50</td>
-          <td style="color:#888;font-weight:600">0.1×</td>
-          <td>₹1327.3</td><td>₹1432.05</td>
-          <td><b>6</b></td>
-          <td style="font-size:12px;color:#555">Above yesterday's high ₹1345.00 | 🔇 Low volume 0.1× avg | Good move +2.58% ✅</td>
-        </tr><tr style="">
-          <td><b>SHYAMMETL</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">S250</span></td>
-          <td>₹1,049.50</td>
-          <td style="color:#2d7a2d;font-weight:600">▲2.64%</td>
-          <td>₹886.52</td>
-          <td>₹992.27</td>
-          <td>₹1,059.00</td>
-          <td style="color:#888;font-weight:600">0.1×</td>
-          <td>₹1020.5</td><td>₹1093.0</td>
-          <td><b>6</b></td>
-          <td style="font-size:12px;color:#555">Above yesterday's high ₹1045.00 | 🔇 Low volume 0.1× avg | Good move +2.64% ✅</td>
-        </tr><tr style="">
-          <td><b>NUVOCO</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">S250</span></td>
-          <td>₹357.60</td>
-          <td style="color:#2d7a2d;font-weight:600">▲2.54%</td>
-          <td>₹348.60</td>
-          <td>₹331.08</td>
-          <td>₹383.60</td>
-          <td style="color:#888;font-weight:600">0.1×</td>
-          <td>₹345.6</td><td>₹375.6</td>
-          <td><b>6</b></td>
-          <td style="font-size:12px;color:#555">Above yesterday's high ₹353.95 | 🔇 Low volume 0.1× avg | Good move +2.54% ✅</td>
-        </tr><tr style="">
-          <td><b>LLOYDSME</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">M150</span></td>
-          <td>₹1,891.00</td>
-          <td style="color:#2d7a2d;font-weight:600">▲1.37%</td>
-          <td>₹1,448.34</td>
-          <td>₹1,805.87</td>
-          <td>₹1,877.90</td>
-          <td style="color:#888;font-weight:600">0.3×</td>
-          <td>₹1855.8</td><td>₹1947.73</td>
-          <td><b>5</b></td>
-          <td style="font-size:12px;color:#555">🚀 Breaking 2-day high ₹1877.90 | 🔇 Low volume 0.3× avg | Near day high 💪</td>
-        </tr><tr style="">
-          <td><b>GABRIEL</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">S250</span></td>
-          <td>₹1,367.10</td>
-          <td style="color:#2d7a2d;font-weight:600">▲2.28%</td>
-          <td>₹1,095.53</td>
-          <td>₹1,263.41</td>
-          <td>₹1,373.60</td>
-          <td style="color:#888;font-weight:600">0.2×</td>
-          <td>₹1331.1</td><td>₹1421.1</td>
-          <td><b>5</b></td>
-          <td style="font-size:12px;color:#555">Above yesterday's high ₹1362.50 | 🔇 Low volume 0.2× avg | Positive +2.28%</td>
-        </tr><tr style="">
-          <td><b>ARE&M</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">S250</span></td>
-          <td>₹918.80</td>
-          <td style="color:#2d7a2d;font-weight:600">▲1.26%</td>
-          <td>₹889.69</td>
-          <td>₹875.69</td>
-          <td>₹917.00</td>
-          <td style="color:#888;font-weight:600">0.2×</td>
-          <td>₹903.85</td><td>₹946.36</td>
-          <td><b>5</b></td>
-          <td style="font-size:12px;color:#555">🚀 Breaking 2-day high ₹917.00 | 🔇 Low volume 0.2× avg | Near day high 💪</td>
-        </tr><tr style="">
-          <td><b>GVT&D</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">M150</span></td>
-          <td>₹4,487.20</td>
-          <td style="color:#2d7a2d;font-weight:600">▲2.27%</td>
-          <td>₹3,723.83</td>
-          <td>₹4,668.29</td>
-          <td>₹4,730.00</td>
-          <td style="color:#888;font-weight:600">0.1×</td>
-          <td>₹4352.1</td><td>₹4689.85</td>
-          <td><b>4</b></td>
-          <td style="font-size:12px;color:#555">🔇 Low volume 0.1× avg | Positive +2.27% | Near day high 💪</td>
-        </tr><tr style="">
-          <td><b>ALKEM</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">M150</span></td>
-          <td>₹5,633.00</td>
-          <td style="color:#2d7a2d;font-weight:600">▲1.26%</td>
-          <td>₹5,532.63</td>
-          <td>₹5,564.96</td>
-          <td>₹5,735.50</td>
-          <td style="color:#888;font-weight:600">0.1×</td>
-          <td>₹5564</td><td>₹5801.99</td>
-          <td><b>4</b></td>
-          <td style="font-size:12px;color:#555">Just above 200 EMA (+1.8%) | Just above 20 EMA (+1.2%) | 🔇 Low volume 0.1× avg</td>
-        </tr><tr style="">
-          <td><b>WELCORP</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">S250</span></td>
-          <td>₹1,612.90</td>
-          <td style="color:#2d7a2d;font-weight:600">▲1.99%</td>
-          <td>₹1,044.77</td>
-          <td>₹1,554.07</td>
-          <td>₹1,695.50</td>
-          <td style="color:#888;font-weight:600">0.1×</td>
-          <td>₹1582.7</td><td>₹1661.29</td>
-          <td><b>4</b></td>
-          <td style="font-size:12px;color:#555">🔇 Low volume 0.1× avg | Positive +1.99% | Near day high 💪</td>
-        </tr><tr style="">
-          <td><b>NAVINFLUOR</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">S250</span></td>
-          <td>₹7,706.00</td>
-          <td style="color:#2d7a2d;font-weight:600">▲1.68%</td>
-          <td>₹6,275.25</td>
-          <td>₹7,554.65</td>
-          <td>₹7,741.00</td>
-          <td style="color:#888;font-weight:600">0.3×</td>
-          <td>₹7475</td><td>₹8052.5</td>
-          <td><b>4</b></td>
-          <td style="font-size:12px;color:#555">🔇 Low volume 0.3× avg | Positive +1.68% | Near day high 💪</td>
-        </tr><tr style="">
-          <td><b>CRAFTSMAN</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">S250</span></td>
-          <td>₹9,243.00</td>
-          <td style="color:#2d7a2d;font-weight:600">▲1.52%</td>
-          <td>₹7,745.81</td>
-          <td>₹9,202.85</td>
-          <td>₹9,277.00</td>
-          <td style="color:#888;font-weight:600">0.2×</td>
-          <td>₹9140</td><td>₹9520.29</td>
-          <td><b>4</b></td>
-          <td style="font-size:12px;color:#555">Just above 20 EMA (+0.4%) | Above yesterday's high ₹9159.00 | 🔇 Low volume 0.2× avg</td>
-        </tr><tr style="">
-          <td><b>KEI</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">M150</span></td>
-          <td>₹4,939.00</td>
-          <td style="color:#2d7a2d;font-weight:600">▲0.66%</td>
-          <td>₹4,581.11</td>
-          <td>₹5,154.51</td>
-          <td>₹5,146.00</td>
-          <td style="color:#888;font-weight:600">0.1×</td>
-          <td>₹4861.5</td><td>₹5087.17</td>
-          <td><b>3</b></td>
-          <td style="font-size:12px;color:#555">🔇 Low volume 0.1× avg | Near day high 💪 | Bullish candle 🕯️</td>
-        </tr><tr style="">
-          <td><b>NYKAA</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">M150</span></td>
-          <td>₹326.55</td>
-          <td style="color:#2d7a2d;font-weight:600">▲1.08%</td>
-          <td>₹267.15</td>
-          <td>₹314.30</td>
-          <td>₹330.95</td>
-          <td style="color:#888;font-weight:600">0.1×</td>
-          <td>₹322.4</td><td>₹336.35</td>
-          <td><b>3</b></td>
-          <td style="font-size:12px;color:#555">🔇 Low volume 0.1× avg | Near day high 💪 | Bullish candle 🕯️</td>
-        </tr><tr style="">
-          <td><b>JSWENERGY</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">M150</span></td>
-          <td>₹548.25</td>
-          <td style="color:#2d7a2d;font-weight:600">▲1.30%</td>
-          <td>₹520.86</td>
-          <td>₹554.19</td>
-          <td>₹556.00</td>
-          <td style="color:#888;font-weight:600">0.1×</td>
-          <td>₹539.3</td><td>₹564.7</td>
-          <td><b>3</b></td>
-          <td style="font-size:12px;color:#555">Above yesterday's high ₹547.40 | 🔇 Low volume 0.1× avg | Upper half of range</td>
-        </tr><tr style="">
-          <td><b>RADICO</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">M150</span></td>
-          <td>₹4,137.30</td>
-          <td style="color:#2d7a2d;font-weight:600">▲0.96%</td>
-          <td>₹3,234.21</td>
-          <td>₹3,973.99</td>
-          <td>₹4,149.20</td>
-          <td style="color:#888;font-weight:600">0.1×</td>
-          <td>₹4088</td><td>₹4261.42</td>
-          <td><b>3</b></td>
-          <td style="font-size:12px;color:#555">Above yesterday's high ₹4134.30 | 🔇 Low volume 0.1× avg | Near day high 💪</td>
-        </tr><tr style="">
-          <td><b>IDFCFIRSTB</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">M150</span></td>
-          <td>₹80.59</td>
-          <td style="color:#2d7a2d;font-weight:600">▲0.30%</td>
-          <td>₹75.82</td>
-          <td>₹79.05</td>
-          <td>₹80.80</td>
-          <td style="color:#888;font-weight:600">0.2×</td>
-          <td>₹79.7</td><td>₹83.01</td>
-          <td><b>3</b></td>
-          <td style="font-size:12px;color:#555">🔇 Low volume 0.2× avg | Near day high 💪 | Bullish candle 🕯️</td>
-        </tr><tr style="">
-          <td><b>LUPIN</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">M150</span></td>
-          <td>₹2,467.70</td>
-          <td style="color:#2d7a2d;font-weight:600">▲1.00%</td>
-          <td>₹2,206.29</td>
-          <td>₹2,437.88</td>
-          <td>₹2,529.50</td>
-          <td style="color:#888;font-weight:600">0.1×</td>
-          <td>₹2424</td><td>₹2541.73</td>
-          <td><b>3</b></td>
-          <td style="font-size:12px;color:#555">Just above 20 EMA (+1.2%) | 🔇 Low volume 0.1× avg | Upper half of range</td>
-        </tr><tr style="">
-          <td><b>IIFL</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">S250</span></td>
-          <td>₹561.60</td>
-          <td style="color:#2d7a2d;font-weight:600">▲1.15%</td>
-          <td>₹512.23</td>
-          <td>₹535.57</td>
-          <td>₹574.45</td>
-          <td style="color:#888;font-weight:600">0.1×</td>
-          <td>₹552.3</td><td>₹578.45</td>
-          <td><b>3</b></td>
-          <td style="font-size:12px;color:#555">🔇 Low volume 0.1× avg | Near day high 💪 | Bullish candle 🕯️</td>
-        </tr><tr style="">
-          <td><b>CAMS</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">S250</span></td>
-          <td>₹756.75</td>
-          <td style="color:#2d7a2d;font-weight:600">▲0.75%</td>
-          <td>₹750.75</td>
-          <td>₹774.28</td>
-          <td>₹764.80</td>
-          <td style="color:#888;font-weight:600">0.1×</td>
-          <td>₹742</td><td>₹779.45</td>
-          <td><b>3</b></td>
-          <td style="font-size:12px;color:#555">Just above 200 EMA (+0.8%) | 🔇 Low volume 0.1× avg | Near day high 💪</td>
-        </tr><tr style="">
-          <td><b>NUVAMA</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">S250</span></td>
-          <td>₹1,870.00</td>
-          <td style="color:#2d7a2d;font-weight:600">▲0.37%</td>
-          <td>₹1,463.93</td>
-          <td>₹1,834.63</td>
-          <td>₹1,931.40</td>
-          <td style="color:#888;font-weight:600">0.1×</td>
-          <td>₹1831.7</td><td>₹1927.45</td>
-          <td><b>3</b></td>
-          <td style="font-size:12px;color:#555">🔇 Low volume 0.1× avg | Near day high 💪 | Bullish candle 🕯️</td>
-        </tr><tr style="">
-          <td><b>NEULANDLAB</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">S250</span></td>
-          <td>₹18,806.00</td>
-          <td style="color:#2d7a2d;font-weight:600">▲2.02%</td>
-          <td>₹15,763.26</td>
-          <td>₹18,572.28</td>
-          <td>₹19,190.00</td>
-          <td style="color:#888;font-weight:600">0.1×</td>
-          <td>₹18442</td><td>₹19370.18</td>
-          <td><b>3</b></td>
-          <td style="font-size:12px;color:#555">Just above 20 EMA (+1.3%) | 🔇 Low volume 0.1× avg | Positive +2.02%</td>
-        </tr><tr style="">
-          <td><b>ABSLAMC</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">S250</span></td>
-          <td>₹1,157.00</td>
-          <td style="color:#2d7a2d;font-weight:600">▲0.56%</td>
-          <td>₹926.85</td>
-          <td>₹1,144.80</td>
-          <td>₹1,156.30</td>
-          <td style="color:#888;font-weight:600">0.2×</td>
-          <td>₹1140.7</td><td>₹1191.71</td>
-          <td><b>3</b></td>
-          <td style="font-size:12px;color:#555">Just above 20 EMA (+1.1%) | 🚀 Breaking 2-day high ₹1156.30 | 🔇 Low volume 0.2× avg</td>
-        </tr><tr style="">
-          <td><b>AEGISVOPAK</b></td>
-          <td><span style="background:#88815;color:#888;font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600">S250</span></td>
-          <td>₹277.89</td>
-          <td style="color:#2d7a2d;font-weight:600">▲2.45%</td>
-          <td>₹235.05</td>
-          <td>₹263.08</td>
-          <td>₹283.45</td>
-          <td style="color:#888;font-weight:600">0.1×</td>
-          <td>₹270.52</td><td>₹288.94</td>
-          <td><b>3</b></td>
-          <td style="font-size:12px;color:#555">Above yesterday's high ₹274.54 | 🔇 Low volume 0.1× avg | Positive +2.45%</td>
-        </tr></tbody>
-    </table>
-  </div>
-
-  
-  <div class="card">
-    <h3>📤 Closed Positions — Performance Log</h3>
-    <div class="metrics2" style="margin-bottom:14px">
-      <div class="mcard"><div class="lbl">Total Closed</div><div class="val">124</div></div>
-      <div class="mcard"><div class="lbl">Overall P&amp;L</div><div class="val" style="color:#b91c1c">-42.09%</div></div>
-      <div class="mcard"><div class="lbl">Win Rate</div><div class="val" style="color:#2d7a2d">39%</div></div>
-      <div class="mcard"><div class="lbl">Avg Win</div><div class="val" style="color:#2d7a2d">+1.1%</div></div>
-      <div class="mcard"><div class="lbl">Avg Loss</div><div class="val" style="color:#b91c1c">-1.25%</div></div>
-      <div class="mcard"><div class="lbl">Wins / Losses</div><div class="val">48W / 76L</div></div>
-      <div class="mcard"><div class="lbl">🏆 Max Profit</div><div class="val" style="color:#2d7a2d;font-size:16px">+4.69%<br><span style="font-size:11px;font-weight:400">AEGISLOG</span></div></div>
-      <div class="mcard"><div class="lbl">💥 Max Loss</div><div class="val" style="color:#b91c1c;font-size:16px">-5.02%<br><span style="font-size:11px;font-weight:400">AXISBANK</span></div></div>
-    </div>
-    <table>
-      <thead><tr><th>Symbol</th><th>Entry</th><th>Exit</th><th>P&amp;L %</th><th>Status</th><th>Entry Date</th><th>Exit Date</th></tr></thead>
-      <tbody><tr>
-          <td><b>GESHIP</b></td>
-          <td>₹1,402.80</td>
-          <td>₹1,400.00</td>
-          <td style="color:#b91c1c;font-weight:700">-0.2%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">TREND EXHAUSTED</span></td>
-          <td style="font-size:12px">20 Jul 2026</td>
-          <td style="font-size:12px;color:#888">20 Jul 2026</td>
-        </tr><tr>
-          <td><b>JSWSTEEL</b></td>
-          <td>₹1,256.20</td>
-          <td>₹1,256.60</td>
-          <td style="color:#2d7a2d;font-weight:700">+0.03%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">TREND EXHAUSTED</span></td>
-          <td style="font-size:12px">20 Jul 2026</td>
-          <td style="font-size:12px;color:#888">20 Jul 2026</td>
-        </tr><tr>
-          <td><b>SPLPETRO</b></td>
-          <td>₹723.50</td>
-          <td>₹729.75</td>
-          <td style="color:#2d7a2d;font-weight:700">+0.86%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">TREND EXHAUSTED</span></td>
-          <td style="font-size:12px">20 Jul 2026</td>
-          <td style="font-size:12px;color:#888">20 Jul 2026</td>
-        </tr><tr>
-          <td><b>TRENT</b></td>
-          <td>₹2,904.70</td>
-          <td>₹2,904.90</td>
-          <td style="color:#2d7a2d;font-weight:700">+0.01%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">TREND EXHAUSTED</span></td>
-          <td style="font-size:12px">20 Jul 2026</td>
-          <td style="font-size:12px;color:#888">20 Jul 2026</td>
-        </tr><tr>
-          <td><b>INDIANB</b></td>
-          <td>₹837.00</td>
-          <td>₹836.85</td>
-          <td style="color:#b91c1c;font-weight:700">-0.02%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">TREND EXHAUSTED</span></td>
-          <td style="font-size:12px">20 Jul 2026</td>
-          <td style="font-size:12px;color:#888">20 Jul 2026</td>
-        </tr><tr>
-          <td><b>OIL</b></td>
-          <td>₹446.40</td>
-          <td>₹446.50</td>
-          <td style="color:#2d7a2d;font-weight:700">+0.02%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">TREND EXHAUSTED</span></td>
-          <td style="font-size:12px">20 Jul 2026</td>
-          <td style="font-size:12px;color:#888">20 Jul 2026</td>
-        </tr><tr>
-          <td><b>ZFCVINDIA</b></td>
-          <td>₹2,410.30</td>
-          <td>₹2,360.00</td>
-          <td style="color:#b91c1c;font-weight:700">-2.09%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">GAP DOWN EXIT</span></td>
-          <td style="font-size:12px">17 Jul 2026</td>
-          <td style="font-size:12px;color:#888">20 Jul 2026</td>
-        </tr><tr>
-          <td><b>ANANTRAJ</b></td>
-          <td>₹592.10</td>
-          <td>₹590.20</td>
-          <td style="color:#b91c1c;font-weight:700">-0.32%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">MOMENTUM EXIT</span></td>
-          <td style="font-size:12px">17 Jul 2026</td>
-          <td style="font-size:12px;color:#888">20 Jul 2026</td>
-        </tr><tr>
-          <td><b>AEGISLOG</b></td>
-          <td>₹1,349.10</td>
-          <td>₹1,412.40</td>
-          <td style="color:#2d7a2d;font-weight:700">+4.69%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">MOMENTUM EXIT</span></td>
-          <td style="font-size:12px">17 Jul 2026</td>
-          <td style="font-size:12px;color:#888">20 Jul 2026</td>
-        </tr><tr>
-          <td><b>PPLPHARMA</b></td>
-          <td>₹176.39</td>
-          <td>₹176.66</td>
-          <td style="color:#2d7a2d;font-weight:700">+0.15%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">MOMENTUM EXIT</span></td>
-          <td style="font-size:12px">17 Jul 2026</td>
-          <td style="font-size:12px;color:#888">20 Jul 2026</td>
-        </tr><tr>
-          <td><b>ZEEL</b></td>
-          <td>₹106.53</td>
-          <td>₹108.40</td>
-          <td style="color:#2d7a2d;font-weight:700">+1.76%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">MOMENTUM EXIT</span></td>
-          <td style="font-size:12px">17 Jul 2026</td>
-          <td style="font-size:12px;color:#888">20 Jul 2026</td>
-        </tr><tr>
-          <td><b>AIIL</b></td>
-          <td>₹551.95</td>
-          <td>₹557.65</td>
-          <td style="color:#2d7a2d;font-weight:700">+1.03%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">MOMENTUM EXIT</span></td>
-          <td style="font-size:12px">17 Jul 2026</td>
-          <td style="font-size:12px;color:#888">20 Jul 2026</td>
-        </tr><tr>
-          <td><b>ECLERX</b></td>
-          <td>₹1,870.90</td>
-          <td>₹1,829.90</td>
-          <td style="color:#b91c1c;font-weight:700">-2.19%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">MOMENTUM EXIT</span></td>
-          <td style="font-size:12px">17 Jul 2026</td>
-          <td style="font-size:12px;color:#888">20 Jul 2026</td>
-        </tr><tr>
-          <td><b>FEDERALBNK</b></td>
-          <td>₹344.65</td>
-          <td>₹341.50</td>
-          <td style="color:#b91c1c;font-weight:700">-0.91%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">GAP DOWN EXIT</span></td>
-          <td style="font-size:12px">17 Jul 2026</td>
-          <td style="font-size:12px;color:#888">20 Jul 2026</td>
-        </tr><tr>
-          <td><b>EICHERMOT</b></td>
-          <td>₹7,549.50</td>
-          <td>₹7,506.50</td>
-          <td style="color:#b91c1c;font-weight:700">-0.57%</td>
-          <td><span style="font-size:11px;background:#f3f4f6;color:#555;padding:2px 10px;border-radius:12px;font-weight:600">MOMENTUM EXIT</span></td>
-          <td style="font-size:12px">17 Jul 2026</td>
-          <td style="font-size:12px;color:#888">20 Jul 2026</td>
-        </tr></tbody>
-    </table>
-  </div>
-
-  <div class="footer">Data: Zerodha Kite API | 200 EMA filter | Key level breakouts | Volume surge | For educational purposes only</div>
-</div></body></html>
+  <div class="footer">Data: NSE Market Watch (live) &nbsp;·&nbsp; SL = day low &nbsp;·&nbsp; For educational purposes only. Not investment advice.</div>
+</div>
+</body>
+</html>
