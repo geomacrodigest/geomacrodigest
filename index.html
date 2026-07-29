@@ -6,13 +6,11 @@
 <title>Geo Macro Digest — Daily Market Intelligence</title>
 <style>
   * { box-sizing:border-box; margin:0; padding:0 }
-  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:#0f1117; color:#fff; min-height:100vh; display:flex; flex-direction:column; align-items:center; padding:40px 24px }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:#0f1117; color:#fff; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px }
   .logo { font-size:28px; font-weight:700; margin-bottom:8px; letter-spacing:-0.5px }
   .logo span { color:#378ADD }
-  .tagline { color:#888; font-size:15px; margin-bottom:40px; text-align:center }
-  .section-label { font-size:11px; font-weight:600; color:#555; text-transform:uppercase; letter-spacing:.1em; width:100%; max-width:840px; margin-bottom:12px; margin-top:28px }
-  .section-label:first-of-type { margin-top:0 }
-  .cards { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; width:100%; max-width:840px; margin-bottom:4px }
+  .tagline { color:#888; font-size:15px; margin-bottom:48px; text-align:center }
+  .cards { display:grid; grid-template-columns:repeat(2,1fr); gap:16px; width:100%; max-width:840px }
   .card { background:#1a1d27; border:1px solid #2a2d3a; border-radius:16px; padding:28px; text-decoration:none; color:#fff; transition:border-color .2s, transform .2s }
   .card:hover { border-color:#378ADD; transform:translateY(-2px) }
   .card-icon { font-size:32px; margin-bottom:16px }
@@ -22,7 +20,6 @@
   .tag-blue { background:#378ADD20; color:#378ADD }
   .tag-green { background:#2d7a2d20; color:#4caf50 }
   .tag-amber { background:#b4530920; color:#f59e0b }
-  .tag-purple { background:#7c3aed20; color:#a78bfa }
   .footer { margin-top:48px; font-size:12px; color:#555; text-align:center }
   .footer a { color:#378ADD; text-decoration:none }
   @media(max-width:700px) { .cards { grid-template-columns:1fr } }
@@ -32,8 +29,13 @@
   <div class="logo">Geo <span>Macro</span> Digest</div>
   <p class="tagline">Daily market intelligence — options chain, macro context & stock setups</p>
 
-  <div class="section-label">📈 Equity &amp; Index</div>
   <div class="cards">
+    <a class="card" href="index_nifty.html">
+      <div class="card-icon">📊</div>
+      <div class="card-title">Nifty Options Dashboard</div>
+      <div class="card-desc">EOD OI analysis — CE/PE walls, PCR, Max Pain, macro context (Brent, DXY, USD/INR), credit spread setups with EV</div>
+      <span class="card-tag tag-blue">Updated daily after 6 PM</span>
+    </a>
     <a class="card" href="options_chain.html">
       <div class="card-icon">🔗</div>
       <div class="card-title">Intraday Options Chain</div>
@@ -63,40 +65,6 @@
       <div class="card-title">Short Scanner</div>
       <div class="card-desc">Bearish setups — Bear Put Spreads, Bear Call Spreads & Put Ratio Backspreads. No naked shorts. Defined-risk only.</div>
       <span class="card-tag" style="background:#7c1d1d30;color:#fca5a5">Every 2 hours during market hours</span>
-    </a>
-  </div>
-
-  <div class="section-label">🛢 Commodities &amp; Currency</div>
-  <div class="cards">
-    <a class="card" href="crudeoil_chain.html">
-      <div class="card-icon">🛢</div>
-      <div class="card-title">Crude Oil Options Chain</div>
-      <div class="card-desc">MCX Crude Oil — OI walls, PCR, ATM straddle, max pain, credit spread suggestions. LOT: 100 bbl</div>
-      <span class="card-tag tag-amber">On demand</span>
-    </a>
-    <a class="card" href="gold_chain.html">
-      <div class="card-icon">🥇</div>
-      <div class="card-title">Gold Options Chain</div>
-      <div class="card-desc">MCX Gold — OI walls, PCR, ATM straddle, max pain, credit spread suggestions. LOT: 1 kg</div>
-      <span class="card-tag tag-amber">On demand</span>
-    </a>
-    <a class="card" href="silver_chain.html">
-      <div class="card-icon">🥈</div>
-      <div class="card-title">Silver Options Chain</div>
-      <div class="card-desc">MCX Silver — OI walls, PCR, ATM straddle, max pain, credit spread suggestions. LOT: 30 kg</div>
-      <span class="card-tag tag-amber">On demand</span>
-    </a>
-    <a class="card" href="naturalgas_chain.html">
-      <div class="card-icon">🔥</div>
-      <div class="card-title">Natural Gas Options Chain</div>
-      <div class="card-desc">MCX Natural Gas — OI walls, PCR, ATM straddle, max pain, credit spread suggestions. LOT: 1250 mmBtu</div>
-      <span class="card-tag tag-amber">On demand</span>
-    </a>
-    <a class="card" href="usdinr_chain.html">
-      <div class="card-icon">💱</div>
-      <div class="card-title">USDINR Options Chain</div>
-      <div class="card-desc">NSE CDS — OI walls, PCR, ATM straddle, max pain, credit spread suggestions. LOT: 1000 USD</div>
-      <span class="card-tag tag-blue">On demand</span>
     </a>
   </div>
 
