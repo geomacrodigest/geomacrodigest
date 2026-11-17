@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NIFTY Options Dashboard (Kite) — 22 Jun 2026 17:44</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f8f9fa;color:#1a1a1a;padding:24px;font-size:14px}
+  .wrap{max-width:1100px;margin:0 auto}
+  h1{font-size:20px;font-weight:600;margin-bottom:4px}
+  .sub{color:#666;font-size:13px;margin-bottom:24px}
+  .metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:24px}
+  .mcard{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px}
+  .mcard .lbl{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+  .mcard .val{font-size:22px;font-weight:600}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+  .card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:16px;margin-bottom:16px}
+  .slbl{font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px}
+  .bias-bar{background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:16px;margin-bottom:16px;display:flex;align-items:center;gap:16px}
+  .bias-pill{font-size:13px;font-weight:700;padding:6px 16px;border-radius:20px;white-space:nowrap;background:#A32D2D20;color:#A32D2D}
+  .bias-tag{display:inline-block;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:600}
+  .bias-desc{font-size:13px;color:#444;line-height:1.6}
+  .kite-badge{display:inline-block;background:#387ed120;color:#387ed1;font-size:11px;padding:2px 10px;border-radius:20px;margin-left:8px}
+  .footer{margin-top:24px;font-size:12px;color:#999;text-align:center}
+  canvas{display:block}
+  @media(max-width:700px){.row2{grid-template-columns:1fr}}
+</style>
+</head><body>
+<div class="wrap">
+<h1>NIFTY Options Dashboard <span class="kite-badge">KITE LIVE</span></h1>
+<p class="sub">Expiry: 23 Jun 2026 &nbsp;|&nbsp; Spot: 24,103 &nbsp;|&nbsp; Generated: 22 Jun 2026 17:44</p>
+
+<div class="metrics">
+  <div class="mcard"><div class="lbl">ATM Strike</div><div class="val" style="color:#1d4ed8">24,100</div></div>
+  <div class="mcard"><div class="lbl">PCR (OI)</div><div class="val" style="color:#A32D2D">0.88</div></div>
+  <div class="mcard"><div class="lbl">Max Pain</div><div class="val" style="color:#A32D2D">24,100</div></div>
+  <div class="mcard"><div class="lbl">Total CE OI</div><div class="val">1,729L</div></div>
+  <div class="mcard"><div class="lbl">Total PE OI</div><div class="val">1,515L</div></div>
+  <div class="mcard"><div class="lbl">DTE</div><div class="val">1</div></div>
+</div>
+
+<div class="bias-bar">
+  <div class="bias-pill">📉 BEARISH</div>
+  <div class="bias-desc">PCR 0.88 — call writers dominant. Capped upside expected.</div>
+</div>
+
+<div class="row2">
+  <div class="card">
+  <h3>🌍 Global Macro Context</h3>
+  <div style="padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:13px;color:#2d7a2d">Brent $79.01 (-0.49%) — benign, supportive for INR/inflation</div><div style="padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:13px;color:#666">DXY 100.89 (-0.01%) — neutral zone, watch 98/102</div><div style="padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:13px;color:#b91c1c">USD/INR 94.68 (+0.39%) — INR weak, FII caution</div><div style="padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:13px;color:#2d7a2d">US futures: Dow +0.39% | S&P +0.41% | Nasdaq +0.68%</div><div style="padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:13px;color:#2d7a2d">Asia: Nikkei +1.97% | HangSeng -0.65% | Kospi +0.69%</div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e5e7eb;font-size:13px;color:#444">
+    <b>Global cue:</b> RISK-ON — futures + Asia lean positive, gap-up bias for Nifty open
+  </div>
+  <div style="margin-top:8px"><span class="bias-tag" style="background:#2d7a2d20;color:#2d7a2d">✅ MACRO SUPPORTIVE</span></div>
+</div>
+  <div class="card">
+  <h3>🎯 Nifty ATM Straddle</h3>
+  <div style="font-size:13px;color:#444">ATM 24,100 | CE ₹64.55 + PE ₹54.45 = <b>₹119.0</b></div>
+  <div style="font-size:13px;color:#444;margin-top:4px">Implied move: <b>119pts (0.49%)</b></div>
+  <div style="font-size:13px;color:#444;margin-top:4px">Breakeven range: <b>23,984–24,222</b></div>
+  <div style="margin-top:10px;font-size:13px;color:#2d7a2d">🔻 <b>Losing value</b> — intraday -45.5 (-27.7%)</div>
+  <div style="font-size:12px;color:#666;margin-top:2px">Vs yesterday close: -75.7 (-38.9%)</div>
+  
+    <div style="margin-top:10px">
+      <div style="font-size:12px;color:#666;margin-bottom:4px">Series since 2026-06-18 — total move consumed: 8.0%</div>
+      <div style="background:#f0f0f0;border-radius:6px;height:10px;overflow:hidden">
+        <div style="background:#2d7a2d;height:100%;width:8.0%"></div>
+      </div>
+      <div style="font-size:12px;color:#666;margin-top:4px">Total move: -19pts (-0.08%) vs ₹240 start straddle</div>
+      <div style="font-size:12px;color:#666;margin-top:4px">Pace-adjusted (75% of week elapsed): <b>10.7%</b> of ~180pt budget</div>
+    </div>
+  <div style="margin-top:10px;padding-top:10px;border-top:1px solid #e5e7eb;font-size:13px;color:#333">Straddle is LOSING value intraday — favorable for premium sellers, theta decay is outpacing realized movement. Only 8.0% of the week's implied move used — market quiet relative to weekly pricing.</div>
+</div>
+</div>
+
+<div class="row2">
+  <div class="card"><div class="slbl">Top CE OI — Resistance</div>
+    <div style="position:relative;height:220px"><canvas id="ceChart"></canvas></div></div>
+  <div class="card"><div class="slbl">Top PE OI — Support</div>
+    <div style="position:relative;height:220px"><canvas id="peChart"></canvas></div></div>
+</div>
+
+<div class="card"><div class="slbl">OI Distribution — CE vs PE across strikes</div>
+  <div style="position:relative;height:250px"><canvas id="distChart"></canvas></div></div>
+
+<div class="card"><div class="slbl">Trade Setups (Directional Option Selling)</div>
+  <div style="background:#f9fafb;border-left:3px solid #D4537E;border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:8px"><div style="font-size:12px;font-weight:700;color:#D4537E;margin-bottom:4px">SELL CE 24,200</div><div style="font-size:13px;color:#444">LTP ₹24.3 | OI 144.4L | 144.4 OI at resistance. SL: ₹48.6. ⚠️ No overnight.</div></div>
+  <p style="font-size:12px;color:#888;margin-top:8px">For educational purposes only. Not investment advice.</p>
+</div>
+
+<div class="card"><div class="slbl">Credit Spread Setups — 200pt width</div>
+  <p style="font-size:12px;color:#888;margin:0 0 12px">Spot: 24,103 | DTE: 1 | Expiry: 23 Jun 2026</p>
+  <p style="color:#888;font-size:13px">No spread candidates — check data.</p>
+  <p style="font-size:12px;color:#888;margin-top:8px">For educational purposes only. Not investment advice.</p>
+</div>
+
+<div class="footer">Data: Zerodha Kite API | LOT: 75 | For educational purposes only</div>
+</div>
+
+<script>
+const ceLabels=['24200', '24100', '24300', '24500', '24150', '25000', '24800'], ceOI=[144.4, 125.8, 106.5, 104.9, 102.7, 99.6, 75.4], ceVol=[4064.3, 4914.6, 2179.3, 1123.7, 4455.7, 657.0, 546.2];
+const peLabels=['24000', '24100', '23500', '23800', '23900', '23000', '24050'], peOI=[139.0, 123.1, 85.0, 84.9, 84.7, 79.2, 74.4], peVol=[2958.1, 5207.0, 736.7, 1017.3, 1659.6, 487.3, 2102.7];
+const dStrikes=['21200', '21250', '21300', '21350', '21400', '21450', '21500', '21550', '21600', '21650', '21700', '21750', '21800', '21850', '21900', '21950', '22000', '22050', '22100', '22150', '22200', '22250', '22300', '22350', '22400', '22450', '22500', '22550', '22600', '22650', '22700', '22750', '22800', '22850', '22900', '22950', '23000', '23050', '23100', '23150', '23200', '23250', '23300', '23350', '23400', '23450', '23500', '23550', '23600', '23650', '23700', '23750', '23800', '23850', '23900', '23950', '24000', '24050', '24100', '24150', '24200', '24250', '24300', '24350', '24400', '24450', '24500', '24550', '24600', '24650', '24700', '24750', '24800', '24850', '24900', '24950', '25000', '25050', '25100', '25150', '25200', '25250', '25300', '25350', '25400', '25450', '25500', '25550', '25600', '25650', '25700', '25750', '25800', '25850', '25900', '25950', '26000', '26050', '26100', '26150', '26200', '26250', '26300'], dCE=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.0, 0.0, 0.0, 0.1, 0.0, 0.1, 0.1, 0.4, 0.0, 3.2, 0.2, 0.8, 0.4, 3.0, 0.6, 2.2, 0.4, 5.1, 0.4, 4.7, 0.5, 6.3, 0.6, 2.5, 0.7, 5.4, 2.3, 15.1, 9.4, 52.8, 28.1, 125.8, 102.7, 144.4, 67.0, 106.5, 41.8, 72.8, 39.4, 104.9, 37.2, 59.7, 32.6, 61.7, 26.0, 75.4, 16.9, 37.6, 11.5, 99.6, 15.1, 50.6, 16.0, 33.5, 7.3, 25.4, 6.6, 18.5, 6.5, 53.5, 4.6, 7.1, 2.4, 6.7, 1.8, 14.0, 1.1, 2.1, 1.1, 26.7, 0.9, 2.6, 1.4, 3.6, 1.9, 8.6], dPE=[27.8, 1.3, 4.8, 0.2, 1.0, 0.4, 7.8, 0.3, 1.3, 0.3, 1.2, 0.2, 5.1, 0.5, 1.4, 0.7, 22.6, 0.6, 3.9, 0.5, 5.6, 0.8, 5.5, 1.3, 3.0, 1.4, 25.4, 5.5, 8.5, 3.1, 8.9, 3.4, 18.9, 6.4, 20.9, 7.0, 79.2, 5.3, 19.6, 10.1, 38.8, 16.6, 40.4, 16.9, 46.1, 18.2, 85.0, 27.6, 62.0, 28.4, 60.4, 36.7, 84.9, 47.3, 84.7, 57.5, 139.0, 74.4, 123.1, 42.9, 32.7, 8.4, 9.4, 1.3, 2.1, 0.8, 3.8, 0.4, 0.5, 0.1, 0.3, 0.0, 0.2, 0.0, 0.1, 0.0, 1.9, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0];
+const atmIdx=58;
+
+new Chart(document.getElementById('ceChart'),{type:'bar',data:{labels:ceLabels,datasets:[
+  {label:'OI (L)',data:ceOI,backgroundColor:'#378ADD',borderRadius:3},
+  {label:'Vol (÷1L)',data:ceVol,backgroundColor:'#97C459',borderRadius:3}
+]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{font:{size:11}}},y:{ticks:{font:{size:10}}}}}}));
+
+new Chart(document.getElementById('peChart'),{type:'bar',data:{labels:peLabels,datasets:[
+  {label:'OI (L)',data:peOI,backgroundColor:'#D4537E',borderRadius:3},
+  {label:'Vol (÷1L)',data:peVol,backgroundColor:'#EF9F27',borderRadius:3}
+]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{font:{size:11}}},y:{ticks:{font:{size:10}}}}}}));
+
+new Chart(document.getElementById('distChart'),{type:'bar',data:{labels:dStrikes,datasets:[
+  {label:'CE OI (L)',data:dCE,backgroundColor:'#378ADD',borderRadius:2},
+  {label:'PE OI (L)',data:dPE,backgroundColor:'#D4537E',borderRadius:2}
+]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+  scales:{x:{grid:{display:false},ticks:{font:{size:10},maxRotation:45,autoSkip:true,maxTicksLimit:20}},
+           y:{ticks:{font:{size:10},callback:v=>v>=1000?Math.round(v/1000)+'K':v}}}}}));
+
+const historyData = [{"date": "12 Jun", "atm": 23700, "pcr": 1.75, "max_pain": 23500, "resistance": 24000, "support": 22500, "bias": "BULLISH", "top_ce": [{"strike": 24000, "oi": 10684115}, {"strike": 24500, "oi": 7181525}, {"strike": 23800, "oi": 6449040}], "top_pe": [{"strike": 22500, "oi": 14394705}, {"strike": 23000, "oi": 11915930}, {"strike": 22000, "oi": 11344645}], "brent": 87.29, "dxy": 99.72, "usdinr": 95.1}, {"date": "13 Jun", "atm": 23700, "pcr": 1.75, "max_pain": 23500, "resistance": 24000, "support": 22500, "bias": "BULLISH", "top_ce": [{"strike": 24000, "oi": 10684115}, {"strike": 24500, "oi": 7181525}, {"strike": 23800, "oi": 6449040}], "top_pe": [{"strike": 22500, "oi": 14394705}, {"strike": 23000, "oi": 11915930}, {"strike": 22000, "oi": 11344645}], "brent": 87.33, "dxy": 99.75, "usdinr": 95.1}, {"date": "16 Jun", "atm": 23950, "pcr": 0.94, "max_pain": 23850, "resistance": 24000, "support": 23500, "bias": "NEUTRAL", "top_ce": [{"strike": 24000, "oi": 4233580}, {"strike": 25000, "oi": 3913390}, {"strike": 24500, "oi": 3000790}], "top_pe": [{"strike": 23500, "oi": 3013270}, {"strike": 23000, "oi": 2772575}, {"strike": 23400, "oi": 2591095}], "brent": 82.98, "dxy": 99.76, "usdinr": 94.66}, {"date": "17 Jun", "atm": 24050, "pcr": 1.07, "max_pain": 24000, "resistance": 25000, "support": 24000, "bias": "NEUTRAL", "top_ce": [{"strike": 25000, "oi": 7660575}, {"strike": 24000, "oi": 6701045}, {"strike": 24500, "oi": 6537180}], "top_pe": [{"strike": 24000, "oi": 8291010}, {"strike": 23000, "oi": 7928375}, {"strike": 23500, "oi": 5446870}], "brent": 79.13, "dxy": 99.57, "usdinr": 94.5}, {"date": "18 Jun", "atm": 24050, "pcr": 0.79, "max_pain": 24000, "resistance": 24100, "support": 24000, "bias": "BEARISH", "top_ce": [{"strike": 24100, "oi": 14755390}, {"strike": 24000, "oi": 9778600}, {"strike": 25000, "oi": 9725560}], "top_pe": [{"strike": 24000, "oi": 10145915}, {"strike": 23000, "oi": 7441655}, {"strike": 23500, "oi": 7006285}], "brent": 77.35, "dxy": 100.29, "usdinr": 94.31}, {"date": "22 Jun", "atm": 24100, "pcr": 0.88, "max_pain": 24100, "resistance": 24200, "support": 24000, "bias": "BEARISH", "top_ce": [{"strike": 24200, "oi": 14441700}, {"strike": 24100, "oi": 12581595}, {"strike": 24300, "oi": 10653500}], "top_pe": [{"strike": 24000, "oi": 13899990}, {"strike": 24100, "oi": 12310155}, {"strike": 23500, "oi": 8504925}], "brent": 79.01, "dxy": 100.89, "usdinr": 94.68}];
+if (historyData.length > 1) {
+  const histSection = document.createElement('div');
+  histSection.className = 'card'; histSection.style.marginBottom = '16px';
+  histSection.innerHTML = '<div class="slbl">7-Day PCR & OI Trend</div>' +
+    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">' +
+    '<div style="position:relative;height:180px"><canvas id="pcrChart"></canvas></div>' +
+    '<div style="position:relative;height:180px"><canvas id="oiTrendChart"></canvas></div></div>';
+  document.querySelector('.footer').before(histSection);
+  const dates = historyData.map(h => h.date);
+  new Chart(document.getElementById('pcrChart'),{type:'line',data:{labels:dates,datasets:[{label:'PCR',data:historyData.map(h=>h.pcr),borderColor:'#378ADD',backgroundColor:'#378ADD20',pointRadius:4,borderWidth:2,tension:0.3,fill:true}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{font:{size:10}}},y:{ticks:{font:{size:10},callback:v=>v.toFixed(2)}}}}}));
+  new Chart(document.getElementById('oiTrendChart'),{type:'line',data:{labels:dates,datasets:[{label:'Resistance CE',data:historyData.map(h=>h.resistance),borderColor:'#D4537E',pointRadius:4,borderWidth:2,tension:0.3},{label:'Support PE',data:historyData.map(h=>h.support),borderColor:'#639922',pointRadius:4,borderWidth:2,tension:0.3}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:true,labels:{font:{size:10},boxWidth:12}}},scales:{x:{grid:{display:false},ticks:{font:{size:10}}},y:{ticks:{font:{size:10},callback:v=>v.toLocaleString('en-IN')}}}}}));
+}
+</script>
+</body></html>
